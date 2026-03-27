@@ -37,9 +37,12 @@ const schema = {
   "@type": "Product",
   "name": product.name,
   "description": product.description,
-  "brand": {
-    "@type": "Brand",
-    "name": "SANMYRS"
+  "brand": { "@type": "Brand", "name": "SANMYRS" },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "PKR",
+    "seller": { "@type": "Organization", "name": "SANMYRS" }
   }
 };
 ---

@@ -17,6 +17,20 @@ interface Props {
   breadcrumbs?: BreadcrumbItem[];
 }
 const { title, description, canonical, schema, breadcrumbs = [] } = Astro.props;
+
+const breadcrumbSchema = breadcrumbs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.sanmyrs.com/" },
+    ...breadcrumbs.map((crumb, i) => ({
+      "@type": "ListItem",
+      "position": i + 2,
+      "name": crumb.label,
+      "item": `https://www.sanmyrs.com${crumb.href}`
+    }))
+  ]
+} : null;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -24,9 +38,10 @@ const { title, description, canonical, schema, breadcrumbs = [] } = Astro.props;
   <link rel="preload" href="/fonts/eras-itc-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
   <link rel="stylesheet" href="/fonts/fonts.css" />
   <SEOHead title={title} description={description} canonical={canonical} schema={schema} />
+  {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet" />
 </head>
 <body class="bg-page-bg font-sans text-body-text">
   <Navbar />
