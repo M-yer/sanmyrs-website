@@ -2,6 +2,7 @@
 
 ## General Rules
 - Install whatever app or tool is required to finish the job, but always inform the user what was installed before proceeding.
+- Push to GitHub after every major change using: `"E:/Mayer 2025/Mayer Programs/gh.exe"` (gh path) and `git push`.
 
 ---
 
