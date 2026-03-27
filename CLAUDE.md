@@ -1,5 +1,10 @@
 # CLAUDE.md — SANMYRS Website Project
 
+## General Rules
+- Install whatever app or tool is required to finish the job, but always inform the user what was installed before proceeding.
+
+---
+
 ## ⛔ ABSOLUTE FREEZE — READ THIS FIRST
 
 ### NEVER TOUCH THESE — NO EXCEPTIONS EVER:
