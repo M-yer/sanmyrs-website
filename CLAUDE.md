@@ -2,7 +2,8 @@
 
 ## General Rules
 - Install whatever app or tool is required to finish the job, but always inform the user what was installed before proceeding.
-- Push to GitHub after every major change using: `"E:/Mayer 2025/Mayer Programs/gh.exe"` (gh path) and `git push`.
+- Push to GitHub after every major change
+- Product cards and color grid boxes must always be fully clickable (entire element wrapped in `<a>` tag linking to the product slug page) — never just a "View Details" link inside a non-clickable container using: `"E:/Mayer 2025/Mayer Programs/gh.exe"` (gh path) and `git push`.
 
 ---
 

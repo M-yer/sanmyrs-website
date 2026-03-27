@@ -93,7 +93,7 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
             {product.images ? (
               <div class="color-grid">
                 {product.images.map(img => (
-                  <div style="background:white; border-radius:12px; border:1px solid #e5e7eb; padding:16px 12px; text-align:center; transition:box-shadow 0.15s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='none'">
+                  <a href={`/products/digital-printing/${product.slug}`} style="display:block; text-decoration:none; background:white; border-radius:12px; border:1px solid #e5e7eb; padding:16px 12px; text-align:center; transition:box-shadow 0.15s, transform 0.15s; cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.1)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
                     <img
                       src={img.src}
                       alt={`${product.name} — ${img.label}`}
@@ -101,7 +101,7 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
                       style="max-height:140px; width:auto; max-width:100%; object-fit:contain; display:block; margin:0 auto 10px;"
                     />
                     <p style="font-size:11px; font-weight:600; color:#4A4A4A; margin:0; text-transform:uppercase; letter-spacing:0.03em;">{img.label}</p>
-                  </div>
+                  </a>
                 ))}
               </div>
             ) : (

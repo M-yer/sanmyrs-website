@@ -8,9 +8,10 @@ interface Props {
 }
 const { name, description, slug, category, image } = Astro.props;
 ---
-<div
+<a
+  href={`/products/${category}/${slug}`}
   class="product-card"
-  style="width:100%; background:white; border-radius:12px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.1); cursor:pointer; transition:transform 0.2s ease, box-shadow 0.2s ease; border:1px solid #e5e7eb;"
+  style="width:100%; display:block; text-decoration:none; background:white; border-radius:12px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.1); cursor:pointer; transition:transform 0.2s ease, box-shadow 0.2s ease; border:1px solid #e5e7eb;"
 >
   <!-- Image area: 4:3 ratio via padding-top trick -->
   <div style="width:100%; padding-top:75%; position:relative; background:#F0F4F3; border-radius:12px 12px 0 0; overflow:hidden;">
@@ -39,12 +40,9 @@ const { name, description, slug, category, image } = Astro.props;
       class="card-desc"
       style="font-size:13px; color:#4A4A4A; max-height:0; overflow:hidden; opacity:0; transition:max-height 0.3s ease, opacity 0.3s ease; margin:0 0 0 0; line-height:1.5;"
     >{description}</p>
-    <a
-      href={`/products/${category}/${slug}`}
-      style="color:#0099AF; font-size:13px; font-weight:500; text-decoration:none; display:inline-block; margin-top:10px;"
-    >View Details →</a>
+    <span style="color:#0099AF; font-size:13px; font-weight:500; display:inline-block; margin-top:10px;">View Details →</span>
   </div>
-</div>
+</a>
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', function () {
