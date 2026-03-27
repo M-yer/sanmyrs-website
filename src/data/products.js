@@ -569,6 +569,7 @@ export const products = {
           {
             name: "Dye Sublimation Ink",
             slug: "dye-sublimation-ink",
+            image: "/images/products/digital-printing/dye-sublimation-ink/dye-sub-cyan.png",
             description: "Dye sublimation inks are formulated with disperse dyes in a water-based humectant carrier for printing onto release-coated transfer paper using inkjet printers, after which the printed transfer is heat-pressed onto polyester fabric at 190–210°C to sublimate the dye directly into the fiber. The sublimation process integrates the dye molecules within the polyester polymer structure, producing vivid, photo-quality images with exceptional wash durability, soft hand feel, and resistance to fading under UV exposure. The gamut achievable on polyester with sublimation inks is among the widest of all textile printing methods.",
             uses: [
               "Full-color sublimation printing on polyester sportswear and jerseys",
@@ -582,6 +583,7 @@ export const products = {
           {
             name: "Reactive Digital Ink",
             slug: "reactive-digital-ink",
+            image: "/images/products/digital-printing/reactive-digital-ink/cyan.png",
             description: "Reactive digital inks for textile printing contain fiber-reactive chromophores dissolved in a humectant aqueous carrier, designed for piezoelectric inkjet printhead systems printing directly onto pretreated cellulosic fabrics including cotton, linen, viscose, and modal. The reactive dye molecules form a covalent bond with the cellulose hydroxyl groups during a steam or wet-fixation post-processing step, producing outstanding washfastness ratings of 4–5 on ISO grey scales. Color gamut achievable with reactive inks on cotton exceeds 95% of the sRGB space, making them the preferred choice for fashion, home textile, and soft signage digital printing.",
             uses: [
               "Direct-to-fabric digital printing on cotton, linen, and viscose",
@@ -595,6 +597,7 @@ export const products = {
           {
             name: "Pigment Textile Ink",
             slug: "pigment-textile-ink",
+            image: "/images/products/digital-printing/pigment-textile-ink/pigment-cyan.png",
             description: "Pigment textile inks for digital printing use insoluble pigment particles dispersed in a water-based binder carrier designed for direct printing onto any fabric type — cotton, polyester, blends, and synthetics — without the need for fabric pretreatment or post-steaming processes, representing the most substrate-versatile digital textile printing chemistry available. The binder polymer encapsulates the pigment and bonds it mechanically to the fabric fiber surface during heat fixation at relatively low temperatures (150–160°C), enabling single-machine, single-process print and fix workflows. While washfastness is slightly lower than reactive or disperse systems, advances in binder technology have made modern pigment inks commercially viable for fashion and home textile applications.",
             uses: [
               "Direct digital printing on mixed-fiber and unidentified fabric substrates",
@@ -608,6 +611,7 @@ export const products = {
           {
             name: "Disperse DTF Ink",
             slug: "disperse-dtf-ink",
+            image: "/images/products/digital-printing/disperse-dtf-ink/dtf-cyan.png",
             description: "Disperse DTF (Direct-to-Film) inks combine disperse dye chemistry with a specially formulated aqueous carrier optimized for printing onto PET transfer film, which is then heat-transferred directly onto polyester and polyester-blend fabrics. Unlike traditional sublimation requiring transfer paper, DTF disperse inks print onto film with a hot-melt adhesive powder applied before curing, enabling transfer to both light and dark polyester substrates with sharp edge definition and excellent stretch durability. This technology is ideal for short-run sportswear, custom garment decoration, and cut-and-sew applications where direct sublimation is not feasible.",
             uses: [
               "Direct-to-film transfer printing on polyester and poly-blend garments",
@@ -626,6 +630,7 @@ export const products = {
           {
             name: "Eco Solvent Ink",
             slug: "eco-solvent-ink",
+            image: "/images/products/digital-printing/eco-solvent-ink/ecosol-cyan.png",
             description: "Eco-solvent inks use mild organic ester solvents — primarily lactate or adipate esters — as the primary carrier for solvent-compatible pigment dispersions, enabling printing on a wide range of uncoated and solvent-receptive vinyl, banner, and specialty media with reduced odor and lower toxicity compared to hard solvent formulations. Designed for Epson, Roland, Mimaki, and Mutoh-compatible eco-solvent print heads, these inks produce waterproof, UV-resistant, and flexible prints suitable for both indoor and short-term outdoor applications. They offer an excellent balance of media compatibility, print durability, and operator safety.",
             uses: [
               "Outdoor and indoor banner, poster, and display graphics",
@@ -639,6 +644,7 @@ export const products = {
           {
             name: "Latex Ink",
             slug: "latex-ink",
+            image: "/images/products/digital-printing/latex-ink/latex-cyan-ink.png",
             description: "Latex inks use water as the primary carrier for an aqueous polymer latex dispersion that forms a durable, flexible, and odorless film on media surfaces when dried and thermally cured by the integrated heater system of HP Latex and compatible printers. The aqueous carrier and non-toxic latex polymer chemistry make these inks among the safest for indoor use, producing prints with no detectable VOC emissions that are immediately ready for finishing without extended outgassing. Outdoor durability of 2–3 years unlaminated makes latex inks suitable for a wide range of indoor and semi-outdoor display applications.",
             uses: [
               "Indoor POS displays, backdrops, and event graphics",
@@ -652,6 +658,7 @@ export const products = {
           {
             name: "Eco Printer Ink",
             slug: "eco-printer-ink",
+            image: "/images/products/digital-printing/eco-printer-ink/mimaki-cyan.png",
             description: "Eco printer inks are water-based, low-VOC pigment or dye formulations engineered for wide-format and desktop inkjet printers used in graphic and advertising applications where environmental compliance and operator safety are priorities alongside print quality. Free from hazardous solvents and heavy metals, eco printer inks meet international environmental standards including OEKO-TEX and REACH, making them suitable for use in enclosed office, studio, and retail environments without special ventilation requirements. They deliver excellent color accuracy, sharp line definition, and adequate media compatibility across coated papers, banners, and display films.",
             uses: [
               "Eco-compliant indoor signage and promotional display printing",
@@ -665,6 +672,7 @@ export const products = {
           {
             name: "UV Ink",
             slug: "uv-ink",
+            image: "/images/products/digital-printing/uv-ink/universal.png",
             description: "UV-curable inks are 100% solids, solvent-free formulations containing photo-initiator compounds that trigger instant polymerization and cross-linking of the ink binder when exposed to UV light or LED-UV radiation during printing, producing immediately dry, scratch-resistant prints with no evaporation or emission. Because UV inks adhere through mechanical bonding to rigid substrates rather than absorption, they print on virtually any hard or flexible surface including glass, metal, acrylic, wood, ceramic tile, and uncoated paper. Excellent chemical and abrasion resistance makes UV prints suitable for demanding industrial and point-of-purchase display applications.",
             uses: [
               "Rigid substrate printing on glass, acrylic, wood, metal, and foam board",
