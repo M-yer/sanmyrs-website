@@ -1,6 +1,5 @@
 ---
 import ProductLayout from '../../../layouts/ProductLayout.astro';
-import ProductCard from '../../../components/ProductCard.astro';
 import { products } from '../../../data/products.js';
 
 const category = products['digital-printing'];
@@ -32,7 +31,7 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
     </div>
   </div>
 
-  <!-- Sticky Nav: Main pills + Sub-pills -->
+  <!-- Sticky Nav -->
   <div style="background:white; border-bottom:1px solid #e5e7eb; position:sticky; top:64px; z-index:30;">
     <div style="max-width:80rem; margin:0 auto; padding:12px 24px 0;">
 
@@ -76,19 +75,41 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
   <div style="max-width:80rem; margin:0 auto; padding:48px 24px;">
     {category.subcategories.map((sub, i) => (
       <div class="cat-section" data-cat={String(i)} style={i === 0 ? 'display:block;' : 'display:none;'}>
-        <div class="product-grid" style="display:grid; gap:24px; align-items:start;">
-          {sub.products.map((product, j) => (
-            <div class="prod-item" data-cat={String(i)} data-prod={String(j)} style={j === 0 ? 'display:contents;' : 'display:none;'}>
-              <ProductCard
-                name={product.name}
-                description={product.description}
-                slug={product.slug}
-                category="digital-printing"
-                image={product.image}
-              />
+        {sub.products.map((product, j) => (
+          <div class="prod-item" data-cat={String(i)} data-prod={String(j)} style={j === 0 ? 'display:block;' : 'display:none;'}>
+
+            <!-- Product Header -->
+            <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-bottom:28px;">
+              <div>
+                <h2 class="font-glancyr" style="font-size:1.4rem; font-weight:700; color:#1A1A2E; margin:0 0 4px 0;">{product.name}</h2>
+                <p style="color:#6b7280; font-size:13px; margin:0;">{product.images ? product.images.length : 1} variants available</p>
+              </div>
+              <a href={`/products/digital-printing/${product.slug}`} style="padding:8px 20px; background:#0099AF; color:white; font-weight:600; border-radius:10px; text-decoration:none; font-size:13px; white-space:nowrap;">
+                View Details →
+              </a>
             </div>
-          ))}
-        </div>
+
+            <!-- Color Image Grid -->
+            {product.images ? (
+              <div class="color-grid">
+                {product.images.map(img => (
+                  <div style="background:white; border-radius:12px; border:1px solid #e5e7eb; padding:16px 12px; text-align:center; transition:box-shadow 0.15s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='none'">
+                    <img
+                      src={img.src}
+                      alt={`${product.name} — ${img.label}`}
+                      loading="lazy"
+                      style="max-height:140px; width:auto; max-width:100%; object-fit:contain; display:block; margin:0 auto 10px;"
+                    />
+                    <p style="font-size:11px; font-weight:600; color:#4A4A4A; margin:0; text-transform:uppercase; letter-spacing:0.03em;">{img.label}</p>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div style="text-align:center; padding:48px; color:#9ca3af;">No images available</div>
+            )}
+
+          </div>
+        ))}
       </div>
     ))}
   </div>
@@ -107,9 +128,14 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
 </ProductLayout>
 
 <style>
-  .product-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); }
-  @media (min-width: 640px)  { .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (min-width: 1024px) { .product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  @media (min-width: 480px)  { .color-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (min-width: 640px)  { .color-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  @media (min-width: 1024px) { .color-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
   div::-webkit-scrollbar { display: none; }
 </style>
 
@@ -120,67 +146,43 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
     var catSections = document.querySelectorAll('.cat-section');
 
     function activateMainPill(catIdx) {
-      // Update main pills style
       mainPills.forEach(function (p) {
-        p.style.background = 'white';
-        p.style.color = '#1A1A2E';
-        p.style.borderColor = '#e5e7eb';
+        p.style.background = 'white'; p.style.color = '#1A1A2E'; p.style.borderColor = '#e5e7eb';
       });
       var active = document.querySelector('.main-pill[data-cat="' + catIdx + '"]');
-      if (active) {
-        active.style.background = '#0099AF';
-        active.style.color = 'white';
-        active.style.borderColor = '#0099AF';
-      }
+      if (active) { active.style.background = '#0099AF'; active.style.color = 'white'; active.style.borderColor = '#0099AF'; }
 
-      // Show correct sub-pill bar
       subPillBars.forEach(function (bar) { bar.style.display = 'none'; });
       var bar = document.querySelector('.sub-pill-bar[data-cat="' + catIdx + '"]');
       if (bar) bar.style.display = 'flex';
 
-      // Show correct cat section
       catSections.forEach(function (s) { s.style.display = 'none'; });
       var section = document.querySelector('.cat-section[data-cat="' + catIdx + '"]');
       if (section) section.style.display = 'block';
 
-      // Auto-select first sub-pill
       activateSubPill(catIdx, 0);
     }
 
     function activateSubPill(catIdx, prodIdx) {
-      // Update sub-pills style
       var subPills = document.querySelectorAll('.sub-pill[data-cat="' + catIdx + '"]');
       subPills.forEach(function (p) {
-        p.style.background = 'white';
-        p.style.color = '#4A4A4A';
-        p.style.borderColor = '#e5e7eb';
+        p.style.background = 'white'; p.style.color = '#4A4A4A'; p.style.borderColor = '#e5e7eb';
       });
       var active = document.querySelector('.sub-pill[data-cat="' + catIdx + '"][data-prod="' + prodIdx + '"]');
-      if (active) {
-        active.style.background = '#0099AF';
-        active.style.color = 'white';
-        active.style.borderColor = '#0099AF';
-      }
+      if (active) { active.style.background = '#0099AF'; active.style.color = 'white'; active.style.borderColor = '#0099AF'; }
 
-      // Show correct product
       var prodItems = document.querySelectorAll('.prod-item[data-cat="' + catIdx + '"]');
       prodItems.forEach(function (item) { item.style.display = 'none'; });
       var target = document.querySelector('.prod-item[data-cat="' + catIdx + '"][data-prod="' + prodIdx + '"]');
-      if (target) target.style.display = 'contents';
+      if (target) target.style.display = 'block';
     }
 
-    // Main pill clicks
     mainPills.forEach(function (pill) {
-      pill.addEventListener('click', function () {
-        activateMainPill(this.getAttribute('data-cat'));
-      });
+      pill.addEventListener('click', function () { activateMainPill(this.getAttribute('data-cat')); });
     });
 
-    // Sub-pill clicks
     document.querySelectorAll('.sub-pill').forEach(function (pill) {
-      pill.addEventListener('click', function () {
-        activateSubPill(this.getAttribute('data-cat'), this.getAttribute('data-prod'));
-      });
+      pill.addEventListener('click', function () { activateSubPill(this.getAttribute('data-cat'), this.getAttribute('data-prod')); });
     });
   });
 </script>
