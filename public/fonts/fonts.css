@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'ErasITC';
+  src: url('/fonts/eras-itc-bold.woff2') format('woff2'),
+       url('/fonts/eras-itc-bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

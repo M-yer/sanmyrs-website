@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { products } from '../../data/products.js';
+
+const categories = [
+  {
+    key: 'screen-printing',
+    href: '/products/screen-printing',
+    title: 'Screen Printing',
+    description: 'Plastisol inks, water-based inks, specialty effect inks, and printing additives for garment and textile screen printing.',
+    count: products['screen-printing'].subcategories.reduce((a, s) => a + s.products.length, 0),
+    features: ['Plastisol Inks', 'Water-Based Inks', 'Metallic & Glitter', 'Specialty Additives'],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>`,
+  },
+  {
+    key: 'screen-chemicals-accessories',
+    href: '/products/screen-chemicals-accessories',
+    title: 'Screen Chemicals & Accessories',
+    description: 'Screen emulsions, degreaser, screen openers, mesh, squeegees, and all essential chemicals and accessories for screen printing preparation.',
+    count: 33,
+    features: ['Screen Emulsions', 'Screen Chemicals', 'Mesh & Squeegees', 'Printing Accessories'],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>`,
+  },
+  {
+    key: 'digital-printing',
+    href: '/products/digital-printing',
+    title: 'Digital Printing',
+    description: 'Reactive, disperse, sublimation, acid, pigment, eco solvent, UV, and latex inks for digital textile and graphic printing systems.',
+    count: products['digital-printing'].subcategories.reduce((a, s) => a + s.products.length, 0),
+    features: ['Reactive & Acid', 'Sublimation', 'Eco Solvent & UV', 'Pretreatments'],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`,
+  },
+  {
+    key: 'textile-auxiliaries',
+    href: '/products/textile-auxiliaries',
+    title: 'Textile Auxiliaries',
+    description: 'Wetting agents, leveling agents, softeners, finishing resins, enzymes, and functional chemicals for textile wet processing and finishing.',
+    count: products['textile-auxiliaries'].subcategories.reduce((a, s) => a + s.products.length, 0),
+    features: ['Dyeing Auxiliaries', 'Silicone Softeners', 'Finishing Resins', 'Functional Agents'],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>`,
+  },
+];
+---
+
+<BaseLayout
+  title="Products | SANMYRS — Screen Printing, Screen Chemicals, Digital Printing & Textile Auxiliaries"
+  description="Browse SANMYRS's complete range of screen printing inks, screen chemicals, digital printing inks, and textile auxiliary chemicals. 80+ products for Pakistan's textile industry."
+>
+  <!-- Page Header -->
+  <div class="relative overflow-hidden py-20" style="background-color:#7A2A37;">
+    <!-- Checkerboard SVG pattern overlay -->
+    <div class="absolute inset-0 opacity-40 pointer-events-none" aria-hidden="true">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+      </svg>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="font-glancyr text-4xl sm:text-5xl font-extrabold mb-4" style="color:#F5A623;">Our Products</h1>
+      <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+        80+ specialist chemical products across four categories — everything your screen printing, digital printing, or textile dyeing operation needs.
+      </p>
+    </div>
+  </div>
+
+  <!-- Category Cards -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {categories.map(cat => (
+          <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col">
+            <div class="h-60 p-8 text-white flex flex-col justify-between" style="background:#1A1A2E;">
+              <div class="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center text-primary mb-5">
+                <Fragment set:html={cat.icon} />
+              </div>
+              <h2 class="text-2xl font-bold mb-2">{cat.title}</h2>
+              <span class="inline-block text-xs font-semibold bg-primary/20 text-primary px-3 py-1 rounded-full">
+                {cat.count} Products
+              </span>
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+              <p class="text-body-text text-sm leading-relaxed mb-6">{cat.description}</p>
+              <div class="space-y-2 mb-8 flex-grow">
+                {cat.features.map(f => (
+                  <div class="flex items-center gap-2 text-sm text-body-text">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {f}
+                  </div>
+                ))}
+              </div>
+              <a
+                href={cat.href}
+                class="block text-center px-6 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors duration-200 cursor-pointer"
+              >
+                Browse Here
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-page-bg py-12 border-t border-gray-200">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-primary font-semibold text-lg mb-4">
+        Can't find what you're looking for? We source specialty chemicals on request.
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors duration-200 cursor-pointer"
+      >
+        Contact Our Team
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

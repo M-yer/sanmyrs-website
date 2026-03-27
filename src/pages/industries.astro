@@ -1,0 +1,258 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Industries We Serve | SANMYRS — Textile & Print Chemical Suppliers"
+  description="SANMYRS supplies screen printing studios, textile mills, digital print bureaus, and garment manufacturers across Pakistan with specialist printing inks and textile auxiliaries."
+>
+
+  <!-- Hero -->
+  <div class="bg-navy py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="font-glancyr text-4xl sm:text-5xl font-extrabold mb-4" style="color:#F5A623;">Industries We Serve</h1>
+      <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+        SANMYRS products are trusted across Pakistan's full textile and printing manufacturing spectrum — from small garment decorators to large export mills.
+      </p>
+    </div>
+  </div>
+
+  <!-- Industries Detail Sections -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
+
+    <!-- Screen Printing Studios -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+          </svg>
+        </div>
+        <h2 class="font-glancyr text-3xl font-bold text-primary mb-4">Screen Printing Studios</h2>
+        <p class="text-body-text leading-relaxed mb-5">
+          Whether you operate a single manual press for custom T-shirts or a multi-head automatic press facility for high-volume garment contracts, SANMYRS has the ink system, additive, and specialty effect product to meet your production requirements.
+        </p>
+        <p class="text-body-text leading-relaxed mb-6">
+          We stock plastisol inks for standard cotton printing, low-bleed formulations for polyester sportswear, high-density inks for raised 3D effects, and specialty inks including glow, metallic, glitter, and reflective. Our water-based range covers soft-hand fashion printing, discharge systems, and eco-compliant programs for international brands with environmental requirements.
+        </p>
+        <div class="space-y-2">
+          {[
+            'Custom T-shirt and garment decoration studios',
+            'Commercial screen printing for promotional and branded apparel',
+            'Sportswear and performance garment decoration',
+            'Fashion brand in-house and contract print facilities',
+          ].map(item => (
+            <div class="flex items-center gap-2 text-body-text text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="bg-page-bg rounded-2xl border border-gray-200 p-8">
+        <h3 class="text-primary font-bold mb-5 text-lg">Relevant Products</h3>
+        <div class="space-y-3">
+          {[
+            { name: 'Plastisol Standard & High Opacity Inks', href: '/products/screen-printing' },
+            { name: 'Low Bleed Inks for Polyester', href: '/products/screen-printing' },
+            { name: 'Water-Based Soft-Hand Inks', href: '/products/screen-printing' },
+            { name: 'Specialty Effects: Metallic, Glitter, Glow', href: '/products/screen-printing' },
+            { name: 'Plastisol & WB Additives', href: '/products/screen-printing' },
+          ].map(p => (
+            <a href={p.href} class="flex items-center gap-2 text-primary text-sm hover:text-primary-dark transition-colors duration-150">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+              {p.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-200"></div>
+
+    <!-- Textile Mills & Dyeing Units -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div class="order-2 lg:order-1 bg-page-bg rounded-2xl border border-gray-200 p-8">
+        <h3 class="text-primary font-bold mb-5 text-lg">Relevant Products</h3>
+        <div class="space-y-3">
+          {[
+            { name: 'Wetting, Leveling & Dispersing Agents', href: '/products/textile-auxiliaries' },
+            { name: 'Sequestering & pH Buffer Chemistry', href: '/products/textile-auxiliaries' },
+            { name: 'Dye Fixing & Soaping Agents', href: '/products/textile-auxiliaries' },
+            { name: 'Silicone & Amino Silicone Softeners', href: '/products/textile-auxiliaries' },
+            { name: 'Enzymes, Wrinkle-Free Resins & Functional Finishes', href: '/products/textile-auxiliaries' },
+          ].map(p => (
+            <a href={p.href} class="flex items-center gap-2 text-primary text-sm hover:text-primary-dark transition-colors duration-150">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+              {p.name}
+            </a>
+          ))}
+        </div>
+      </div>
+      <div class="order-1 lg:order-2">
+        <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg>
+        </div>
+        <h2 class="font-glancyr text-3xl font-bold text-primary mb-4">Textile Mills &amp; Dyeing Units</h2>
+        <p class="text-body-text leading-relaxed mb-5">
+          Pakistan's textile export industry demands chemical consistency and technical reliability. SANMYRS's textile auxiliaries range covers every stage of the wet processing workflow — from pre-treatment and dyeing through to finishing and functional treatments.
+        </p>
+        <p class="text-body-text leading-relaxed mb-6">
+          For dyeing departments, we supply wetting agents, sequestrants, leveling agents, dispersants, and dye fixing chemistry. For finishing, our range includes silicone softeners across all grades (PDMS, hydrophilic, amino-functional), wrinkle-free resins, water repellents, anti-pilling enzymes, and antistatic agents for every fiber type.
+        </p>
+        <div class="space-y-2">
+          {[
+            'Knitting, woven, and non-woven fabric dyeing units',
+            'Garment dyeing and finishing departments',
+            'Yarn package and beam dyeing operations',
+            'Technical textile and functional fabric finishing mills',
+          ].map(item => (
+            <div class="flex items-center gap-2 text-body-text text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-200"></div>
+
+    <!-- Digital Print Studios -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <h2 class="font-glancyr text-3xl font-bold text-primary mb-4">Digital Print Studios</h2>
+        <p class="text-body-text leading-relaxed mb-5">
+          Digital textile printing is one of Pakistan's fastest growing production segments, driven by demand for short-run, fast-turnaround, and sustainable printing alternatives to conventional screen and rotary printing. SANMYRS supplies the full range of digital textile inks — reactive, disperse, sublimation, acid, and pigment — along with pretreatment liquors and maintenance cleaning solutions.
+        </p>
+        <p class="text-body-text leading-relaxed mb-6">
+          For wide-format graphic and advertising studios, we supply eco solvent, hard solvent, UV, latex, pigment, and dye inkjet inks for Epson, Roland, Mimaki, Mutoh, and HP compatible systems, covering all major signage, banner, and display media types.
+        </p>
+        <div class="space-y-2">
+          {[
+            'Digital textile print bureaus on cotton, polyester, silk, and wool',
+            'Sublimation printing on polyester sportswear and fashion',
+            'Wide-format signage, banner, and display graphics studios',
+            'On-demand, short-run sampling and production print facilities',
+          ].map(item => (
+            <div class="flex items-center gap-2 text-body-text text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="bg-page-bg rounded-2xl border border-gray-200 p-8">
+        <h3 class="text-primary font-bold mb-5 text-lg">Relevant Products</h3>
+        <div class="space-y-3">
+          {[
+            { name: 'Reactive & Acid Digital Textile Inks', href: '/products/digital-printing' },
+            { name: 'Sublimation & Disperse Inks', href: '/products/digital-printing' },
+            { name: 'Pigment Textile Inks', href: '/products/digital-printing' },
+            { name: 'Eco Solvent, UV & Latex Inks', href: '/products/digital-printing' },
+            { name: 'Pretreatment & Cleaning Solutions', href: '/products/digital-printing' },
+          ].map(p => (
+            <a href={p.href} class="flex items-center gap-2 text-primary text-sm hover:text-primary-dark transition-colors duration-150">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+              {p.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-200"></div>
+
+    <!-- Garment Manufacturers -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div class="order-2 lg:order-1 bg-page-bg rounded-2xl border border-gray-200 p-8">
+        <h3 class="text-primary font-bold mb-5 text-lg">Relevant Products</h3>
+        <div class="space-y-3">
+          {[
+            { name: 'Plastisol PU & Stretch Inks', href: '/products/screen-printing' },
+            { name: 'Water-Based Eco Printing Systems', href: '/products/screen-printing' },
+            { name: 'Reflective & Hi-Vis Safety Inks', href: '/products/screen-printing' },
+            { name: 'Amino Silicone & Reactive Softeners', href: '/products/textile-auxiliaries' },
+            { name: 'Water Repellent & Functional Finishes', href: '/products/textile-auxiliaries' },
+          ].map(p => (
+            <a href={p.href} class="flex items-center gap-2 text-primary text-sm hover:text-primary-dark transition-colors duration-150">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+              {p.name}
+            </a>
+          ))}
+        </div>
+      </div>
+      <div class="order-1 lg:order-2">
+        <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+        </div>
+        <h2 class="font-glancyr text-3xl font-bold text-primary mb-4">Garment Manufacturers</h2>
+        <p class="text-body-text leading-relaxed mb-5">
+          Pakistan's garment export sector faces increasing compliance demands from international buyers — OEKO-TEX compliance, formaldehyde-free chemistry, PFAS-free DWR finishes, and eco-certified ink systems. SANMYRS supports export-oriented manufacturers by stocking products that meet these requirements alongside standard commercial grades.
+        </p>
+        <p class="text-body-text leading-relaxed mb-6">
+          For garment printing, we supply stretch-compatible plastisol PU inks, low-bleed inks for polyester, water-based eco systems, and hi-visibility reflective inks for safety workwear. For finishing, our softener range — including amino silicone, reactive, and hydrophilic grades — provides the hand-feel specification required by international brand buyers.
+        </p>
+        <div class="space-y-2">
+          {[
+            'Apparel export manufacturers for EU and US markets',
+            'Sportswear and activewear brands and their contract manufacturers',
+            'Workwear, uniform, and safety garment producers',
+            'Fashion brands requiring soft-hand eco-printing capabilities',
+          ].map(item => (
+            <div class="flex items-center gap-2 text-body-text text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <section class="bg-navy py-14">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-glancyr text-3xl font-bold text-white mb-5">Serving Your Industry</h2>
+      <p class="text-gray-300 mb-8">
+        Tell us your production process and we'll recommend the right products for your specific needs.
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors duration-200 cursor-pointer"
+      >
+        Speak to Our Team
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

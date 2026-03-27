@@ -1,0 +1,34 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import SEOHead from '../components/SEOHead.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  schema?: object;
+}
+const { title, description, canonical, schema } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ErasITC: static CSS link first — bypasses Vite module timing, loads in all browsers -->
+  <link rel="preload" href="/fonts/eras-itc-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/fonts/fonts.css" />
+  <SEOHead title={title} description={description} canonical={canonical} schema={schema} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-page-bg font-sans text-body-text">
+  <Navbar />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+  <WhatsAppButton />
+</body>
+</html>

@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About SANMYRS | 18+ Years Supplying Pakistan's Textile Industry"
+  description="SANMYRS has been supplying specialist screen printing inks, digital printing inks, and textile auxiliaries to Pakistan's textile and garment industry for over 18 years. Based in Karachi."
+>
+
+  <!-- Hero -->
+  <div class="bg-navy py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="font-glancyr text-4xl sm:text-5xl font-extrabold mb-4" style="color:#F5A623;">About <span class="font-erasitc">SANMYRS</span></h1>
+      <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+        18 years of specialist chemical supply to Pakistan's textile and printing industry — built on expertise, consistency, and trust.
+      </p>
+    </div>
+  </div>
+
+  <!-- Company Story -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+        <div>
+          <span class="text-primary font-semibold text-sm uppercase tracking-wider">Our Story</span>
+          <h2 class="font-glancyr text-3xl font-bold mt-2 mb-6" style="color:#1A1A2E;">From Karachi to Every Corner of Pakistan's Textile Belt</h2>
+          <div class="space-y-4 text-body-text leading-relaxed">
+            <p>
+              SANMYRS was established in Karachi with a single purpose: to bring professional-grade printing inks and textile chemicals to Pakistan's rapidly growing garment and textile manufacturing sector, with the technical knowledge to back every product we sell.
+            </p>
+            <p>
+              Over 18 years, we have built deep expertise across three distinct chemical disciplines — screen printing inks (plastisol and water-based), digital printing inks (textile and graphic), and textile auxiliaries (dyeing and finishing). Our customers range from small screen printing studios in Karachi's industrial zones to large textile mills and garment export houses supplying international brands.
+            </p>
+            <p>
+              We are not simply order-takers. Our team understands the technical realities of ink and dye chemistry, fabric behavior, and process conditions. When a customer faces a production problem — dye bleed on polyester, crease marks in the jet machine, a print film that's cracking on stretch fabric — we help solve it.
+            </p>
+          </div>
+        </div>
+
+        <!-- Logo / Brand Placeholder -->
+        <div class="flex items-center justify-center">
+          <div class="rounded-3xl w-72 h-72 flex flex-col items-center justify-center shadow-2xl" style="background:#1A1A2E;">
+            <span class="text-5xl font-extrabold text-white tracking-tight">
+              SAN<span class="text-primary">MYRS</span>
+            </span>
+            <div class="w-16 h-1 bg-primary rounded-full mt-4 mb-3"></div>
+            <span class="text-gray-400 text-sm text-center px-8 leading-snug">
+              Specialist Printing Inks &amp; Textile Chemicals
+            </span>
+            <span class="text-gray-500 text-xs mt-3">Karachi, Pakistan</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="bg-primary py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+        {[
+          { value: '2006', label: 'Year Founded' },
+          { value: '18+', label: 'Years of Expertise' },
+          { value: '50+', label: 'Products in Range' },
+          { value: '500+', label: 'Satisfied Customers' },
+        ].map(stat => (
+          <div>
+            <div class="text-4xl font-extrabold text-white">{stat.value}</div>
+            <div class="text-white/80 text-sm mt-1">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Values -->
+  <section class="py-16 bg-page-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="font-glancyr text-3xl font-bold mb-4" style="color:#1A1A2E;">Our Mission</h2>
+        <p class="text-body-text max-w-2xl mx-auto text-lg leading-relaxed">
+          To supply Pakistan's textile and printing industry with reliable, high-performance chemical products, backed by the technical expertise that transforms good products into great production results.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        {[
+          {
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>`,
+            title: 'Quality Without Compromise',
+            body: 'Every product in our range is selected and tested to perform consistently in production conditions. We do not compromise on raw material quality or batch consistency.',
+          },
+          {
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>`,
+            title: 'Knowledge-Led Service',
+            body: 'We invest in understanding the industries we serve. Our team can discuss dye chemistry, ink rheology, and process parameters — not just product specifications.',
+          },
+          {
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`,
+            title: 'Long-Term Partnerships',
+            body: 'We build relationships with customers who want a reliable supply partner, not just a vendor. Many of our clients have purchased from SANMYRS for over a decade.',
+          },
+        ].map(v => (
+          <div class="bg-white rounded-2xl border border-gray-200 p-7 text-center hover:shadow-md transition-shadow duration-200">
+            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mx-auto mb-5">
+              <Fragment set:html={v.icon} />
+            </div>
+            <h3 class="font-bold mb-3" style="color:#1A1A2E;">{v.title}</h3>
+            <p class="text-body-text text-sm leading-relaxed">{v.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Placeholder -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="font-glancyr text-3xl font-bold mb-4" style="color:#1A1A2E;">Our Team</h2>
+        <p class="text-body-text max-w-xl mx-auto">
+          The SANMYRS team combines deep industry experience in textile chemistry, printing technology, and customer service.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        {[
+          { role: 'Founder & Director', area: 'Screen Printing Chemistry & Business Development', years: '18+ years in textile chemicals' },
+          { role: 'Technical Manager', area: 'Textile Auxiliaries & Dyeing Process Support', years: '14+ years in wet processing' },
+          { role: 'Digital Printing Specialist', area: 'Inkjet Inks & Digital Textile Systems', years: '10+ years in digital print' },
+        ].map(member => (
+          <div class="bg-page-bg rounded-2xl border border-gray-200 p-7 text-center">
+            <div class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-5" style="background:#0099AF;">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+            </div>
+            <h3 class="font-bold mb-1" style="color:#1A1A2E;">{member.role}</h3>
+            <p class="text-body-text text-sm mb-2">{member.area}</p>
+            <span class="text-xs text-primary font-medium">{member.years}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-navy py-14">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-glancyr text-3xl font-bold text-white mb-5">Ready to work with SANMYRS?</h2>
+      <p class="text-gray-300 mb-8">
+        Whether you're looking for a specific product or need guidance on a process challenge, our team is ready to help.
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors duration-200 cursor-pointer"
+      >
+        Contact Us Today
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

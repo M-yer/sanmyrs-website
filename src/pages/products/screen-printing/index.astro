@@ -1,0 +1,123 @@
+---
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import ProductCard from '../../../components/ProductCard.astro';
+import { products } from '../../../data/products.js';
+
+const category = products['screen-printing'];
+const totalProducts = category.subcategories.reduce((a, s) => a + s.products.length, 0);
+---
+
+<ProductLayout
+  title="Screen Printing Inks & Additives | SANMYRS"
+  description="Browse SANMYRS's complete screen printing range: plastisol inks, water-based inks, specialty effect inks, and additives for garment and textile printing. Karachi, Pakistan."
+  breadcrumbs={[
+    { label: 'Products', href: '/products' },
+    { label: 'Screen Printing', href: '/products/screen-printing' },
+  ]}
+>
+  <!-- Header -->
+  <div style="background:#7A2A37; padding:clamp(32px,6vw,56px) 0;">
+    <div style="max-width:80rem; margin:0 auto; padding:0 24px;">
+      <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px;">
+        <div>
+          <h1 class="font-glancyr" style="font-size:clamp(1.75rem,5vw,2.25rem); font-weight:800; color:#F5A623; margin:0 0 8px 0;">Screen Printing</h1>
+          <p style="color:#d1d5db; max-width:36rem; margin:0;">
+            Professional plastisol inks, water-based systems, and specialty additives engineered for garment decorators and textile screen printers.
+          </p>
+        </div>
+        <span style="background:rgba(0,153,175,0.2); color:#0099AF; font-size:13px; font-weight:600; padding:6px 16px; border-radius:999px; border:1px solid rgba(0,153,175,0.3); white-space:nowrap;">
+          {totalProducts} Products
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pill Navigation -->
+  <div style="background:white; border-bottom:1px solid #e5e7eb; position:sticky; top:64px; z-index:30;">
+    <div style="max-width:80rem; margin:0 auto; padding:12px 24px;">
+      <div style="display:flex; flex-wrap:nowrap; gap:8px; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; padding-bottom:4px;">
+{category.subcategories.map((sub, i) => (
+          <button
+            class="pill-btn"
+            data-index={String(i)}
+            style={`flex-shrink:0; padding:6px 16px; border-radius:999px; border:1px solid; font-size:13px; font-weight:500; cursor:pointer; transition:background 0.15s, color 0.15s, border-color 0.15s; background:${i === 0 ? '#0099AF' : 'white'}; color:${i === 0 ? 'white' : '#1A1A2E'}; border-color:${i === 0 ? '#0099AF' : '#e5e7eb'};`}
+          >
+            {sub.name} ({sub.products.length})
+          </button>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Subcategory Sections -->
+  <div style="max-width:80rem; margin:0 auto; padding:48px 24px;">
+    {category.subcategories.map((sub, i) => (
+      <div
+        class="subcategory-section"
+        data-index={String(i)}
+        style={i === 0 ? 'display:block;' : 'display:none;'}
+      >
+        <div class="product-grid" style="display:grid; gap:24px; align-items:start;">
+          {sub.products.map(product => (
+            <ProductCard
+              name={product.name}
+              description={product.description}
+              slug={product.slug}
+              category="screen-printing"
+              image={product.image}
+            />
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- CTA -->
+  <div style="background:white; border-top:1px solid #e5e7eb; padding:48px 0;">
+    <div style="max-width:48rem; margin:0 auto; padding:0 24px; text-align:center;">
+      <h3 style="font-size:1.125rem; font-weight:700; color:#1A1A2E; margin:0 0 12px 0;">Need a recommendation or sample?</h3>
+      <p style="color:#4A4A4A; margin:0 0 24px 0;">Our team can help you identify the right ink system for your fabric type, press setup, and production requirements.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+        <a href="/contact" style="padding:10px 24px; background:#0099AF; color:white; font-weight:600; border-radius:12px; text-decoration:none; font-size:14px;">Request a Sample</a>
+        <a href="https://wa.me/923183755197" target="_blank" rel="noopener noreferrer" style="padding:10px 24px; border:1px solid #0099AF; color:#0099AF; font-weight:600; border-radius:12px; text-decoration:none; font-size:14px;">WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+</ProductLayout>
+
+<style>
+  .product-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+  @media (min-width: 640px)  { .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 1024px) { .product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  div::-webkit-scrollbar { display: none; }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    var pills = document.querySelectorAll('.pill-btn');
+    var sections = document.querySelectorAll('.subcategory-section');
+
+    if (pills.length === 0) return;
+
+    pills.forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        var idx = this.getAttribute('data-index');
+
+        pills.forEach(function (p) {
+          p.style.background = 'white';
+          p.style.color = '#1A1A2E';
+          p.style.borderColor = '#e5e7eb';
+          p.style.cursor = 'pointer';
+        });
+        this.style.background = '#0099AF';
+        this.style.color = 'white';
+        this.style.borderColor = '#0099AF';
+        this.style.cursor = 'default';
+
+        sections.forEach(function (s) { s.style.display = 'none'; });
+        var target = document.querySelector('.subcategory-section[data-index="' + idx + '"]');
+        if (target) target.style.display = 'block';
+      });
+    });
+  });
+</script>

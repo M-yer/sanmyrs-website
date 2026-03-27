@@ -1,0 +1,239 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact SANMYRS | Inquire About Products — Karachi, Pakistan"
+  description="Contact SANMYRS to inquire about screen printing inks, digital printing inks, or textile auxiliaries. Located in Karachi, Pakistan. WhatsApp: +92 318 3755197."
+>
+
+  <!-- Hero -->
+  <div class="bg-navy py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="font-glancyr text-4xl sm:text-5xl font-extrabold mb-4" style="color:#F5A623;">Contact Us</h1>
+      <p class="text-gray-300 text-lg max-w-xl mx-auto">
+        Send us an inquiry for product pricing, technical data sheets, samples, or process advice. We respond within 24 hours on working days.
+      </p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+        <!-- Contact Form -->
+        <div>
+          <div class="bg-white rounded-2xl border border-gray-200 p-8">
+            <h2 class="font-glancyr text-2xl font-bold text-primary mb-2">Send an Inquiry</h2>
+            <p class="text-body-text text-sm mb-7">
+              Fill in the form below and our team will respond within one working day. For urgent inquiries, please WhatsApp us directly.
+            </p>
+
+            <form
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST"
+              class="space-y-5"
+            >
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-primary mb-2">
+                    Full Name <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Your full name"
+                    class="w-full px-4 py-3 border border-gray-200 rounded-xl text-body-text text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors duration-150 bg-page-bg"
+                  />
+                </div>
+                <div>
+                  <label for="company" class="block text-sm font-medium text-primary mb-2">
+                    Company Name
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    placeholder="Your company"
+                    class="w-full px-4 py-3 border border-gray-200 rounded-xl text-body-text text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors duration-150 bg-page-bg"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-medium text-primary mb-2">
+                  Email Address <span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="your@email.com"
+                  class="w-full px-4 py-3 border border-gray-200 rounded-xl text-body-text text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors duration-150 bg-page-bg"
+                />
+              </div>
+
+              <div>
+                <label for="phone" class="block text-sm font-medium text-primary mb-2">
+                  Phone / WhatsApp
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="+92 3XX XXXXXXX"
+                  class="w-full px-4 py-3 border border-gray-200 rounded-xl text-body-text text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors duration-150 bg-page-bg"
+                />
+              </div>
+
+              <div>
+                <label for="product" class="block text-sm font-medium text-primary mb-2">
+                  Product of Interest
+                </label>
+                <select
+                  id="product"
+                  name="product"
+                  class="w-full px-4 py-3 border border-gray-200 rounded-xl text-body-text text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors duration-150 bg-page-bg cursor-pointer"
+                >
+                  <option value="">Select a category...</option>
+                  <optgroup label="Screen Printing">
+                    <option>Plastisol Inks</option>
+                    <option>Water-Based Inks</option>
+                    <option>Plastisol Additives</option>
+                    <option>Water-Based Additives</option>
+                  </optgroup>
+                  <optgroup label="Digital Printing">
+                    <option>Reactive / Acid / Disperse / Pigment Textile Inks</option>
+                    <option>Sublimation Inks</option>
+                    <option>Eco Solvent / Solvent / UV / Latex Inks</option>
+                  </optgroup>
+                  <optgroup label="Textile Auxiliaries">
+                    <option>Dyeing Auxiliaries</option>
+                    <option>Softeners &amp; Finishing Chemicals</option>
+                  </optgroup>
+                  <option value="other">Other / Not sure</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-medium text-primary mb-2">
+                  Message <span class="text-red-500">*</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows="5"
+                  placeholder="Tell us about your requirements — product name, quantity, application, fabric type, or any technical questions..."
+                  class="w-full px-4 py-3 border border-gray-200 rounded-xl text-body-text text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors duration-150 bg-page-bg resize-none"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full px-6 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors duration-200 cursor-pointer text-base"
+              >
+                Send Inquiry
+              </button>
+
+              <p class="text-xs text-gray-400 text-center">
+                By submitting this form you agree to be contacted by SANMYRS regarding your inquiry.
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <!-- Contact Info Column -->
+        <div class="space-y-6">
+
+          <!-- WhatsApp Card -->
+          <div class="bg-white rounded-2xl border border-gray-200 p-7">
+            <h3 class="text-lg font-bold text-primary mb-5 flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-[#25D366]">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              WhatsApp — Fastest Response
+            </h3>
+            <p class="text-body-text text-sm mb-5">
+              For urgent product inquiries, price requests, or to speak directly with our team, WhatsApp is the fastest way to reach us. We typically respond within 1–2 hours during business hours.
+            </p>
+            <a
+              href="https://wa.me/923183755197"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center gap-2 w-full px-6 py-4 bg-[#25D366] text-white font-semibold rounded-xl hover:bg-[#128C7E] transition-colors duration-200 cursor-pointer"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-5 h-5">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Chat on WhatsApp: +92 318 3755197
+            </a>
+          </div>
+
+          <!-- Address / Info Card -->
+          <div class="bg-white rounded-2xl border border-gray-200 p-7">
+            <h3 class="text-lg font-bold text-primary mb-5">Our Location</h3>
+
+            <div class="space-y-4 text-sm text-body-text">
+              <div class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <address class="not-italic leading-relaxed">
+                  F-126, Lucknow Society<br/>
+                  Korangi Industrial Area<br/>
+                  Karachi, Pakistan
+                </address>
+              </div>
+            </div>
+
+            <!-- Map Placeholder -->
+            <div class="mt-6 bg-page-bg rounded-xl border border-gray-200 h-48 flex flex-col items-center justify-center gap-2 text-body-text">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+              </svg>
+              <span class="text-sm">Korangi, Karachi</span>
+              <a
+                href="https://www.google.com/maps/search/Korangi+Industrial+Area+Karachi"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary text-xs font-medium hover:text-primary-dark transition-colors duration-150"
+              >
+                View on Google Maps
+              </a>
+            </div>
+          </div>
+
+          <!-- Business Hours -->
+          <div class="bg-white rounded-2xl border border-gray-200 p-7">
+            <h3 class="text-lg font-bold text-primary mb-5 flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Business Hours
+            </h3>
+            <div class="space-y-2 text-sm text-body-text">
+              {[
+                { day: 'Monday – Friday', hours: '9:00 AM – 6:00 PM' },
+                { day: 'Saturday', hours: '9:00 AM – 2:00 PM' },
+                { day: 'Sunday', hours: 'Closed' },
+              ].map(row => (
+                <div class="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
+                  <span class="font-medium text-primary">{row.day}</span>
+                  <span class={row.hours === 'Closed' ? 'text-gray-400' : 'text-primary font-medium'}>{row.hours}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
