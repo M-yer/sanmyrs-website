@@ -128,12 +128,14 @@ const totalProducts = categories.reduce((a, c) => a + c.count, 0);
       </div>
 
       <div class="prod-cat-grid">
-        {categories.map(cat => (
+        {categories.map((cat, i) => (
           <a
             href={cat.href}
             class="prod-cat-card"
             style={`--cat-accent:${cat.accentColor};`}
             aria-label={`${cat.title} — ${cat.count} products`}
+            data-aos="fade-up"
+            data-aos-delay={String(i * 100)}
           >
             <!-- Top accent bar -->
             <div class="prod-cat-accent-top" aria-hidden="true"></div>

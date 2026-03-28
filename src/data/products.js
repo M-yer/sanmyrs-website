@@ -445,7 +445,7 @@ export const products = {
           {
             name: "WB Thickener",
             slug: "wb-thickener",
-            image: "/images/products/screen-printing/WB Add/Thickener.png",
+            image: "/images/products/screen-printing/WB Add/Thickener WB.png",
             description: "Water-based thickener is a rheology modifier — typically an associative urethane or acrylic alkali-swellable emulsion — that increases the viscosity and body of water-based ink systems to achieve the correct print paste consistency for the application and mesh count in use. It prevents ink from flooding through open mesh areas, improving edge definition and reducing ink pickup on non-printing areas. Compatible with acrylic, PUD, and discharge water-based systems without affecting fixation or washfastness.",
             uses: [
               "Adjusting WB ink viscosity for specific mesh counts and squeegee pressures",
@@ -459,7 +459,7 @@ export const products = {
           {
             name: "WB Binder",
             slug: "wb-binder",
-            image: "/images/products/screen-printing/WB Add/Binder.png",
+            image: "/images/products/screen-printing/WB Add/Binder WB.png",
             description: "Water-based binder is a concentrated acrylic or polyurethane polymer emulsion used to increase the binder-to-pigment ratio in water-based ink formulations, improving film strength, adhesion, and washfastness, particularly in heavily pigmented or discharge-activated systems. It can also serve as a clear base for in-house ink mixing from dry pigment dispersions or as a modifier to improve the durability of existing ink systems showing inadequate wash performance. The binder is compatible with crosslinkers for enhanced durability on difficult substrates.",
             uses: [
               "Boosting washfastness in custom-mixed WB ink systems",
@@ -473,7 +473,7 @@ export const products = {
           {
             name: "WB Fixer / Crosslinker",
             slug: "wb-fixer-crosslinker",
-            image: "/images/products/screen-printing/WB Add/Fixer.png",
+            image: "/images/products/screen-printing/WB Add/Fixer WB.png",
             description: "Water-based fixer and crosslinker is a reactive polyisocyanate or aziridine-based additive that chemically crosslinks the acrylic or PUD binder polymer chains during the curing cycle, dramatically improving washfastness, chemical resistance, and bond strength to the fabric substrate. Without crosslinking, many water-based inks exhibit inadequate washfastness, particularly on synthetic substrates. Addition rates of 3–8% and a minimum dwell time after addition ensure complete integration before printing begins.",
             uses: [
               "Improving washfastness of WB inks on cotton, polyester, and nylon",
@@ -487,7 +487,7 @@ export const products = {
           {
             name: "WB Softener",
             slug: "wb-softener",
-            image: "/images/products/screen-printing/WB Add/Softener.png",
+            image: "/images/products/screen-printing/WB Add/Softner WB.png",
             description: "Water-based softener additive is a non-ionic emulsified silicone or fatty acid ester compound blended into water-based ink formulations to reduce the stiffness of the cured print film and improve the overall hand feel of the finished printed garment. Unlike plastisol softeners, WB softener must be compatible with the aqueous binder system and not destabilize the emulsion or interfere with crosslinker chemistry. Used at 3–10%, it meaningfully reduces print stiffness on heavy-coverage areas.",
             uses: [
               "Softening the hand feel of WB print areas on fashion garments",
@@ -501,7 +501,7 @@ export const products = {
           {
             name: "WB Retarder",
             slug: "wb-retarder",
-            image: "/images/products/screen-printing/WB Add/Retarder.png",
+            image: "/images/products/screen-printing/WB Add/Retarder WB.png",
             description: "Water-based retarder is a slow-evaporating humectant additive — typically glycol-based — that extends the open time of water-based inks on the screen during printing, preventing premature drying and mesh blockage in high-temperature printing environments or when long press dwell times are unavoidable. By slowing aqueous evaporation from the ink film on the screen surface, the retarder maintains printability and prevents dot-gain issues caused by viscosity increase from moisture loss during production runs.",
             uses: [
               "Hot and dry climate printing environments where WB inks dry quickly",
@@ -515,7 +515,7 @@ export const products = {
           {
             name: "WB Anti-Foam",
             slug: "wb-anti-foam",
-            image: "/images/products/screen-printing/WB Add/Anti Foam.png",
+            image: "/images/products/screen-printing/WB Add/Anti Foam WB.png",
             description: "Water-based anti-foam is a silicone or mineral oil emulsion defoamer added in trace quantities (0.1–0.5%) to water-based ink systems to eliminate air entrainment and surface foam caused by agitation during mixing, pumping, or high-speed automatic press printing. Foam in water-based inks causes pinhole defects, uneven ink film density, and poor mesh release, all of which degrade print quality. The anti-foam is fully compatible with acrylic and PUD binder systems without causing cratering or fisheye defects.",
             uses: [
               "Eliminating foam in WB inks on high-speed automatic presses",
@@ -529,7 +529,7 @@ export const products = {
           {
             name: "WB Matting Agent",
             slug: "wb-matting-agent",
-            image: "/images/products/screen-printing/WB Add/Matt Agent.png",
+            image: "/images/products/screen-printing/WB Add/Matting Agent.png",
             description: "Water-based matting agent is a finely precipitated silica or wax dispersion that scatters surface light reflection from cured WB ink films, reducing gloss and producing low-sheen matte and flat finish aesthetics on water-based screen-printed garments. The particles create micro-roughness at the cured film surface without affecting the underlying ink color or print clarity. Addition rates from 5% to 20% provide a controllable gloss reduction gradient from satin through to full flat matte.",
             uses: [
               "Matte and flat finish printing for premium eco-fashion brands",

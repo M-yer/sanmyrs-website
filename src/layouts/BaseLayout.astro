@@ -35,6 +35,7 @@ const { title, description, canonical, schema } = Astro.props;
     import AOS from 'aos';
     import 'aos/dist/aos.css';
     AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 60 });
+    (window as any).AOS = AOS;
   </script>
 </body>
 </html>

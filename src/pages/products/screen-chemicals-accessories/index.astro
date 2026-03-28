@@ -67,14 +67,16 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
       {category.subcategories.map((sub, i) => (
         <div class="subcategory-section animate-fade-in" data-index={String(i)} style={i===0?'display:block;':'display:none;'}>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
-            {sub.products.map(product => (
-              <ProductCard 
-                name={product.name} 
-                description={product.description}
-                slug={product.slug} 
-                category="screen-chemicals-accessories" 
-                image={product.image}
-              />
+            {sub.products.map((product, pi) => (
+              <div data-aos="fade-up" data-aos-delay={String((pi % 4) * 75)}>
+                <ProductCard
+                  name={product.name}
+                  description={product.description}
+                  slug={product.slug}
+                  category="screen-chemicals-accessories"
+                  image={product.image}
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -114,7 +116,10 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
         this.querySelector('.tab-indicator').classList.add('opacity-100');
         sections.forEach(s => { s.style.display = 'none'; });
         const targetSection = document.querySelector('.subcategory-section[data-index="'+idx+'"]');
-        if (targetSection) targetSection.style.display = 'block';
+        if (targetSection) {
+          targetSection.style.display = 'block';
+          if (window.AOS) window.AOS.refresh();
+        }
       });
     });
   });
