@@ -67,10 +67,10 @@ const schema = {
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
         
         <!-- LEFT: Img / Carousel -->
-        <div class="lg:sticky lg:top-32 w-full rounded-3xl bg-white border border-gray-100 p-8 sm:p-12 flex flex-col items-center justify-center min-h-[400px] lg:min-h-[500px]">
+        <div class="lg:sticky lg:top-32 w-full rounded-3xl bg-white border border-gray-100 p-6 sm:p-12 flex flex-col items-center justify-center min-h-[280px] sm:min-h-[400px] lg:min-h-[500px]">
           {product.images && product.images.length > 0 ? (
             <div id="carousel-wrap" data-variants={JSON.stringify(product.images)} style="width:100%;">
-              <div style="position:relative; display:flex; align-items:center; gap:8px; min-height:400px;">
+              <div style="position:relative; display:flex; align-items:center; gap:8px; min-height:260px;">
                 <button id="carousel-prev" class="shrink-0 bg-white border border-gray-200 rounded-full w-10 h-10 flex items-center justify-center text-xl text-navy hover:text-primary transition-colors cursor-pointer shadow-sm hover:shadow-md">&#8249;</button>
                 <div style="flex:1; text-align:center;">
                   <div id="zoom-container" style="position:relative; display:inline-block; cursor:crosshair;">
