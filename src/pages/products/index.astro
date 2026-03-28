@@ -68,20 +68,20 @@ const totalProducts = categories.reduce((a, c) => a + c.count, 0);
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="prod-hero-inner">
 
-      <div class="prod-hero-eyebrow">
+      <div class="prod-hero-eyebrow" data-aos="fade-down">
         <span class="prod-eyebrow-dot" aria-hidden="true"></span>
         80+ Specialist Products
       </div>
 
-      <h1 class="prod-hero-h1 font-unison">
+      <h1 class="prod-hero-h1 font-unison" data-aos="fade-up" data-aos-delay="100">
         Our Product <span class="prod-hero-gradient">Range.</span>
       </h1>
 
-      <p class="prod-hero-desc">
+      <p class="prod-hero-desc" data-aos="fade-up" data-aos-delay="200">
         Four categories. Every chemical your screen printing, digital printing, and textile processing operation needs — stocked in Karachi, dispatched fast.
       </p>
 
-      <nav class="prod-quicknav" aria-label="Jump to category">
+      <nav class="prod-quicknav" aria-label="Jump to category" data-aos="fade-up" data-aos-delay="300">
         {categories.map(cat => (
           <a href={cat.href} class="prod-quickpill" style={`--pill-accent:${cat.accentColor};`}>
             <span class="prod-quickpill-num">{cat.num}</span>
@@ -105,8 +105,8 @@ const totalProducts = categories.reduce((a, c) => a + c.count, 0);
           { value: '4',   label: 'Categories' },
           { value: '18+', label: 'Years in Business' },
           { value: 'KHI', label: 'Ready Stock' },
-        ].map(s => (
-          <div class="prod-stat-item">
+        ].map((s, i) => (
+          <div class="prod-stat-item" data-aos="fade-up" data-aos-delay={String(i * 100)}>
             <span class="prod-stat-value font-unison">{s.value}</span>
             <span class="prod-stat-label">{s.label}</span>
           </div>
@@ -122,7 +122,7 @@ const totalProducts = categories.reduce((a, c) => a + c.count, 0);
   <section class="prod-cats-section" aria-labelledby="cats-heading">
     <div class="prod-container">
 
-      <div class="prod-section-hd">
+      <div class="prod-section-hd" data-aos="fade-up">
         <p class="prod-eyebrow-text">Browse by Category</p>
         <h2 id="cats-heading" class="prod-section-h2 font-unison">Find What You Need.</h2>
       </div>
