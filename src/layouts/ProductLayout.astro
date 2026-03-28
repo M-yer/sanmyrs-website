@@ -77,5 +77,10 @@ const breadcrumbSchema = breadcrumbs.length > 0 ? {
   </main>
   <Footer />
   <WhatsAppButton />
+  <script>
+    import AOS from 'aos';
+    import 'aos/dist/aos.css';
+    AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 60 });
+  </script>
 </body>
 </html>

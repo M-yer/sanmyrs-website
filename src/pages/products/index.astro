@@ -60,8 +60,8 @@ const categories = [
       </svg>
     </div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="font-glancyr text-4xl sm:text-5xl font-extrabold mb-4" style="color:#F5A623;">Our Products</h1>
-      <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+      <h1 data-aos="fade-up" class="font-glancyr text-4xl sm:text-5xl font-extrabold mb-4" style="color:#F5A623;">Our Products</h1>
+      <p data-aos="fade-up" data-aos-delay="100" class="text-gray-300 text-lg max-w-2xl mx-auto">
         80+ specialist chemical products across four categories — everything your screen printing, digital printing, or textile dyeing operation needs.
       </p>
     </div>
@@ -71,8 +71,8 @@ const categories = [
   <section class="py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {categories.map(cat => (
-          <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col">
+        {categories.map((cat, i) => (
+          <div data-aos="fade-up" data-aos-delay={String(i * 100)} class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col">
             <div class="h-60 p-8 text-white flex flex-col justify-between" style="background:#1A1A2E;">
               <div class="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center text-primary mb-5">
                 <Fragment set:html={cat.icon} />

@@ -47,21 +47,21 @@ const schema = {
     </div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-      <div class="inline-flex items-center gap-2 bg-primary/20 border border-primary/30 text-primary text-sm font-medium px-4 py-2 rounded-full mb-6">
+      <div data-aos="fade-down" class="inline-flex items-center gap-2 bg-primary/20 border border-primary/30 text-primary text-sm font-medium px-4 py-2 rounded-full mb-6">
         <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
         Trusted by Pakistan's Textile Industry Since 2002
       </div>
 
-      <h1 class="font-glancyr text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+      <h1 data-aos="fade-up" data-aos-delay="100" class="font-glancyr text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
         Premium Inks &amp; Chemicals<br/>
         <span style="color:#F5A623;">For Every Print Process</span>
       </h1>
 
-      <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+      <p data-aos="fade-up" data-aos-delay="200" class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
         SANMYRS supplies screen printing inks, digital printing inks, and textile auxiliaries to manufacturers, garment decorators, and dyeing units across Pakistan.
       </p>
 
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
           href="/products"
           class="px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors duration-200 cursor-pointer text-base shadow-lg shadow-primary/30"
@@ -77,7 +77,7 @@ const schema = {
       </div>
 
       <!-- Stats Row -->
-      <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto">
+      <div data-aos="fade-up" data-aos-delay="400" class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto">
         {[
           { value: '18+', label: 'Years in Business' },
           { value: '50+', label: 'Product SKUs' },
@@ -96,7 +96,7 @@ const schema = {
   <!-- Product Categories Section -->
   <section class="py-20 bg-page-bg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
+      <div data-aos="fade-up" class="text-center mb-12">
         <h2 class="font-glancyr text-3xl sm:text-4xl font-bold text-primary mb-4">Our Product Range</h2>
         <p class="text-body-text max-w-xl mx-auto">
           Four comprehensive categories covering every stage of textile printing and dyeing production.
@@ -137,8 +137,8 @@ const schema = {
             count: '22 Products',
             features: ['Dyeing Auxiliaries', 'Silicone Softeners', 'Functional Finishes', 'Enzymes'],
           },
-        ].map(cat => (
-          <a href={cat.href} class="bg-white rounded-2xl border border-gray-200 p-8 hover:shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col group" style="text-decoration:none;">
+        ].map((cat, i) => (
+          <a href={cat.href} data-aos="fade-up" data-aos-delay={String(i * 100)} class="bg-white rounded-2xl border border-gray-200 p-8 hover:shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col group" style="text-decoration:none;">
             <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
               <Fragment set:html={cat.icon} />
             </div>
@@ -167,7 +167,7 @@ const schema = {
   <!-- Why SANMYRS Section -->
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
+      <div data-aos="fade-up" class="text-center mb-12">
         <h2 class="font-glancyr text-3xl sm:text-4xl font-bold text-primary mb-4">Why Choose SANMYRS</h2>
         <p class="text-body-text max-w-xl mx-auto">
           Built on 18 years of supplying Pakistan's most demanding textile and printing operations.
@@ -196,8 +196,8 @@ const schema = {
             title: 'Wide Product Range',
             body: 'From basic plastisol inks to advanced dyeing auxiliaries, SANMYRS covers every chemical need across screen printing, digital printing, and textile finishing.',
           },
-        ].map(card => (
-          <div class="bg-page-bg rounded-2xl p-6 border border-gray-200 hover:shadow-md transition-shadow duration-200">
+        ].map((card, i) => (
+          <div data-aos="fade-up" data-aos-delay={String(i * 100)} class="bg-page-bg rounded-2xl p-6 border border-gray-200 hover:shadow-md transition-shadow duration-200">
             <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-5">
               <Fragment set:html={card.icon} />
             </div>
@@ -212,7 +212,7 @@ const schema = {
   <!-- Industries We Serve -->
   <section class="py-20 bg-page-bg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
+      <div data-aos="fade-up" class="text-center mb-12">
         <h2 class="font-glancyr text-3xl sm:text-4xl font-bold text-primary mb-4">Industries We Serve</h2>
         <p class="text-body-text max-w-xl mx-auto">
           SANMYRS products are trusted across the full spectrum of Pakistan's textile and print manufacturing sector.
@@ -241,8 +241,8 @@ const schema = {
             title: 'Garment Manufacturers',
             desc: 'Apparel exporters, sportswear brands, and workwear manufacturers requiring specialist print and finishing chemicals.',
           },
-        ].map(item => (
-          <div class="bg-white rounded-2xl p-6 border border-gray-200 hover:border-primary/40 hover:shadow-md transition-all duration-200 text-center">
+        ].map((item, i) => (
+          <div data-aos="fade-up" data-aos-delay={String(i * 100)} class="bg-white rounded-2xl p-6 border border-gray-200 hover:border-primary/40 hover:shadow-md transition-all duration-200 text-center">
             <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mx-auto mb-4">
               <Fragment set:html={item.icon} />
             </div>
@@ -266,13 +266,13 @@ const schema = {
   <!-- Contact CTA Banner -->
   <section class="py-20 bg-navy">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-glancyr text-3xl sm:text-4xl font-bold text-white mb-5">
+      <h2 data-aos="fade-up" class="font-glancyr text-3xl sm:text-4xl font-bold text-white mb-5">
         Ready to Upgrade Your Production?
       </h2>
-      <p class="text-gray-300 text-lg mb-10 leading-relaxed">
+      <p data-aos="fade-up" data-aos-delay="100" class="text-gray-300 text-lg mb-10 leading-relaxed">
         Contact our team for product recommendations, technical data sheets, or to request samples. We respond within 24 hours on working days.
       </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
           href="/contact"
           class="px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors duration-200 cursor-pointer text-base shadow-lg shadow-primary/30"

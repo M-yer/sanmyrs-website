@@ -32,12 +32,10 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
     </div>
   </div>
 
-  <!-- Sticky Nav: Main pills + Sub-pills -->
+  <!-- Sticky Nav: Main category pills only -->
   <div style="background:white; border-bottom:1px solid #e5e7eb; position:sticky; top:64px; z-index:30;">
-    <div style="max-width:80rem; margin:0 auto; padding:12px 24px 0;">
-
-      <!-- Level 1: Main category pills -->
-      <div style="display:flex; flex-wrap:nowrap; gap:8px; overflow-x:auto; scrollbar-width:none; padding-bottom:12px;">
+    <div style="max-width:80rem; margin:0 auto; padding:12px 24px;">
+      <div style="display:flex; flex-wrap:nowrap; gap:8px; overflow-x:auto; scrollbar-width:none;">
         {category.subcategories.map((sub, i) => (
           <button
             class="main-pill"
@@ -48,27 +46,6 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
           </button>
         ))}
       </div>
-
-      <!-- Level 2: Sub-pills per main category -->
-      {category.subcategories.map((sub, i) => (
-        <div
-          class="sub-pill-bar"
-          data-cat={String(i)}
-          style={`display:${i === 0 ? 'flex' : 'none'}; flex-wrap:nowrap; gap:8px; overflow-x:auto; scrollbar-width:none; padding-bottom:12px; border-top:1px solid #f3f4f6;`}
-        >
-          {sub.products.map((product, j) => (
-            <button
-              class="sub-pill"
-              data-cat={String(i)}
-              data-prod={String(j)}
-              style={`flex-shrink:0; margin-top:10px; padding:5px 14px; border-radius:999px; border:1px solid; font-size:12px; font-weight:500; cursor:pointer; transition:background 0.15s, color 0.15s, border-color 0.15s; background:${j === 0 ? '#0099AF' : 'white'}; color:${j === 0 ? 'white' : '#4A4A4A'}; border-color:${j === 0 ? '#0099AF' : '#e5e7eb'};`}
-            >
-              {product.name}
-            </button>
-          ))}
-        </div>
-      ))}
-
     </div>
   </div>
 
@@ -77,16 +54,14 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
     {category.subcategories.map((sub, i) => (
       <div class="cat-section" data-cat={String(i)} style={i === 0 ? 'display:block;' : 'display:none;'}>
         <div class="product-grid" style="display:grid; gap:24px; align-items:start;">
-          {sub.products.map((product, j) => (
-            <div class="prod-item" data-cat={String(i)} data-prod={String(j)} style={j === 0 ? 'display:contents;' : 'display:none;'}>
-              <ProductCard
-                name={product.name}
-                description={product.description}
-                slug={product.slug}
-                category="textile-auxiliaries"
-                image={product.image}
-              />
-            </div>
+          {sub.products.map((product) => (
+            <ProductCard
+              name={product.name}
+              description={product.description}
+              slug={product.slug}
+              category="textile-auxiliaries"
+              image={product.image}
+            />
           ))}
         </div>
       </div>
@@ -116,62 +91,24 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
 <script is:inline>
   document.addEventListener('DOMContentLoaded', function () {
     var mainPills = document.querySelectorAll('.main-pill');
-    var subPillBars = document.querySelectorAll('.sub-pill-bar');
     var catSections = document.querySelectorAll('.cat-section');
-
-    function activateMainPill(catIdx) {
-      mainPills.forEach(function (p) {
-        p.style.background = 'white';
-        p.style.color = '#1A1A2E';
-        p.style.borderColor = '#e5e7eb';
-      });
-      var active = document.querySelector('.main-pill[data-cat="' + catIdx + '"]');
-      if (active) {
-        active.style.background = '#0099AF';
-        active.style.color = 'white';
-        active.style.borderColor = '#0099AF';
-      }
-
-      subPillBars.forEach(function (bar) { bar.style.display = 'none'; });
-      var bar = document.querySelector('.sub-pill-bar[data-cat="' + catIdx + '"]');
-      if (bar) bar.style.display = 'flex';
-
-      catSections.forEach(function (s) { s.style.display = 'none'; });
-      var section = document.querySelector('.cat-section[data-cat="' + catIdx + '"]');
-      if (section) section.style.display = 'block';
-
-      activateSubPill(catIdx, 0);
-    }
-
-    function activateSubPill(catIdx, prodIdx) {
-      var subPills = document.querySelectorAll('.sub-pill[data-cat="' + catIdx + '"]');
-      subPills.forEach(function (p) {
-        p.style.background = 'white';
-        p.style.color = '#4A4A4A';
-        p.style.borderColor = '#e5e7eb';
-      });
-      var active = document.querySelector('.sub-pill[data-cat="' + catIdx + '"][data-prod="' + prodIdx + '"]');
-      if (active) {
-        active.style.background = '#0099AF';
-        active.style.color = 'white';
-        active.style.borderColor = '#0099AF';
-      }
-
-      var prodItems = document.querySelectorAll('.prod-item[data-cat="' + catIdx + '"]');
-      prodItems.forEach(function (item) { item.style.display = 'none'; });
-      var target = document.querySelector('.prod-item[data-cat="' + catIdx + '"][data-prod="' + prodIdx + '"]');
-      if (target) target.style.display = 'contents';
-    }
 
     mainPills.forEach(function (pill) {
       pill.addEventListener('click', function () {
-        activateMainPill(this.getAttribute('data-cat'));
-      });
-    });
+        var catIdx = this.getAttribute('data-cat');
 
-    document.querySelectorAll('.sub-pill').forEach(function (pill) {
-      pill.addEventListener('click', function () {
-        activateSubPill(this.getAttribute('data-cat'), this.getAttribute('data-prod'));
+        mainPills.forEach(function (p) {
+          p.style.background = 'white';
+          p.style.color = '#1A1A2E';
+          p.style.borderColor = '#e5e7eb';
+        });
+        this.style.background = '#0099AF';
+        this.style.color = 'white';
+        this.style.borderColor = '#0099AF';
+
+        catSections.forEach(function (s) { s.style.display = 'none'; });
+        var section = document.querySelector('.cat-section[data-cat="' + catIdx + '"]');
+        if (section) section.style.display = 'block';
       });
     });
   });

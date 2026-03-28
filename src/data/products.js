@@ -771,6 +771,7 @@ export const products = {
           {
             name: "Wetting Agent",
             slug: "wetting-agent",
+            image: "/images/products/textile-auxiliaries/wetting-agent.png",
             description: "Textile wetting agents are anionic or non-ionic surfactant compounds that dramatically reduce the surface tension of aqueous dyebaths and process liquors, enabling rapid and uniform penetration of process chemicals into the dense fiber structure of yarn packages, fabric rolls, and garment loads. By eliminating trapped air pockets within fiber bundles and fabric constructions, wetting agents ensure that dyebath chemistry reaches all fiber surfaces simultaneously, preventing the uneven dye uptake and streaky dyeing defects caused by poor liquor penetration. Effective at very low addition rates (0.5–2 g/L), wetting agents are standard additions to scouring, dyeing, and finishing liquors.",
             uses: [
               "Rapid fabric and yarn wetting before dyeing and finishing operations",
@@ -784,6 +785,7 @@ export const products = {
           {
             name: "Sequestering Agent",
             slug: "sequestering-agent",
+            image: "/images/products/textile-auxiliaries/sequestering-agent.png",
             description: "Textile sequestering agents are chelating compounds — primarily phosphonate, EDTA, or polycarboxylate chemistry — that bind and inactivate calcium, magnesium, iron, and other heavy metal ions present in hard process water and in the textile substrate itself, preventing their interference with dye chemistry, bleaching performance, and auxiliaries stability. Metal ions precipitate anionic dyes and auxiliaries, catalyze peroxide decomposition in bleach baths, and cause yellowing and shade contamination in finished textiles without effective sequestration. Sequestrants are particularly critical in areas with hard water supply, where high calcium and magnesium content would otherwise severely compromise process reproducibility.",
             uses: [
               "Hard water treatment in dyeing and bleaching process liquors",
@@ -797,6 +799,7 @@ export const products = {
           {
             name: "Leveling Agent",
             slug: "leveling-agent",
+            image: "/images/products/textile-auxiliaries/leveling-agent.png",
             description: "Textile leveling agents are amphiphilic surfactants or polymer compounds that control the rate of dye uptake from the dyebath onto fiber, retarding initial dye strike and promoting migration of pre-absorbed dye from heavily dyed areas to lighter areas, ultimately producing uniform, level dyeings across the entire substrate. Anionic leveling agents for reactive and direct dyes compete with dye molecules for fiber sites, while cationic leveling agents for acid and basic dyes retard ionic bonding kinetics. Without leveling agents, rate-sensitive dyeings on automated machines with rapid temperature ramping frequently produce unlevel, stripey results.",
             uses: [
               "Reactive and direct dye leveling on cotton and viscose",
@@ -810,6 +813,7 @@ export const products = {
           {
             name: "Dispersing Agent",
             slug: "dispersing-agent",
+            image: "/images/products/textile-auxiliaries/dispersing-agent.png",
             description: "Textile dispersing agents are anionic polymer surfactants — naphthalene sulfonate formaldehyde condensates or lignosulfonates — that maintain the colloidal stability of disperse dye particles and other insoluble chemicals in aqueous dyebaths at elevated temperatures and pH extremes, preventing particle agglomeration and precipitation onto the fabric surface as dye spots and oligomer deposits. At HT dyeing temperatures above 130°C, disperse dyes tend to self-aggregate unless a dispersant is present throughout the dyebath. Dispersing agents also facilitate the removal of disperse dye surface deposits from polyester during the reduction clearing stage.",
             uses: [
               "Disperse dye stabilization in HT polyester jet dyeing",
@@ -823,6 +827,7 @@ export const products = {
           {
             name: "Anti-creasing Agent",
             slug: "anti-creasing-agent",
+            image: "/images/products/textile-auxiliaries/anti-creasing-agent.png",
             description: "Textile anti-creasing agents are lubricant polymer emulsions that coat fabric surfaces and fiber-fiber contact points within jet dyeing machines to reduce inter-fiber friction and fabric-machine contact forces, preventing the formation of permanent crease marks and rope marks in the fabric rope during high-temperature machine processing. Crease damage is a particularly serious defect risk in woven synthetics, acetate, and high-twist worsted wool fabrics processed in jet dyeing machines, where tight rope formation under tension and heat can cause permanent fabric distortion. Anti-creasing agents also facilitate smooth fabric rope movement, reducing machine load and power consumption.",
             uses: [
               "Crease mark and rope mark prevention in jet dyeing of woven fabrics",
@@ -836,6 +841,7 @@ export const products = {
           {
             name: "Dye Fixing Agent",
             slug: "dye-fixing-agent",
+            image: "/images/products/textile-auxiliaries/dye-fixing-agent.png",
             description: "Textile dye fixing agents are cationic polymer compounds — polyamine or quaternary ammonium chemistry — applied after dyeing in an exhaust or pad aftertreatment to improve the wet fastness and perspiration fastness of reactive, direct, and vat dyes on cotton and regenerated cellulosic fibers by forming ionic complexes with unfixed anionic dye molecules that would otherwise bleed in washing. The cationic fixer forms an insoluble ionic complex with the surface dye, anchoring it to the fiber and dramatically reducing the amount of dye that transfers to wash water in subsequent laundering. Modern fixing agents are formaldehyde-free and comply with OEKO-TEX Standard 100.",
             uses: [
               "Improving wet and perspiration fastness of reactive dyes on cotton",
@@ -849,6 +855,7 @@ export const products = {
           {
             name: "Soaping Agent",
             slug: "soaping-agent",
+            image: "/images/products/textile-auxiliaries/soaping-agent.png",
             description: "Textile soaping agents are anionic and non-ionic surfactant blends specifically designed for the post-dyeing soaping wash stage, where their primary function is to remove unfixed and hydrolyzed reactive dye molecules from the fiber surface and prevent them from re-deposition onto adjacent fabric or fiber surfaces that would cause shade contamination and reduced rub fastness. The anti-redeposition polymer component of soaping agents keeps hydrolyzed dye dispersed in the wash liquor until it is drained away rather than re-adsorbing onto clean fabric. Effective soaping at 95°C for 15–20 minutes is critical for achieving commercial rub and wash fastness ratings.",
             uses: [
               "Post-reactive dyeing soaping wash on cotton and viscose",
@@ -862,6 +869,7 @@ export const products = {
           {
             name: "pH Buffer",
             slug: "ph-buffer",
+            image: "/images/products/textile-auxiliaries/ph-buffer.png",
             description: "Textile pH buffers are chemical blends that maintain the dyebath or process liquor within a precisely controlled pH range throughout the dyeing or finishing cycle, ensuring reproducible dye chemistry, consistent dye fixation yields, and protection of sensitive fiber structures from acid or alkali damage. Reactive dye fixation on cotton requires controlled alkaline pH (10.5–11.5) throughout the fixation period, while acid dye exhaust on wool requires a controlled acidic pH (4.0–5.5) that must be maintained as dye is absorbed. Phosphate, acetate, sodium bicarbonate, and citrate buffer systems are used depending on the required pH range.",
             uses: [
               "pH control in reactive dye fixation baths for cotton dyeing",
@@ -875,6 +883,7 @@ export const products = {
           {
             name: "Carrier for Polyester Dyeing",
             slug: "carrier-polyester-dyeing",
+            image: "/images/products/textile-auxiliaries/carrier-polyester-dyeing.png",
             description: "Textile dyeing carriers are aromatic or aliphatic organic compounds that swell and temporarily plasticize the compact amorphous regions of polyester fiber structure at atmospheric pressure (100°C), temporarily lowering the glass transition temperature (Tg) and allowing disperse dye molecules to diffuse into the fiber interior at lower temperatures than would otherwise be possible. Carriers enable atmospheric pressure dyeing of polyester in open baths where high-temperature (HT) pressure equipment is unavailable, or dyeing of polyester-cotton and polyester-wool blends where HT temperatures would damage the natural fiber component. After dyeing, thorough washing is required to remove carrier residues.",
             uses: [
               "Atmospheric pressure disperse dyeing of polyester without HT equipment",
@@ -888,6 +897,7 @@ export const products = {
           {
             name: "Defoamer / Antifoam",
             slug: "defoamer-antifoam",
+            image: "/images/products/textile-auxiliaries/defoamer-antifoam.png",
             description: "Textile defoamers and antifoam agents are silicone emulsion or mineral oil compounds that destabilize foam generated in wet processing machinery by rapidly spreading over foam bubble surfaces, reducing their surface elasticity and causing collapse. Foam in jet dyeing machines, padding mangles, and printing paste mixers interferes with liquor circulation, causes unlevel dyeing through air entrapment, and can overflow tanks causing safety and housekeeping issues. Textile defoamers are effective at very low addition rates (0.1–0.5 g/L) and are compatible with all dyebath and finishing chemical systems.",
             uses: [
               "Foam control in jet, overflow, and winch dyeing machines",
@@ -901,6 +911,7 @@ export const products = {
           {
             name: "Enzyme (Bio Polishing, Desizing)",
             slug: "enzyme-bio-polishing-desizing",
+            image: "/images/products/textile-auxiliaries/enzyme-bio-polishing-desizing.png",
             description: "Textile processing enzymes are biological catalysts used in two major applications: cellulase enzymes for bio-polishing of cotton and cellulosic fabrics, which hydrolyze and remove protruding surface fibrils from the yarn surface to produce smooth, pill-resistant, high-luster fabrics; and amylase enzymes for desizing of starch-sized warp yarns, which efficiently hydrolyze starch sizing agent under mild conditions (60–70°C, near-neutral pH) without damaging the cotton fiber. Enzymatic processing is preferred over harsh chemical scouring and mechanical sueding because it achieves superior results with lower energy, water, and chemical inputs, aligning with sustainable textile manufacturing goals.",
             uses: [
               "Cellulase bio-polishing of cotton knit and woven fabrics for anti-pilling",
@@ -919,6 +930,7 @@ export const products = {
           {
             name: "Silicone Softener",
             slug: "silicone-softener",
+            image: "/images/products/textile-auxiliaries/silicone-softener.png",
             description: "Polydimethylsiloxane (PDMS) silicone softener is the most widely used textile softening technology, imparting a characteristic smooth, silky, and lubricating hand feel to synthetic and cellulosic fabrics through the formation of an oriented PDMS layer on fiber surfaces that dramatically reduces inter-fiber friction coefficients. Unlike cationic softeners, standard PDMS silicone is essentially non-ionic and compatible with a broad range of dyes, auxiliaries, and fiber types. Applied by pad or exhaust at 2–40 g/L and dried at 120–150°C, it provides durable softening with moderate re-wettability.",
             uses: [
               "General-purpose fabric softening on cotton, polyester, and blends",
@@ -932,6 +944,7 @@ export const products = {
           {
             name: "Hydrophilic Silicone Softener",
             slug: "hydrophilic-silicone-softener",
+            image: "/images/products/textile-auxiliaries/hydrophilic-silicone-softener.png",
             description: "Hydrophilic silicone softeners are polyether-modified polysiloxane compounds engineered to combine the soft, smooth hand-feel properties of conventional silicone with a hydrophilic molecular architecture that preserves or enhances the moisture wicking and absorbency of treated fabrics — a property that standard PDMS silicones compromise through their hydrophobic character. The polyether side chains of the modified silicone orient toward the fabric surface and attract water molecules, enabling sweat management and comfort in performance and sportswear textiles without sacrificing the sought-after silicone softness. Particularly important in activewear where moisture management is a core performance requirement.",
             uses: [
               "Softening performance and sportswear while maintaining moisture wicking",
@@ -945,6 +958,7 @@ export const products = {
           {
             name: "Amino Silicone Softener",
             slug: "amino-silicone-softener",
+            image: "/images/products/textile-auxiliaries/amino-silicone-softener.png",
             description: "Amino-functional silicone softeners contain reactive amine groups (primary, secondary, or tertiary amino groups) grafted onto the polysiloxane backbone, enabling the silicone to form strong electrostatic and reactive bonds with anionic fiber surfaces — particularly cotton and wool — resulting in significantly more durable softening effects and an exceptionally soft, cashmere-like tactile quality compared to unfunctionalized PDMS systems. The substantivity of amino groups toward cellulose and protein fibers reduces wash-off and extends softening longevity through multiple home laundering cycles. Micro-emulsified grades enable application at low addition rates with excellent exhaustion efficiency.",
             uses: [
               "Premium softening of cotton knits, jersey, and interlock fabrics",
@@ -958,6 +972,7 @@ export const products = {
           {
             name: "Softening Flakes",
             slug: "softening-flakes",
+            image: "/images/products/textile-auxiliaries/softening-flakes.png",
             description: "Textile softening flakes are concentrated solid cationic or non-ionic fatty quaternary ammonium compounds in flake or pellet form that dissolve readily in water to produce softening bath or pad liquors for cellulosic and synthetic fabric finishing. The solid form provides significant handling, storage, and transportation advantages over liquid softener emulsions, with higher active content and reduced packaging volume and weight. They produce a characteristic full, natural hand feel with excellent electrostatic reduction on cotton and polyester fabrics when applied by exhaust or pad processes.",
             uses: [
               "Garment washing and finishing softening applications",
@@ -971,6 +986,7 @@ export const products = {
           {
             name: "Cationic Softener",
             slug: "cationic-softener",
+            image: "/images/products/textile-auxiliaries/cationic-softener.png",
             description: "Cationic fabric softeners are quaternary ammonium compounds with long aliphatic hydrocarbon chains that exhibit strong substantivity to anionic cellulosic and protein fiber surfaces through electrostatic attraction, enabling exhaustion-bath application at very low concentrations with minimal pad bath requirement. The oriented hydrocarbon tails project outward from the fiber surface, creating a hydrophobic lubricating layer that imparts softness, smoothness, and reduced static charge to the treated fabric. Cationic softeners are incompatible with anionic dyebath chemicals and must be applied in dedicated post-dyeing finishing baths after thorough rinsing.",
             uses: [
               "Post-dyeing exhaust softening of cotton and viscose garments",
@@ -984,6 +1000,7 @@ export const products = {
           {
             name: "Reactive Softener",
             slug: "reactive-softener",
+            image: "/images/products/textile-auxiliaries/reactive-softener.png",
             description: "Reactive softeners contain functional groups — typically epoxy, chlorotriazine, or carbamate chemistry — that form permanent covalent bonds with the hydroxyl groups of cotton and cellulosic fibers under alkaline high-temperature conditions, producing a wash-permanent softening effect that does not diminish with repeated industrial laundering as conventional ionic softeners do. The reacted softener becomes an integral part of the fiber rather than merely a surface coating, providing excellent durability for workwear, medical textiles, and industrial fabrics that undergo frequent institutional washing at high temperatures. Reactive softeners also contribute to crease resistance and dimensional stability of the treated fabric.",
             uses: [
               "Permanent softening of workwear and industrial garments requiring hot-wash durability",
@@ -997,6 +1014,7 @@ export const products = {
           {
             name: "Anti-Pilling Agent",
             slug: "anti-pilling-agent",
+            image: "/images/products/textile-auxiliaries/anti-pilling-agent.png",
             description: "Textile anti-pilling agents are cellulose-specific enzyme systems (cellulase) or polymer-based finishes that reduce the tendency of knitted and woven fabrics to form surface pills — entangled fiber balls caused by the protruding ends of loose fibers becoming entangled and compacted through wear friction. Cellulase-based bio-polishing physically removes loose surface fibrils by enzymatic hydrolysis, permanently reducing pilling propensity with a concomitant improvement in fabric luster and smoothness. Polymer-based anti-pilling finishes cross-link loose fibers to the fabric surface, preventing their mobilization under friction without enzymatic fiber removal.",
             uses: [
               "Anti-pilling finishing of cotton and cotton-rich knitted garments",
@@ -1010,6 +1028,7 @@ export const products = {
           {
             name: "Anti-Static Agent",
             slug: "anti-static-agent",
+            image: "/images/products/textile-auxiliaries/anti-static-agent.png",
             description: "Textile antistatic agents are hygroscopic or conducting compounds applied to synthetic fabric surfaces to dissipate electrostatic charge buildup that occurs from friction between non-polar synthetic fibers during processing, wearing, and use. Hydrophilic non-ionic and quaternary ammonium antistatic agents function by attracting and retaining a thin layer of moisture on the fiber surface, providing a dissipating pathway for static charges that would otherwise accumulate to levels causing fiber clinging, processing disruption, and spark hazards in dusty environments. Durable antistatic finishes using reactive chemistry provide wash-resistant static control for technical textile applications.",
             uses: [
               "Static control finishing on polyester, acrylic, and nylon fabrics",
@@ -1023,6 +1042,7 @@ export const products = {
           {
             name: "Water Repellent",
             slug: "water-repellent",
+            image: "/images/products/textile-auxiliaries/water-repellent.png",
             description: "Textile water repellent finishes are fluorocarbon (C6 DWR) or non-fluorinated hydrocarbon-based compounds applied to fabric surfaces to reduce surface energy and contact angle of water droplets to above 90°, causing water to bead and roll off rather than spreading and penetrating the fabric structure. Durable water repellency (DWR) is a critical functional requirement for outdoor apparel, rainwear, workwear, and technical textiles, where the ability to shed rain and moisture without saturation is essential for comfort and performance. Modern C6 and C8-free fluorocarbon-free DWR chemistries are increasingly used to meet PFAS restriction requirements in European and global export markets.",
             uses: [
               "DWR treatment of outdoor jackets, rainwear, and windbreakers",
@@ -1036,6 +1056,7 @@ export const products = {
           {
             name: "Wrinkle Free Resin",
             slug: "wrinkle-free-resin",
+            image: "/images/products/textile-auxiliaries/wrinkle-free-resin.png",
             description: "Wrinkle-free and easy-care textile resins are dimethyldihydroxyethylene urea (DMDHEU) or glyoxal-based crosslinking agents that react with adjacent cellulose hydroxyl groups in cotton and cotton-blend fabrics under acid catalyst and heat conditions to introduce permanent crosslinks within the fiber structure that resist deformation under moisture and mechanical stress, producing fabrics with dramatically improved wrinkle recovery, wash-and-wear performance, and dimensional stability. The crosslinking chemistry sets the fiber in its flat, uncreased configuration, enabling shirts and trousers to maintain a neat appearance after domestic washing without ironing. Fluorocarbon-free formaldehyde-releasing and low-formaldehyde DMDHEU grades meet OEKO-TEX formaldehyde limits.",
             uses: [
               "Wrinkle-free and easy-care finishing of cotton shirts and trousers",
@@ -1049,6 +1070,7 @@ export const products = {
           {
             name: "Fixing Agent",
             slug: "fixing-agent",
+            image: "/images/products/textile-auxiliaries/fixing-agent.png",
             description: "Textile fixing agents are cationic reactive polymer compounds used as aftertreatment chemistry to improve the wet fastness and crocking (rub) fastness of reactive, direct, and sulfur dyes on cellulosic fiber substrates by complexing with surface dye molecules and anchoring them to the fiber through ionic and covalent interactions. The fixing agent application stage follows dyeing and soaping in the finishing sequence, operating at 40–50°C in an exhaust or pad application to deposit the cationic polymer preferentially on anionic dye-fiber surfaces. Modern formaldehyde-free fixing agents from polyamine and polyamide-amine chemistry comply with OEKO-TEX and REACH requirements for export-oriented textile production.",
             uses: [
               "Wet and crock fastness improvement on reactive-dyed cotton and viscose",

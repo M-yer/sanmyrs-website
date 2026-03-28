@@ -28,7 +28,7 @@ If ANY task seems to require touching Navbar.astro, navbar code, or the logo fon
 
 ## Tech Stack
 - Framework: Astro + Tailwind CSS + `@astrojs/sitemap` (auto-generates sitemap at build)
-- Contact form: Formspree (placeholder URL — not yet live)
+- Contact form: Formspree — **LIVE URL: `https://formspree.io/f/xzdkbblv`** (already set in contact.astro)
 - Hosting: Netlify (planned)
 - Git repo: https://github.com/M-yer/sanmyrs-website (branch: main)
 - gh CLI: `E:/Mayer 2025/Mayer Programs/gh.exe`
@@ -68,16 +68,24 @@ Used on: `digital-printing/index.astro`, `textile-auxiliaries/index.astro`
 **Level 2 pills** — individual products within that subcategory (e.g. "Dye Sublimation Ink", "Reactive Digital Ink")
 **Content area** — when a Level 2 pill is clicked, shows a color image grid of all variants for that product
 
-Color grid: 2 cols mobile → 3 cols (480px) → 4 cols (640px) → 6 cols (1024px)
-Each box: white card, image + label, fully clickable `<a>` linking to product slug page, hover lift effect.
+Color grid: 1 col mobile → 2 cols (640px) → 4 cols (1024px)
+Each box: white card, image + label, fully clickable `<a>` linking to `product slug?variant=LABEL`, hover lift effect.
 
 Screen printing uses single-level pills + ProductCard grid (4-col desktop).
+
+**IMPORTANT — `prod-item` wrapper**: Must always use `display:block` (not `display:contents`). Using `display:contents` breaks CSS grid toggling. In JS `activateSubPill`, set `target.style.display = 'block'` (not `'contents'`).
+
+## Digital Printing Detail Page (`[slug].astro`)
+- Full-width carousel with prev/next arrows, thumbnail strip, and **CSS magnifier lens on hover**
+- Carousel reads `product.images[]` from `data-variants` JSON attribute
+- URL `?variant=LABEL` param pre-selects the correct color when arriving from the index color grid
+- Lens: circular, 150×150px, 2.5× zoom, appears on `mouseenter` the zoom-container, tracks mouse
+- Image height: 380px max in carousel main view
 
 ## ProductCard Component
 - Outer element is `<a>` tag — entire card is clickable, links to `/products/${category}/${slug}`
 - Hover: description slides down, card lifts with shadow
 - Real image if `product.image` exists, camera placeholder SVG if not
-- `data-desc` attribute holds description for tooltip (tooltip appended to document.body)
 
 ## Product Grid (screen-printing, screen-chemicals-accessories)
 - CSS grid only: `display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; align-items:start`
@@ -134,16 +142,27 @@ All filenames: lowercase kebab-case (e.g. `ecosol-cyan.png`, `dtf-black.png`)
 - robots.txt: allows all, references sitemap
 
 ## SEO — Still Needed
-- [ ] og-image.png (1200×630) — referenced in SEOHead but file doesn't exist yet
-- [ ] favicon.ico
+- [ ] og-image.png (1200×630) — referenced in SEOHead but file doesn't exist yet (og:image currently broken)
+- [ ] favicon.ico — missing, add `<link rel="icon" href="/favicon.ico" />` to both layouts
+- [ ] Fix og:image in SEOHead.astro to absolute URL (currently relative `/og-image.png` — invalid for OG)
+- [ ] Add `twitter:image` meta tag to SEOHead.astro
+- [ ] Add `og:site_name` to SEOHead.astro
 - [ ] Google Search Console verification meta tag → add to SEOHead.astro
-- [ ] Google Analytics (GA4) tag
+- [ ] Google Analytics (GA4) tag → add to both layouts
+- [ ] Fix short title tags: Digital Printing index (31 chars), Textile Auxiliaries index (29 chars)
+- [ ] Upgrade LocalBusiness schema: add `image`, `openingHours`, `sameAs` fields; remove `priceRange`
+
+## Critical Bug — screen-chemicals-accessories
+**`src/pages/products/screen-chemicals-accessories/` directory is COMPLETELY EMPTY.**
+All internal links from the homepage and /products index to this category currently return 404.
+This is the highest-priority pending task: build `index.astro` and `[slug].astro` for this category.
+The pattern to follow is identical to `screen-printing/index.astro` (single-level pills + ProductCard grid).
 
 ## Mobile
 - Fully optimized for 375px, 768px, 1024px, 1440px
 - Pills: horizontally scrollable on mobile (scrollbar hidden)
 - Product grid: 1/2/4 cols at mobile/tablet/desktop
-- Color grid: 2/3/4/6 cols
+- Color grid: 1/2/4 cols (digital printing index)
 
 ## Common Mistakes — NEVER DO THESE
 - Touch Navbar.astro
@@ -153,15 +172,18 @@ All filenames: lowercase kebab-case (e.g. `ecosol-cyan.png`, `dtf-black.png`)
 - Add overflow:hidden to grid containers
 - Change astro.config.mjs site URL (https://www.sanmyrs.com)
 - Make product boxes non-clickable (must always be full `<a>` tags)
+- Use `display:contents` on `prod-item` wrappers — always `display:block`
 
 ## Pending
-- [ ] Formspree real URL (contact form)
+- [ ] **CRITICAL**: Build screen-chemicals-accessories pages (index.astro + [slug].astro) — currently 404
+- [ ] **CRITICAL**: Create public/og-image.png (1200×630 branded)
+- [ ] **CRITICAL**: Add favicon.ico
+- [ ] Fix og:image to absolute URL in SEOHead.astro + add twitter:image + og:site_name
 - [ ] Google Maps embed on contact page
 - [ ] Product catalog PDF download
 - [ ] Certifications content from client
 - [ ] About page real content from client
 - [ ] Screen chemicals & accessories product images
 - [ ] Textile auxiliaries product images + color grid (same pattern as digital printing)
-- [ ] og-image.png + favicon.ico
 - [ ] Google Search Console + Analytics setup
 - [ ] Netlify deploy + sanmyrs.com domain connection

@@ -64,12 +64,31 @@ const schema = {
         <!-- Product Header: two-column with image when available, single-column otherwise -->
         {product.image ? (
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div style="background:#F5F7F6; border-radius:16px; display:flex; align-items:center; justify-content:center; padding:24px; min-height:280px;">
-              <img
-                src={product.image}
-                alt={product.name}
-                style="max-width:100%; max-height:320px; object-fit:contain; border-radius:8px; display:block;"
-              />
+            <div style="background:#F5F7F6; border-radius:16px; padding:20px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+              {product.images && product.images.length > 0 ? (
+                <div id="carousel-wrap" data-variants={JSON.stringify(product.images)} style="width:100%;">
+                  <div style="position:relative; display:flex; align-items:center; gap:8px; min-height:380px;">
+                    <button id="carousel-prev" style="flex-shrink:0; background:white; border:1px solid #e5e7eb; border-radius:50%; width:36px; height:36px; cursor:pointer; font-size:22px; line-height:1; color:#1A1A2E; box-shadow:0 1px 4px rgba(0,0,0,0.1); display:flex; align-items:center; justify-content:center;">&#8249;</button>
+                    <div style="flex:1; text-align:center;">
+                      <div id="zoom-container" style="position:relative; display:inline-block; cursor:crosshair;">
+                        <img id="carousel-main" src={product.images[0].src} alt={product.name} style="max-height:380px; max-width:100%; object-fit:contain; display:block; margin:0 auto; user-select:none;" />
+                        <div id="zoom-lens" style="position:absolute; width:150px; height:150px; border-radius:50%; border:2px solid rgba(0,153,175,0.7); background-repeat:no-repeat; pointer-events:none; display:none; box-shadow:0 0 0 3px rgba(0,153,175,0.15), 0 6px 24px rgba(0,0,0,0.22); z-index:10;"></div>
+                      </div>
+                      <p id="carousel-label" style="margin:10px 0 0; font-size:13px; font-weight:700; color:#4A4A4A; text-transform:uppercase; letter-spacing:0.08em;">{product.images[0].label}</p>
+                    </div>
+                    <button id="carousel-next" style="flex-shrink:0; background:white; border:1px solid #e5e7eb; border-radius:50%; width:36px; height:36px; cursor:pointer; font-size:22px; line-height:1; color:#1A1A2E; box-shadow:0 1px 4px rgba(0,0,0,0.1); display:flex; align-items:center; justify-content:center;">&#8250;</button>
+                  </div>
+                  <div style="display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; justify-content:center; flex-wrap:wrap; margin-top:14px;">
+                    {product.images.map((img, idx) => (
+                      <button class="carousel-thumb" data-idx={String(idx)} style={`flex-shrink:0; background:white; border:2px solid ${idx === 0 ? '#0099AF' : '#e5e7eb'}; border-radius:8px; padding:5px; cursor:pointer; width:52px; height:52px; display:flex; align-items:center; justify-content:center;`} title={img.label}>
+                        <img src={img.src} alt={img.label} style="max-width:36px; max-height:36px; object-fit:contain;" />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <img src={product.image} alt={product.name} style="max-width:100%; max-height:320px; object-fit:contain; border-radius:8px; display:block;" />
+              )}
             </div>
             <div class="bg-white rounded-2xl border border-gray-200 p-8 flex flex-col justify-center">
               <span class="inline-block text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full mb-4">
@@ -184,3 +203,68 @@ const schema = {
     )}
   </div>
 </ProductLayout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    var wrap = document.getElementById('carousel-wrap');
+    if (!wrap) return;
+    var images;
+    try { images = JSON.parse(wrap.getAttribute('data-variants') || '[]'); } catch (e) { return; }
+    if (!images.length) return;
+
+    var mainImg = document.getElementById('carousel-main');
+    var labelEl = document.getElementById('carousel-label');
+    var thumbs = document.querySelectorAll('.carousel-thumb');
+    var current = 0;
+
+    var params = new URLSearchParams(window.location.search);
+    var variant = params.get('variant');
+    if (variant) {
+      var fromParam = images.findIndex(function (v) { return v.label === variant; });
+      if (fromParam >= 0) current = fromParam;
+    }
+
+    function goTo(idx) {
+      current = ((idx % images.length) + images.length) % images.length;
+      if (mainImg) mainImg.src = images[current].src;
+      if (labelEl) labelEl.textContent = images[current].label;
+      thumbs.forEach(function (t, i) {
+        t.style.borderColor = i === current ? '#0099AF' : '#e5e7eb';
+      });
+    }
+
+    goTo(current);
+
+    var prevBtn = document.getElementById('carousel-prev');
+    var nextBtn = document.getElementById('carousel-next');
+    if (prevBtn) prevBtn.addEventListener('click', function () { goTo(current - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { goTo(current + 1); });
+    thumbs.forEach(function (t) {
+      t.addEventListener('click', function () { goTo(parseInt(this.getAttribute('data-idx'))); });
+    });
+
+    // Magnifier lens
+    var zoomContainer = document.getElementById('zoom-container');
+    var lens = document.getElementById('zoom-lens');
+    if (zoomContainer && lens && mainImg) {
+      var Z = 2.5;
+      function updateLens(e) {
+        var iRect = mainImg.getBoundingClientRect();
+        var cRect = zoomContainer.getBoundingClientRect();
+        var x = e.clientX - iRect.left;
+        var y = e.clientY - iRect.top;
+        x = Math.max(0, Math.min(x, iRect.width));
+        y = Math.max(0, Math.min(y, iRect.height));
+        var lw = lens.offsetWidth, lh = lens.offsetHeight;
+        lens.style.left = ((x - lw / 2) + (iRect.left - cRect.left)) + 'px';
+        lens.style.top  = ((y - lh / 2) + (iRect.top  - cRect.top))  + 'px';
+        lens.style.backgroundImage    = 'url("' + mainImg.src + '")';
+        lens.style.backgroundSize     = (iRect.width * Z) + 'px ' + (iRect.height * Z) + 'px';
+        lens.style.backgroundPosition = (-(x * Z - lw / 2)) + 'px ' + (-(y * Z - lh / 2)) + 'px';
+      }
+      zoomContainer.addEventListener('mouseenter', function () { lens.style.display = 'block'; });
+      zoomContainer.addEventListener('mouseleave', function () { lens.style.display = 'none'; });
+      zoomContainer.addEventListener('mousemove', updateLens);
+    }
+  });
+</script>
