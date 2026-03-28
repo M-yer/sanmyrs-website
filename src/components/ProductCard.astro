@@ -5,27 +5,19 @@ interface Props {
   slug: string;
   category: string;
   image?: string;
-  colorIndex?: number;
+  accentColor?: string;
 }
-const { name, description, slug, category, image, colorIndex = 0 } = Astro.props;
-
-const cmyk = [
-  { accent: '#00AEEF', bg: '#E6F7FD' }, // C — Cyan
-  { accent: '#EC008C', bg: '#FDE6F4' }, // M — Magenta
-  { accent: '#F7D000', bg: '#FDFAE0' }, // Y — Yellow
-  { accent: '#00A651', bg: '#E6F7EE' }, // K — Green
-];
-const color = cmyk[colorIndex % 4];
+const { name, description, slug, category, image, accentColor = '#0099AF' } = Astro.props;
 ---
 <a
   href={`/products/${category}/${slug}`}
   class="product-card"
-  style={`width:100%; display:block; text-decoration:none; background:white; border-radius:12px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.1); cursor:pointer; transition:transform 0.2s ease, box-shadow 0.2s ease; border:1px solid #e5e7eb;`}
+  style="width:100%; display:block; text-decoration:none; background:white; border-radius:12px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.1); cursor:pointer; transition:transform 0.2s ease, box-shadow 0.2s ease; border:1px solid #e5e7eb;"
 >
-  <!-- CMYK top accent bar -->
-  <div style={`height:4px; background:${color.accent};`}></div>
+  <!-- Category accent bar -->
+  <div style={`height:4px; background:${accentColor};`}></div>
 
-  <!-- Image area: 4:3 ratio via padding-top trick -->
+  <!-- Image area -->
   <div style="width:100%; padding-top:75%; position:relative; background:#ffffff; overflow:hidden;">
     {image ? (
       <img
@@ -50,9 +42,9 @@ const color = cmyk[colorIndex % 4];
     <h3 style="font-weight:600; color:#1A1A2E; margin:0 0 8px 0; font-size:15px; line-height:1.4;">{name}</h3>
     <p
       class="card-desc"
-      style="font-size:13px; color:#4A4A4A; max-height:0; overflow:hidden; opacity:0; transition:max-height 0.3s ease, opacity 0.3s ease; margin:0 0 0 0; line-height:1.5;"
+      style="font-size:13px; color:#4A4A4A; max-height:0; overflow:hidden; opacity:0; transition:max-height 0.3s ease, opacity 0.3s ease; margin:0; line-height:1.5;"
     >{description}</p>
-    <span style={`color:${color.accent}; font-size:13px; font-weight:500; display:inline-block; margin-top:10px;`}>View Details →</span>
+    <span style={`color:${accentColor}; font-size:13px; font-weight:500; display:inline-block; margin-top:10px;`}>View Details →</span>
   </div>
 </a>
 
