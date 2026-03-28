@@ -56,171 +56,129 @@ const schema = {
     { label: product.name, href: `/products/${categorySlug}/${product.slug}` },
   ]}
 >
-  <!-- ── Product Header ── -->
-  <header class="pd-header">
-    <div class="pd-header-dots" aria-hidden="true">
-      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-        <defs><pattern id="pdh" width="32" height="32" patternUnits="userSpaceOnUse">
-          <circle cx="1" cy="1" r="1" fill="rgba(0,153,175,0.18)"/>
-        </pattern></defs>
-        <rect width="100%" height="100%" fill="url(#pdh)"/>
-      </svg>
-    </div>
-    <div class="pd-header-inner">
-      <span class="pd-sub-badge">{product.subcategory}</span>
-      <h1 class="pd-h1 font-unison">{product.name}</h1>
-      <p class="pd-hdesc">{product.description.split('.')[0]}.</p>
-    </div>
-  </header>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+  <!-- ── SPLIT LAYOUT PRODUCT HERO ── -->
+  <div class="bg-white pt-12 pb-16 lg:pt-20 lg:pb-24 overflow-hidden relative border-b border-gray-100">
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <div class="absolute top-0 right-0 w-[50vh] h-[50vh] bg-[#0099AF] rounded-full blur-[100px] opacity-10 translate-x-1/2 -translate-y-1/2"></div>
+    </div>
 
-      <!-- Main Content -->
-      <div class="lg:col-span-2">
-        <!-- Product Header: two-column with image when available, single-column otherwise -->
-        {product.image ? (
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div style="background:#F5F7F6; border-radius:16px; padding:20px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
-              {product.images && product.images.length > 0 ? (
-                <div id="carousel-wrap" data-variants={JSON.stringify(product.images)} style="width:100%;">
-                  <div style="position:relative; display:flex; align-items:center; gap:8px; min-height:380px;">
-                    <button id="carousel-prev" style="flex-shrink:0; background:white; border:1px solid #e5e7eb; border-radius:50%; width:36px; height:36px; cursor:pointer; font-size:22px; line-height:1; color:#1A1A2E; box-shadow:0 1px 4px rgba(0,0,0,0.1); display:flex; align-items:center; justify-content:center;">&#8249;</button>
-                    <div style="flex:1; text-align:center;">
-                      <div id="zoom-container" style="position:relative; display:inline-block; cursor:crosshair;">
-                        <img id="carousel-main" src={product.images[0].src} alt={product.name} style="max-height:380px; max-width:100%; object-fit:contain; display:block; margin:0 auto; user-select:none;" />
-                        <div id="zoom-lens" style="position:absolute; width:150px; height:150px; border-radius:50%; border:2px solid rgba(0,153,175,0.7); background-repeat:no-repeat; pointer-events:none; display:none; box-shadow:0 0 0 3px rgba(0,153,175,0.15), 0 6px 24px rgba(0,0,0,0.22); z-index:10;"></div>
-                      </div>
-                      <p id="carousel-label" style="margin:10px 0 0; font-size:13px; font-weight:700; color:#4A4A4A; text-transform:uppercase; letter-spacing:0.08em;">{product.images[0].label}</p>
-                    </div>
-                    <button id="carousel-next" style="flex-shrink:0; background:white; border:1px solid #e5e7eb; border-radius:50%; width:36px; height:36px; cursor:pointer; font-size:22px; line-height:1; color:#1A1A2E; box-shadow:0 1px 4px rgba(0,0,0,0.1); display:flex; align-items:center; justify-content:center;">&#8250;</button>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+        
+        <!-- LEFT: Img / Carousel -->
+        <div class="lg:sticky lg:top-32 w-full rounded-3xl bg-slate-50/50 border border-gray-100 p-8 sm:p-12 flex flex-col items-center justify-center min-h-[400px] lg:min-h-[500px]">
+          {product.images && product.images.length > 0 ? (
+            <div id="carousel-wrap" data-variants={JSON.stringify(product.images)} style="width:100%;">
+              <div style="position:relative; display:flex; align-items:center; gap:8px; min-height:400px;">
+                <button id="carousel-prev" class="shrink-0 bg-white border border-gray-200 rounded-full w-10 h-10 flex items-center justify-center text-xl text-navy hover:text-primary transition-colors cursor-pointer shadow-sm hover:shadow-md">&#8249;</button>
+                <div style="flex:1; text-align:center;">
+                  <div id="zoom-container" style="position:relative; display:inline-block; cursor:crosshair;">
+                    <img id="carousel-main" src={product.images[0].src} alt={product.name} style="max-height:400px; max-width:100%; object-fit:contain; display:block; margin:0 auto; user-select:none; mix-blend-mode:multiply;" />
+                    <div id="zoom-lens" style="position:absolute; width:150px; height:150px; border-radius:50%; border:2px solid rgba(0,153,175,0.7); background-repeat:no-repeat; pointer-events:none; display:none; box-shadow:0 0 0 3px rgba(0,153,175,0.15), 0 6px 24px rgba(0,0,0,0.22); z-index:10; background-color:white;"></div>
                   </div>
-                  <div style="display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; justify-content:center; flex-wrap:wrap; margin-top:14px;">
-                    {product.images.map((img, idx) => (
-                      <button class="carousel-thumb" data-idx={String(idx)} style={`flex-shrink:0; background:white; border:2px solid ${idx === 0 ? '#0099AF' : '#e5e7eb'}; border-radius:8px; padding:5px; cursor:pointer; width:52px; height:52px; display:flex; align-items:center; justify-content:center;`} title={img.label}>
-                        <img src={img.src} alt={img.label} style="max-width:36px; max-height:36px; object-fit:contain;" />
-                      </button>
-                    ))}
-                  </div>
+                  <p id="carousel-label" class="mt-4 text-xs font-bold text-gray-500 uppercase tracking-widest">{product.images[0].label}</p>
                 </div>
-              ) : (
-                <img src={product.image} alt={product.name} style="max-width:100%; max-height:320px; object-fit:contain; border-radius:8px; display:block;" />
-              )}
-            </div>
-            <div class="bg-white rounded-2xl border border-gray-200 p-8 flex flex-col justify-center">
-              <span class="inline-block text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full mb-4">
-                {product.subcategory}
-              </span>
-              <h1 class="font-unison text-2xl font-bold text-primary mb-4">{product.name}</h1>
-              <p class="text-body-text leading-relaxed text-base">{product.description}</p>
-            </div>
-          </div>
-        ) : (
-          <div class="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-            <span class="inline-block text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full mb-4">
-              {product.subcategory}
-            </span>
-            <h1 class="font-unison text-2xl font-bold text-primary mb-4">{product.name}</h1>
-            <p class="text-body-text leading-relaxed text-base">{product.description}</p>
-          </div>
-        )}
-
-        <div class="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-          <h2 class="text-xl font-bold text-primary mb-6 flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-            </svg>
-            Key Applications
-          </h2>
-          <ul class="space-y-3">
-            {product.uses.map((use: string) => (
-              <li class="flex items-start gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span class="text-body-text text-sm">{use}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div class="bg-gradient-to-br from-navy to-navy/90 rounded-2xl p-8 text-white">
-          <h2 class="text-lg font-bold mb-4">Why Order From SANMYRS?</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {[
-              { text: 'Consistent batch-to-batch quality' },
-              { text: 'Technical support and guidance' },
-              { text: 'Fast dispatch from Karachi stock' },
-              { text: 'Competitive pricing for all order sizes' },
-            ].map(item => (
-              <div class="flex items-center gap-2 text-sm text-gray-200">
-                <span class="text-primary font-bold">✓</span>
-                {item.text}
+                <button id="carousel-next" class="shrink-0 bg-white border border-gray-200 rounded-full w-10 h-10 flex items-center justify-center text-xl text-navy hover:text-primary transition-colors cursor-pointer shadow-sm hover:shadow-md">&#8250;</button>
               </div>
-            ))}
-          </div>
+              <div style="display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; justify-content:center; flex-wrap:wrap; margin-top:24px;">
+                {product.images.map((img:any, idx:number) => (
+                  <button class="carousel-thumb relative w-14 h-14 bg-white border border-gray-200 rounded-xl flex border-2 items-center justify-center cursor-pointer transition-all hover:border-[#0099AF]" data-idx={String(idx)} title={img.label}>
+                    <img src={img.src} alt={img.label} style="max-width:40px; max-height:40px; object-fit:contain; mix-blend-mode:multiply;" />
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : product.image ? (
+            <img src={product.image} alt={product.name} class="w-full max-h-[400px] object-contain drop-shadow-sm mix-blend-multiply" />
+          ) : (
+            <div class="text-gray-400 font-medium tracking-wide">Image Not Available</div>
+          )}
         </div>
-      </div>
 
-      <!-- Sidebar -->
-      <div class="lg:col-span-1">
-        <div class="bg-white rounded-2xl border border-gray-200 p-7 sticky top-24">
-          <h3 class="text-lg font-bold text-primary mb-2">Inquire About This Product</h3>
-          <p class="text-body-text text-sm mb-6">
-            Contact our team to request pricing, availability, a technical data sheet, or a sample of {product.name}.
-          </p>
-
-          <a
-            href={`/contact?product=${encodeURIComponent(product.name)}`}
-            class="block w-full text-center px-6 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors duration-200 cursor-pointer mb-3"
-          >
-            Send an Inquiry
-          </a>
-
-          <a
-            href={`https://wa.me/923183755197?text=${encodeURIComponent('Hi SANMYRS, I am interested in ' + product.name + '. Please share pricing and availability.')}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex items-center justify-center gap-2 w-full px-6 py-3 border border-gray-200 text-primary font-medium rounded-xl hover:bg-page-bg transition-colors duration-200 cursor-pointer text-sm"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-[#25D366]">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            WhatsApp Direct
-          </a>
-
-          <div class="mt-5 pt-5 border-t border-gray-100 text-center">
-            <p class="text-xs text-gray-400">
-              Based in Karachi, Pakistan<br/>
-              F-126, Lucknow Society, Korangi
+        <!-- RIGHT: Product Details -->
+        <div class="flex flex-col justify-center lg:py-4">
+          <div class="mb-10 animate-fade-in" style="animation-duration:0.5s;">
+            <span class="inline-flex items-center gap-2 mb-4">
+              <span class="w-8 h-[2px] bg-[#0099AF]"></span>
+              <span class="text-xs font-bold uppercase tracking-widest text-[#0099AF]">{product.subcategory}</span>
+            </span>
+            <h1 class="text-4xl sm:text-5xl lg:text-5xl font-extrabold text-[#1A1A2E] tracking-tight leading-[1.05] font-unison mb-6">
+              {product.name}
+            </h1>
+            <p class="text-lg text-gray-500 leading-relaxed">
+              {product.description}
             </p>
           </div>
+
+          <!-- USES Grid -->
+          {product.uses && product.uses.length > 0 && (
+            <div class="mb-10 animate-fade-in" style="animation-duration:0.7s;">
+              <h3 class="text-sm font-bold text-[#1A1A2E] uppercase tracking-wider mb-5">Key Applications</h3>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6">
+                {product.uses.map((use:string) => (
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-[#0099AF] shrink-0 mt-0.5 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    <span class="text-sm text-gray-600 font-medium leading-relaxed">{use}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <!-- Inquiry CTAs -->
+          <div class="flex flex-col sm:flex-row gap-4 mb-10 animate-fade-in" style="animation-duration:0.8s;">
+            <a href={`/contact?product=${encodeURIComponent(product.name)}`} class="flex-1 flex justify-center items-center px-6 py-4 bg-[#1A1A2E] text-white font-bold rounded-xl hover:bg-[#2A2A4A] transition-all shadow-[0_8px_30px_rgb(26,26,46,0.15)] hover:shadow-[0_8px_30px_rgb(26,26,46,0.25)] hover:-translate-y-0.5 text-sm tracking-wide">
+              Request Info & Pricing
+            </a>
+            <a href={`https://wa.me/923183755197?text=${encodeURIComponent('Hi SANMYRS, I am interested in ' + product.name + '. Please share pricing and availability.')}`} target="_blank" rel="noopener noreferrer" class="flex-1 flex justify-center items-center gap-2 px-6 py-4 bg-white border border-gray-200 text-[#1A1A2E] font-bold rounded-xl hover:border-[#25D366] hover:text-[#25D366] transition-all hover:bg-[#25D366]/5 text-sm tracking-wide">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-[#25D366]">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Direct Chat
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="px-5 py-4 bg-slate-50 rounded-xl border border-gray-100 animate-fade-in" style="animation-duration:0.9s;">
+             <div class="flex flex-wrap gap-x-6 gap-y-3 justify-between items-center text-xs font-bold text-gray-500 uppercase tracking-wide">
+               <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-[#0099AF]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> Quality Verified</span>
+               <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-[#0099AF]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> Fast Dispatch</span>
+               <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-[#0099AF]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg> Expert Tech Support</span>
+             </div>
+          </div>
         </div>
+
       </div>
     </div>
+  </div>
 
-    {relatedProducts.length > 0 && (
-      <div class="mt-14">
-        <h2 class="font-unison text-2xl font-bold text-primary mb-6">Related Products</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+  <!-- ── RELATED PRODUCTS ── -->
+  {relatedProducts.length > 0 && (
+    <div class="bg-slate-50 py-16 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="font-unison text-3xl font-bold text-[#1A1A2E] mb-10 text-center lg:text-left">Frequently Bought Together</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {relatedProducts.map((p: any) => (
-            <a href={`/products/${categorySlug}/${p.slug}`} class="block bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md hover:border-primary transition-all duration-200 cursor-pointer no-underline">
-              <h3 class="font-semibold text-primary mb-2">{p.name}</h3>
-              <p class="text-body-text text-sm mb-4">{p.description.split('.')[0]}.</p>
+            <a href={`/products/${categorySlug}/${p.slug}`} class="block bg-white rounded-2xl border border-gray-100 p-8 hover:shadow-xl hover:shadow-gray-200/50 hover:border-[#0099AF]/30 transition-all duration-300 cursor-pointer no-underline group hover:-translate-y-1">
+              <span class="inline-block text-[10px] font-bold tracking-widest uppercase text-gray-400 mb-2">{categoryLabel}</span>
+              <h3 class="font-bold text-lg text-[#1A1A2E] mb-3 group-hover:text-[#0099AF] transition-colors">{p.name}</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">{p.description.split('.')[0]}.</p>
             </a>
           ))}
         </div>
       </div>
-    )}
-  </div>
-<style>
-  .pd-header { position:relative; background:#1A1A2E; overflow:hidden; padding:clamp(32px,5vw,52px) 0; }
-  .pd-header-dots { position:absolute; inset:0; pointer-events:none; }
-  .pd-header-inner { position:relative; max-width:80rem; margin:0 auto; padding:0 clamp(16px,4vw,32px); }
-  .pd-sub-badge { display:inline-flex; align-items:center; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#0099AF; background:rgba(0,153,175,0.12); border:1px solid rgba(0,153,175,0.25); padding:5px 14px; border-radius:100px; margin-bottom:12px; }
-  .pd-h1 { font-size:clamp(1.5rem,3.5vw,2.6rem); font-weight:800; color:white; margin:0 0 12px; line-height:1.1; letter-spacing:-0.01em; }
-  .pd-hdesc { color:rgba(255,255,255,0.6); font-size:14px; line-height:1.7; margin:0; max-width:42rem; }
-</style>
+    </div>
+  )}
+
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
+  </style>
+
 </ProductLayout>
 
 <script is:inline>
@@ -248,7 +206,11 @@ const schema = {
       if (mainImg) mainImg.src = images[current].src;
       if (labelEl) labelEl.textContent = images[current].label;
       thumbs.forEach(function (t, i) {
-        t.style.borderColor = i === current ? '#0099AF' : '#e5e7eb';
+        if(i === current) {
+          t.style.borderColor = '#0099AF';
+        } else {
+          t.style.borderColor = '#e5e7eb';
+        }
       });
     }
 

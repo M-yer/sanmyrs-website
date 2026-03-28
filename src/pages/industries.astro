@@ -7,689 +7,305 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="SANMYRS supplies screen printing studios, textile mills, digital print bureaus, and garment manufacturers across Pakistan with specialist printing inks and textile auxiliaries."
 >
 
-  <!-- ── HERO ─────────────────────────────────────────── -->
-  <section class="ind-hero" aria-label="Industries hero">
-    <div class="ind-hero__glow" aria-hidden="true"></div>
-    <div class="ind-container">
-      <div class="ind-hero__inner" data-aos="fade-up">
-        <div class="ind-eyebrow-pill">
-          <span class="ind-gold-dot" aria-hidden="true"></span>
-          4 Industries Served
-        </div>
-        <h1 class="ind-hero__h1 font-unison">Who We Serve.</h1>
-        <p class="ind-hero__sub">
-          From small garment decorators to large textile mills — SANMYRS products are trusted across
-          Pakistan's full textile and printing manufacturing spectrum.
-        </p>
-        <div class="ind-hero__accent-line" aria-hidden="true"></div>
+  <!-- ── NEOMINIMALIST HERO ────────────────────────────── -->
+  <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 bg-white overflow-hidden border-b border-gray-100">
+    <!-- Abstract Tech/Industry Grid Background -->
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 opacity-[0.02] mix-blend-multiply" style="background-image: linear-gradient(#1A1A2E 2px, transparent 2px), linear-gradient(90deg, #1A1A2E 2px, transparent 2px); background-size: 60px 60px; background-position: center center;"></div>
+      <div class="absolute top-1/4 left-1/2 w-[800px] h-[300px] bg-[#0099AF] rounded-full blur-[150px] opacity-10 -translate-x-1/2 -rotate-12"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-gray-200 shadow-sm mb-6" data-aos="fade-down">
+        <span class="w-2 h-2 rounded-full bg-[#1A1A2E]"></span>
+        <span class="text-xs font-bold uppercase tracking-widest text-[#1A1A2E]">4 Key Sectors</span>
       </div>
+      <h1 class="text-5xl lg:text-7xl font-extrabold text-[#1A1A2E] tracking-tight leading-[1.05] mb-6 font-unison max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        Industry-Specific <br/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#1A1A2E] to-[#0099AF]">Chemical Solutions.</span>
+      </h1>
+      <p class="text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="150">
+        From small garment decorators to large textile mills — SANMYRS products are trusted across Pakistan's full textile and printing manufacturing spectrum.
+      </p>
     </div>
   </section>
 
-  <!-- ── INDUSTRIES SECTION ────────────────────────────── -->
-  <section class="ind-section" aria-label="Industries we serve">
-    <div class="ind-container">
+  <!-- ── ALTERNATING INDUSTRIES LIST ─────────────────────── -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-32">
 
-      <!-- Section header -->
-      <div class="ind-section-header" data-aos="fade-up" data-aos-delay="80">
-        <span class="ind-section-eyebrow">Our Customers</span>
-        <h2 class="ind-section-h2 font-unison">Trusted Across the Industry.</h2>
-      </div>
-
-      <!-- 2x2 grid -->
-      <div class="ind-grid">
-
-        <!-- Card 01: Screen Printing Studios -->
-        <article class="ind-card" data-aos="fade-up" data-aos-delay="80">
-          <div class="ind-card__inner">
-
-            <div class="ind-card__top-row">
-              <span class="ind-card__badge font-unison">01</span>
-              <h2 class="ind-card__title font-unison">Screen Printing Studios</h2>
+      <!-- Industry 01: Screen Printing -->
+      <article class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center justify-between group">
+        <!-- Visual Half -->
+        <div class="w-full lg:w-1/2 relative" data-aos="fade-right">
+          <!-- Big background number -->
+          <div class="absolute -top-16 -left-10 text-[12rem] lg:text-[16rem] font-black text-[#1A1A2E]/5 font-unison leading-none pointer-events-none select-none transition-transform duration-700 group-hover:-translate-y-4">01</div>
+          
+          <div class="relative z-10 bg-white rounded-[2rem] p-10 lg:p-14 border border-gray-100 shadow-xl shadow-gray-200/50">
+            <div class="w-20 h-20 bg-[#1A1A2E] rounded-2xl flex items-center justify-center text-white mb-8 shadow-lg shadow-[#1A1A2E]/20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>
             </div>
-
-            <div class="ind-card__icon-box">
-              <svg xmlns="http://www.w3.org/2000/svg" class="ind-card__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-              </svg>
-            </div>
-
-            <p class="ind-card__desc">
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-[#1A1A2E] mb-6 font-unison leading-tight">Screen Printing<br/>Studios</h2>
+            <ul class="space-y-4">
+              {[
+                'Custom T-shirt and garment studios',
+                'Commercial promo and branded apparel',
+                'Sportswear and performance decoration',
+                'Fashion brand in-house facilities',
+              ].map(item => (
+                <li class="flex items-start gap-3 text-gray-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0099AF] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  <span class="text-sm border-b border-transparent hover:border-gray-300 transition-colors">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Text/Content Half -->
+        <div class="w-full lg:w-1/2 relative z-10" data-aos="fade-left">
+          <div class="prose prose-lg text-gray-600 mb-10">
+            <p>
               Whether you operate a single manual press for custom T-shirts or a multi-head automatic press facility for high-volume garment contracts, SANMYRS has the ink system, additive, and specialty effect product to meet your production requirements.
             </p>
-            <p class="ind-card__desc">
-              We stock plastisol inks for standard cotton printing, low-bleed formulations for polyester sportswear, high-density inks for raised 3D effects, and specialty inks including glow, metallic, glitter, and reflective. Our water-based range covers soft-hand fashion printing, discharge systems, and eco-compliant programs for international brands with environmental requirements.
+            <p>
+              We stock plastisol inks for standard cotton printing, low-bleed formulations for polyester sportswear, high-density inks for raised 3D effects, and specialty inks including glow, metallic, glitter, and reflective. Our water-based range covers soft-hand fashion printing, discharge systems, and eco-compliant programs for international brands.
             </p>
-
-            <ul class="ind-checklist">
+          </div>
+          
+          <!-- Relevant Links Box -->
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
+            <p class="text-xs font-bold uppercase tracking-widest text-[#0099AF] mb-4">Relevant Categories</p>
+            <div class="flex flex-col gap-3">
               {[
-                'Custom T-shirt and garment decoration studios',
-                'Commercial screen printing for promotional and branded apparel',
-                'Sportswear and performance garment decoration',
-                'Fashion brand in-house and contract print facilities',
+                { name: 'Plastisol Standard & High Opacity Inks' },
+                { name: 'Low Bleed Inks for Polyester' },
+                { name: 'Water-Based Soft-Hand Inks' },
+                { name: 'Specialty Effects: Metallic, Glitter, Glow' },
+                { name: 'Plastisol & WB Additives' },
+              ].map(p => (
+                <a href="/products/screen-printing" class="group/link flex items-center gap-2 text-sm text-[#1A1A2E] font-semibold hover:text-[#0099AF] transition-colors w-fit">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#0099AF] transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                  {p.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Industry 02: Textile Mills (Reversed) -->
+      <article class="flex flex-col lg:flex-row-reverse gap-12 lg:gap-20 items-center justify-between group">
+        <!-- Visual Half -->
+        <div class="w-full lg:w-1/2 relative" data-aos="fade-left">
+          <div class="absolute -top-16 -right-10 text-[12rem] lg:text-[16rem] font-black text-[#1A1A2E]/5 font-unison leading-none pointer-events-none select-none transition-transform duration-700 group-hover:-translate-y-4">02</div>
+          
+          <div class="relative z-10 bg-[#0099AF] rounded-[2rem] p-10 lg:p-14 shadow-xl shadow-[#0099AF]/20 text-white overflow-hidden">
+            <div class="absolute inset-0 opacity-10 mix-blend-overlay bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8cGF0aCBkPSJNMCAwTDggOFpNOCAwTDAgOFoiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+Cjwvc3ZnPg==')]"></div>
+
+            <div class="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center text-white mb-8 border border-white/20 backdrop-blur-sm relative z-10">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+            </div>
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-white mb-6 font-unison leading-tight relative z-10">Textile Mills &amp;<br/>Dyeing Units</h2>
+            <ul class="space-y-4 relative z-10">
+              {[
+                'Knitting, woven, and non-woven dyeing',
+                'Garment dyeing and finishing departments',
+                'Yarn package and beam dyeing',
+                'Technical textile finishing mills',
               ].map(item => (
-                <li class="ind-checklist__item">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="ind-checklist__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  {item}
+                <li class="flex items-start gap-3 text-white/90">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white/50 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  <span class="text-sm">{item}</span>
                 </li>
               ))}
             </ul>
-
-            <div class="ind-relevant">
-              <p class="ind-relevant__label">Relevant Products</p>
-              <div class="ind-relevant__links">
-                {[
-                  { name: 'Plastisol Standard & High Opacity Inks', href: '/products/screen-printing' },
-                  { name: 'Low Bleed Inks for Polyester', href: '/products/screen-printing' },
-                  { name: 'Water-Based Soft-Hand Inks', href: '/products/screen-printing' },
-                  { name: 'Specialty Effects: Metallic, Glitter, Glow', href: '/products/screen-printing' },
-                  { name: 'Plastisol & WB Additives', href: '/products/screen-printing' },
-                ].map(p => (
-                  <a href={p.href} class="ind-relevant__link">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="ind-relevant__arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                    {p.name}
-                  </a>
-                ))}
-              </div>
-            </div>
-
           </div>
-        </article>
-
-        <!-- Card 02: Textile Mills & Dyeing Units -->
-        <article class="ind-card" data-aos="fade-up" data-aos-delay="160">
-          <div class="ind-card__inner">
-
-            <div class="ind-card__top-row">
-              <span class="ind-card__badge font-unison">02</span>
-              <h2 class="ind-card__title font-unison">Textile Mills &amp; Dyeing Units</h2>
-            </div>
-
-            <div class="ind-card__icon-box">
-              <svg xmlns="http://www.w3.org/2000/svg" class="ind-card__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
-            </div>
-
-            <p class="ind-card__desc">
+        </div>
+        
+        <!-- Text/Content Half -->
+        <div class="w-full lg:w-1/2 relative z-10" data-aos="fade-right">
+          <div class="prose prose-lg text-gray-600 mb-10">
+             <p>
               Pakistan's textile export industry demands chemical consistency and technical reliability. SANMYRS's textile auxiliaries range covers every stage of the wet processing workflow — from pre-treatment and dyeing through to finishing and functional treatments.
             </p>
-            <p class="ind-card__desc">
+            <p>
               For dyeing departments, we supply wetting agents, sequestrants, leveling agents, dispersants, and dye fixing chemistry. For finishing, our range includes silicone softeners across all grades (PDMS, hydrophilic, amino-functional), wrinkle-free resins, water repellents, anti-pilling enzymes, and antistatic agents for every fiber type.
             </p>
-
-            <ul class="ind-checklist">
+          </div>
+          
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
+            <p class="text-xs font-bold uppercase tracking-widest text-[#0099AF] mb-4">Relevant Categories</p>
+            <div class="flex flex-col gap-3">
               {[
-                'Knitting, woven, and non-woven fabric dyeing units',
-                'Garment dyeing and finishing departments',
-                'Yarn package and beam dyeing operations',
-                'Technical textile and functional fabric finishing mills',
+                { name: 'Wetting, Leveling & Dispersing Agents' },
+                { name: 'Sequestering & pH Buffer Chemistry' },
+                { name: 'Dye Fixing & Soaping Agents' },
+                { name: 'Silicone & Amino Silicone Softeners' },
+                { name: 'Enzymes, Resins & Finishes' },
+              ].map(p => (
+                <a href="/products/textile-auxiliaries" class="group/link flex items-center gap-2 text-sm text-[#1A1A2E] font-semibold hover:text-[#0099AF] transition-colors w-fit">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#0099AF] transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                  {p.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Industry 03: Digital Print Studios -->
+      <article class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center justify-between group">
+        <!-- Visual Half -->
+        <div class="w-full lg:w-1/2 relative" data-aos="fade-right">
+          <div class="absolute -top-16 -left-10 text-[12rem] lg:text-[16rem] font-black text-[#1A1A2E]/5 font-unison leading-none pointer-events-none select-none transition-transform duration-700 group-hover:-translate-y-4">03</div>
+          
+          <div class="relative z-10 bg-white rounded-[2rem] p-10 lg:p-14 border border-gray-100 shadow-xl shadow-gray-200/50">
+            <div class="w-20 h-20 bg-[#1A1A2E] rounded-2xl flex items-center justify-center text-white mb-8 shadow-lg shadow-[#1A1A2E]/20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+            </div>
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-[#1A1A2E] mb-6 font-unison leading-tight">Digital Print<br/>Studios</h2>
+            <ul class="space-y-4">
+              {[
+                'Digital textile print bureaus on all fabrics',
+                'Sublimation printing on polyester and fashion',
+                'Wide-format signage and banner studios',
+                'On-demand, short-run sampling facilities',
               ].map(item => (
-                <li class="ind-checklist__item">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="ind-checklist__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  {item}
+                <li class="flex items-start gap-3 text-gray-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0099AF] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  <span class="text-sm">{item}</span>
                 </li>
               ))}
             </ul>
-
-            <div class="ind-relevant">
-              <p class="ind-relevant__label">Relevant Products</p>
-              <div class="ind-relevant__links">
-                {[
-                  { name: 'Wetting, Leveling & Dispersing Agents', href: '/products/textile-auxiliaries' },
-                  { name: 'Sequestering & pH Buffer Chemistry', href: '/products/textile-auxiliaries' },
-                  { name: 'Dye Fixing & Soaping Agents', href: '/products/textile-auxiliaries' },
-                  { name: 'Silicone & Amino Silicone Softeners', href: '/products/textile-auxiliaries' },
-                  { name: 'Enzymes, Wrinkle-Free Resins & Functional Finishes', href: '/products/textile-auxiliaries' },
-                ].map(p => (
-                  <a href={p.href} class="ind-relevant__link">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="ind-relevant__arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                    {p.name}
-                  </a>
-                ))}
-              </div>
-            </div>
-
           </div>
-        </article>
-
-        <!-- Card 03: Digital Print Studios -->
-        <article class="ind-card" data-aos="fade-up" data-aos-delay="80">
-          <div class="ind-card__inner">
-
-            <div class="ind-card__top-row">
-              <span class="ind-card__badge font-unison">03</span>
-              <h2 class="ind-card__title font-unison">Digital Print Studios</h2>
-            </div>
-
-            <div class="ind-card__icon-box">
-              <svg xmlns="http://www.w3.org/2000/svg" class="ind-card__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </div>
-
-            <p class="ind-card__desc">
-              Digital textile printing is one of Pakistan's fastest growing production segments, driven by demand for short-run, fast-turnaround, and sustainable printing alternatives to conventional screen and rotary printing. SANMYRS supplies the full range of digital textile inks — reactive, disperse, sublimation, acid, and pigment — along with pretreatment liquors and maintenance cleaning solutions.
+        </div>
+        
+        <!-- Text/Content Half -->
+        <div class="w-full lg:w-1/2 relative z-10" data-aos="fade-left">
+          <div class="prose prose-lg text-gray-600 mb-10">
+            <p>
+              Digital textile printing is one of Pakistan's fastest growing production segments, driven by demand for short-run, fast-turnaround, and sustainable printing alternatives to conventional screen and rotary printing. SANMYRS supplies the full range of digital textile inks — reactive, disperse, sublimation, acid, and pigment.
             </p>
-            <p class="ind-card__desc">
+            <p>
               For wide-format graphic and advertising studios, we supply eco solvent, hard solvent, UV, latex, pigment, and dye inkjet inks for Epson, Roland, Mimaki, Mutoh, and HP compatible systems, covering all major signage, banner, and display media types.
             </p>
-
-            <ul class="ind-checklist">
+          </div>
+          
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
+            <p class="text-xs font-bold uppercase tracking-widest text-[#0099AF] mb-4">Relevant Categories</p>
+            <div class="flex flex-col gap-3">
               {[
-                'Digital textile print bureaus on cotton, polyester, silk, and wool',
-                'Sublimation printing on polyester sportswear and fashion',
-                'Wide-format signage, banner, and display graphics studios',
-                'On-demand, short-run sampling and production print facilities',
+                { name: 'Reactive & Acid Digital Textile Inks' },
+                { name: 'Sublimation & Disperse Inks' },
+                { name: 'Pigment Textile Inks' },
+                { name: 'Eco Solvent, UV & Latex Inks' },
+                { name: 'Pretreatment & Cleaning Solutions' },
+              ].map(p => (
+                <a href="/products/digital-printing" class="group/link flex items-center gap-2 text-sm text-[#1A1A2E] font-semibold hover:text-[#0099AF] transition-colors w-fit">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#0099AF] transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                  {p.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Industry 04: Garment Manufacturers (Reversed) -->
+      <article class="flex flex-col lg:flex-row-reverse gap-12 lg:gap-20 items-center justify-between group pb-12">
+        <!-- Visual Half -->
+        <div class="w-full lg:w-1/2 relative" data-aos="fade-left">
+          <div class="absolute -top-16 -right-10 text-[12rem] lg:text-[16rem] font-black text-[#1A1A2E]/5 font-unison leading-none pointer-events-none select-none transition-transform duration-700 group-hover:-translate-y-4">04</div>
+          
+          <div class="relative z-10 bg-[#1A1A2E] rounded-[2rem] p-10 lg:p-14 shadow-xl shadow-[#1A1A2E]/20 text-white overflow-hidden">
+            <div class="w-20 h-20 bg-[#0099AF] rounded-2xl flex items-center justify-center text-white mb-8 shadow-lg shadow-[#0099AF]/20 relative z-10">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+            </div>
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-white mb-6 font-unison leading-tight relative z-10">Garment<br/>Manufacturers</h2>
+            <ul class="space-y-4 relative z-10">
+              {[
+                'Apparel export manufacturers for EU/US',
+                'Sportswear and activewear brands',
+                'Workwear, uniform, and safety garment producers',
+                'Fashion brands requiring soft-hand eco-printing',
               ].map(item => (
-                <li class="ind-checklist__item">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="ind-checklist__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  {item}
+                <li class="flex items-start gap-3 text-white/90">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#0099AF] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  <span class="text-sm">{item}</span>
                 </li>
               ))}
             </ul>
-
-            <div class="ind-relevant">
-              <p class="ind-relevant__label">Relevant Products</p>
-              <div class="ind-relevant__links">
-                {[
-                  { name: 'Reactive & Acid Digital Textile Inks', href: '/products/digital-printing' },
-                  { name: 'Sublimation & Disperse Inks', href: '/products/digital-printing' },
-                  { name: 'Pigment Textile Inks', href: '/products/digital-printing' },
-                  { name: 'Eco Solvent, UV & Latex Inks', href: '/products/digital-printing' },
-                  { name: 'Pretreatment & Cleaning Solutions', href: '/products/digital-printing' },
-                ].map(p => (
-                  <a href={p.href} class="ind-relevant__link">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="ind-relevant__arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                    {p.name}
-                  </a>
-                ))}
-              </div>
-            </div>
-
           </div>
-        </article>
-
-        <!-- Card 04: Garment Manufacturers -->
-        <article class="ind-card" data-aos="fade-up" data-aos-delay="160">
-          <div class="ind-card__inner">
-
-            <div class="ind-card__top-row">
-              <span class="ind-card__badge font-unison">04</span>
-              <h2 class="ind-card__title font-unison">Garment Manufacturers</h2>
-            </div>
-
-            <div class="ind-card__icon-box">
-              <svg xmlns="http://www.w3.org/2000/svg" class="ind-card__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-              </svg>
-            </div>
-
-            <p class="ind-card__desc">
+        </div>
+        
+        <!-- Text/Content Half -->
+        <div class="w-full lg:w-1/2 relative z-10" data-aos="fade-right">
+          <div class="prose prose-lg text-gray-600 mb-10">
+            <p>
               Pakistan's garment export sector faces increasing compliance demands from international buyers — OEKO-TEX compliance, formaldehyde-free chemistry, PFAS-free DWR finishes, and eco-certified ink systems. SANMYRS supports export-oriented manufacturers by stocking products that meet these requirements alongside standard commercial grades.
             </p>
-            <p class="ind-card__desc">
-              For garment printing, we supply stretch-compatible plastisol PU inks, low-bleed inks for polyester, water-based eco systems, and hi-visibility reflective inks for safety workwear. For finishing, our softener range — including amino silicone, reactive, and hydrophilic grades — provides the hand-feel specification required by international brand buyers.
+            <p>
+              For garment printing, we supply stretch-compatible plastisol PU inks, low-bleed inks for polyester, water-based eco systems, and hi-visibility reflective inks. For finishing, our softeners provide the hand-feel specification requested by international brand buyers.
             </p>
-
-            <ul class="ind-checklist">
-              {[
-                'Apparel export manufacturers for EU and US markets',
-                'Sportswear and activewear brands and their contract manufacturers',
-                'Workwear, uniform, and safety garment producers',
-                'Fashion brands requiring soft-hand eco-printing capabilities',
-              ].map(item => (
-                <li class="ind-checklist__item">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="ind-checklist__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  {item}
-                </li>
-              ))}
-            </ul>
-
-            <div class="ind-relevant">
-              <p class="ind-relevant__label">Relevant Products</p>
-              <div class="ind-relevant__links">
-                {[
-                  { name: 'Plastisol PU & Stretch Inks', href: '/products/screen-printing' },
-                  { name: 'Water-Based Eco Printing Systems', href: '/products/screen-printing' },
-                  { name: 'Reflective & Hi-Vis Safety Inks', href: '/products/screen-printing' },
-                  { name: 'Amino Silicone & Reactive Softeners', href: '/products/textile-auxiliaries' },
-                  { name: 'Water Repellent & Functional Finishes', href: '/products/textile-auxiliaries' },
-                ].map(p => (
-                  <a href={p.href} class="ind-relevant__link">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="ind-relevant__arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                    {p.name}
-                  </a>
-                ))}
-              </div>
-            </div>
-
           </div>
-        </article>
+          
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
+            <p class="text-xs font-bold uppercase tracking-widest text-[#0099AF] mb-4">Relevant Categories</p>
+            <div class="flex flex-col gap-3">
+              {[
+                { name: 'Plastisol PU & Stretch Inks', url: '/products/screen-printing' },
+                { name: 'Water-Based Eco Printing Systems', url: '/products/screen-printing' },
+                { name: 'Reflective & Hi-Vis Safety Inks', url: '/products/screen-printing' },
+                { name: 'Amino Silicone & Reactive Softeners', url: '/products/textile-auxiliaries' },
+                { name: 'Water Repellent & Functional Finishes', url: '/products/textile-auxiliaries' },
+              ].map(p => (
+                <a href={p.url} class="group/link flex items-center gap-2 text-sm text-[#1A1A2E] font-semibold hover:text-[#0099AF] transition-colors w-fit">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#0099AF] transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                  {p.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </article>
 
-      </div>
     </div>
   </section>
 
-  <!-- ── CTA ───────────────────────────────────────────── -->
-  <section class="ind-cta" aria-label="Call to action">
-    <div class="ind-container">
-      <div class="ind-cta__inner" data-aos="fade-up">
-
-        <div class="ind-cta__text" data-aos="fade-up" data-aos-delay="80">
-          <h2 class="ind-cta__h2 font-unison">Serving Your Industry.</h2>
-          <p class="ind-cta__sub">
-            Tell us your production process and we'll recommend the right products for your specific
-            needs. Our technical team has hands-on experience across all four sectors.
+  <!-- ── CTA SPLIT ─────────────────────────────────────── -->
+  <section class="border-t border-gray-100">
+    <div class="grid grid-cols-1 md:grid-cols-2">
+      <!-- Left (White) -->
+      <div class="bg-white p-12 md:p-24 flex items-center justify-center md:justify-end text-center md:text-left">
+        <div class="max-w-md">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-[#1A1A2E] font-unison leading-tight mb-4">Serving Your Industry.</h2>
+          <p class="text-gray-500 mb-8 leading-relaxed">
+            Tell us your production process and we'll recommend the right products for your specific needs. Our technical team has hands-on experience across all four sectors.
           </p>
-        </div>
-
-        <div class="ind-cta__buttons" data-aos="fade-up" data-aos-delay="160">
-          <a href="/contact" class="ind-cta__btn-primary">
+          <a href="/contact" class="inline-flex justify-center items-center px-8 py-4 rounded-xl bg-[#0099AF] text-white font-bold tracking-wide transition-all hover:bg-[#007A8A] hover:-translate-y-1 shadow-lg shadow-[#0099AF]/20 w-full sm:w-auto">
             Speak to Our Team
-            <svg xmlns="http://www.w3.org/2000/svg" class="ind-btn-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
           </a>
-          <a
-            href="https://wa.me/923183755197?text=Hello%2C%20I%27d%20like%20to%20discuss%20your%20products%20for%20my%20industry."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="ind-cta__btn-ghost"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="ind-btn-icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
+        </div>
+      </div>
+      
+      <!-- Right (Navy) -->
+      <div class="bg-[#1A1A2E] p-12 md:p-24 flex items-center justify-center md:justify-start text-center md:text-left relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px;"></div>
+        <div class="max-w-md relative z-10">
+          <div class="w-16 h-16 rounded-full bg-[#25D366]/20 text-[#25D366] flex items-center justify-center mb-6 mx-auto md:mx-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-white font-unison leading-tight mb-4">Urgent technical query?</h2>
+          <p class="text-gray-400 mb-8 leading-relaxed">
+            Send us a message detailing your process challenge and get an immediate technical response.
+          </p>
+          <a href="https://wa.me/923183755197" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center px-8 py-4 rounded-xl bg-white text-[#1A1A2E] border border-transparent font-bold tracking-wide transition-all hover:bg-gray-100 hover:-translate-y-1 w-full sm:w-auto">
             WhatsApp Us
           </a>
         </div>
-
       </div>
     </div>
   </section>
 
 </BaseLayout>
-
-<style>
-  /* ── Container ───────────────────────────────────────── */
-  .ind-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 clamp(16px, 4vw, 32px);
-  }
-
-  /* ── HERO ────────────────────────────────────────────── */
-  .ind-hero {
-    position: relative;
-    background: #1A1A2E;
-    overflow: hidden;
-    padding: clamp(80px, 12vw, 130px) 0 clamp(64px, 8vw, 96px);
-  }
-
-  .ind-hero__glow {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-  }
-  .ind-hero__glow::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 55% 90% at 105% -15%, rgba(0,153,175,0.18) 0%, transparent 60%);
-  }
-
-  .ind-hero__inner {
-    position: relative;
-    z-index: 1;
-    max-width: 680px;
-  }
-
-  .ind-eyebrow-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(0,153,175,0.15);
-    border: 1px solid rgba(0,153,175,0.3);
-    color: #0099AF;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 0.3rem 0.85rem;
-    border-radius: 4px;
-    margin-bottom: 1.25rem;
-  }
-
-  .ind-gold-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #F5A623;
-    flex-shrink: 0;
-  }
-
-  .ind-hero__h1 {
-    font-size: clamp(2.8rem, 6vw, 4.5rem);
-    font-weight: 800;
-    color: #ffffff;
-    line-height: 1.05;
-    margin: 0 0 1.25rem;
-  }
-
-  .ind-hero__sub {
-    color: rgba(255,255,255,0.65);
-    font-size: clamp(1rem, 2vw, 1.15rem);
-    line-height: 1.7;
-    max-width: 540px;
-    margin: 0;
-  }
-
-  .ind-hero__accent-line {
-    width: 3rem;
-    height: 3px;
-    background: #0099AF;
-    border-radius: 2px;
-    margin-top: 2rem;
-  }
-
-  /* ── Section Header ──────────────────────────────────── */
-  .ind-section-header {
-    text-align: center;
-    margin-bottom: clamp(40px, 5vw, 64px);
-  }
-
-  .ind-section-eyebrow {
-    display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #0099AF;
-    margin-bottom: 0.5rem;
-  }
-
-  .ind-section-h2 {
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    font-weight: 800;
-    color: #0F172A;
-    line-height: 1.15;
-    margin: 0;
-  }
-
-  /* ── Industries Section ──────────────────────────────── */
-  .ind-section {
-    background: #F8FAFC;
-    padding: clamp(64px, 8vw, 96px) 0;
-  }
-
-  /* ── Industries Grid ─────────────────────────────────── */
-  .ind-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.75rem;
-  }
-  @media (min-width: 768px) {
-    .ind-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  /* ── Industry Card ───────────────────────────────────── */
-  .ind-card {
-    background: #ffffff;
-    border: 1px solid #E2E8F0;
-    border-top: 3px solid #0099AF;
-    border-radius: 16px;
-    overflow: hidden;
-    transition: box-shadow 200ms ease, transform 200ms ease;
-  }
-  .ind-card:hover {
-    box-shadow: 0 16px 40px rgba(0,0,0,0.10);
-    transform: translateY(-3px);
-  }
-
-  .ind-card__inner {
-    padding: clamp(1.5rem, 3vw, 2rem);
-  }
-
-  .ind-card__top-row {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .ind-card__badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0,153,175,0.10);
-    color: #0099AF;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    padding: 0.25rem 0.75rem;
-    border-radius: 999px;
-    flex-shrink: 0;
-  }
-
-  .ind-card__title {
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: #0F172A;
-    line-height: 1.2;
-    margin: 0;
-  }
-
-  .ind-card__icon-box {
-    width: 56px;
-    height: 56px;
-    background: rgba(0,153,175,0.08);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #0099AF;
-    margin-bottom: 1.1rem;
-    flex-shrink: 0;
-  }
-
-  .ind-card__icon {
-    width: 28px;
-    height: 28px;
-  }
-
-  .ind-card__desc {
-    color: #475569;
-    font-size: 0.9375rem;
-    line-height: 1.7;
-    margin: 0 0 0.75rem;
-  }
-
-  /* Checklist */
-  .ind-checklist {
-    list-style: none;
-    margin: 1rem 0 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .ind-checklist__item {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-    color: #475569;
-    font-size: 0.875rem;
-    line-height: 1.5;
-  }
-
-  .ind-checklist__icon {
-    width: 16px;
-    height: 16px;
-    color: #0099AF;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  /* Relevant products box */
-  .ind-relevant {
-    background: #F8FAFC;
-    border-radius: 10px;
-    padding: 1rem;
-    margin-top: 1.25rem;
-  }
-
-  .ind-relevant__label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: #0099AF;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin: 0 0 0.625rem;
-  }
-
-  .ind-relevant__links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.375rem;
-  }
-
-  .ind-relevant__link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.375rem;
-    color: #0099AF;
-    font-size: 0.875rem;
-    text-decoration: none;
-    transition: color 150ms ease;
-  }
-  .ind-relevant__link:hover {
-    color: #007A8A;
-  }
-  .ind-relevant__link:hover .ind-relevant__arrow {
-    transform: translateX(2px);
-  }
-
-  .ind-relevant__arrow {
-    width: 12px;
-    height: 12px;
-    flex-shrink: 0;
-    transition: transform 150ms ease;
-  }
-
-  /* ── CTA ─────────────────────────────────────────────── */
-  .ind-cta {
-    background: #1A1A2E;
-    border-top: 3px solid #0099AF;
-    padding: clamp(56px, 7vw, 80px) 0;
-  }
-
-  .ind-cta__inner {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: flex-start;
-  }
-  @media (min-width: 768px) {
-    .ind-cta__inner {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    }
-  }
-
-  .ind-cta__text {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .ind-cta__h2 {
-    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-    font-weight: 800;
-    color: #ffffff;
-    line-height: 1.15;
-    margin: 0 0 0.75rem;
-  }
-
-  .ind-cta__sub {
-    color: rgba(255,255,255,0.65);
-    font-size: 1rem;
-    line-height: 1.7;
-    margin: 0;
-    max-width: 520px;
-  }
-
-  .ind-cta__buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    flex-shrink: 0;
-  }
-  @media (min-width: 480px) {
-    .ind-cta__buttons {
-      flex-direction: row;
-      align-items: center;
-    }
-  }
-
-  .ind-cta__btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #0099AF;
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 0.9rem;
-    padding: 0.8rem 1.75rem;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background 150ms ease, transform 150ms ease;
-    white-space: nowrap;
-  }
-  .ind-cta__btn-primary:hover {
-    background: #007A8A;
-    transform: translateY(-1px);
-  }
-
-  .ind-cta__btn-ghost {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255,255,255,0.08);
-    border: 1.5px solid rgba(255,255,255,0.2);
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 0.9rem;
-    padding: 0.8rem 1.75rem;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background 150ms ease, transform 150ms ease;
-    white-space: nowrap;
-  }
-  .ind-cta__btn-ghost:hover {
-    background: rgba(255,255,255,0.14);
-    transform: translateY(-1px);
-  }
-
-  .ind-btn-icon {
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
-  }
-</style>

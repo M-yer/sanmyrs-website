@@ -1229,6 +1229,43 @@ export const products = {
         ]
       }
     ]
+  },
+  "screen-chemicals-accessories": {
+    label: "Chemicals & Accessories",
+    slug: "screen-chemicals-accessories",
+    description: "Essential screen making chemicals, emulsions, mesh, and squeegees for professional screen printing prepress and production.",
+    subcategories: [
+      {
+        name: "Prepress & Accessories",
+        products: [
+          {
+            name: "Premium Photo Emulsion",
+            slug: "premium-photo-emulsion",
+            image: null,
+            description: "High-resolution dual-cure photo emulsion for creating durable, sharp printing stencils. Exposes fast and resists both plastisol and water-based inks under long production runs.",
+            uses: [
+              "Screen coating and stencil making",
+              "High-detail halftone and line-art exposure",
+              "Durable plastisol and water-based printing"
+            ],
+            metaTitle: "Photo Emulsion | SANMYRS",
+            metaDescription: "SANMYRS Photo Emulsion provides high-resolution, durable stencils for screen printing. Available in Karachi, Pakistan."
+          },
+          {
+            name: "Screen Reclaimer / Stripper",
+            slug: "screen-reclaimer",
+            image: null,
+            description: "Concentrated stencil remover that rapidly breaks down dual-cure and diazo emulsions for easy reclaim and mesh reuse. Environmentally safe and biodegradable.",
+            uses: [
+              "Removing old emulsion from screens",
+              "Screen reclamation and recycling"
+            ],
+            metaTitle: "Screen Reclaimer | SANMYRS",
+            metaDescription: "SANMYRS Screen Reclaimer rapidly breaks down emulsion for fast screen turnaround."
+          }
+        ]
+      }
+    ]
   }
 };
 

@@ -7,599 +7,200 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="SANMYRS supplies products meeting OEKO-TEX, REACH, GOTS, and international quality standards for Pakistan's export-oriented textile and printing industry."
 >
 
-  <!-- ── HERO ─────────────────────────────────────────── -->
-  <section class="cr-hero">
-    <div class="cr-hero__glow" aria-hidden="true"></div>
-    <div class="cr-container">
-      <div class="cr-hero__inner" data-aos="fade-up">
-        <div class="cr-eyebrow-pill">
-          <span class="cr-gold-dot" aria-hidden="true"></span>
-          Quality &amp; Compliance
+  <!-- ── NEOMINIMALIST HERO: TYPOGRAPHY FOCUS ──────────── -->
+  <section class="relative pt-32 pb-24 lg:pt-44 lg:pb-32 bg-white overflow-hidden border-b border-gray-100">
+    <div class="absolute inset-0 bg-[radial-gradient(#1A1A2E_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.03]"></div>
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0099AF] rounded-full blur-[150px] opacity-10 -translate-y-1/2 translate-x-1/2"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-gray-200 shadow-sm mb-6" data-aos="fade-down">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#0099AF]" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        <span class="text-xs font-bold uppercase tracking-widest text-[#1A1A2E]">Quality & Compliance</span>
+      </div>
+      <h1 class="text-5xl lg:text-7xl font-extrabold text-[#1A1A2E] tracking-tight leading-[1.05] mb-6 font-unison max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        The Highest Standards <br/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#1A1A2E] to-[#0099AF]">We Uphold.</span>
+      </h1>
+      <p class="text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="150">
+        We supply products aligned with international quality standards and compliance requirements for Pakistan's export-oriented textile industry.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── PROCESS PIPELINE ──────────────────────────────── -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row gap-12 items-start mb-20" data-aos="fade-up">
+        <div class="max-w-md shrink-0">
+          <h2 class="text-sm font-bold uppercase tracking-widest text-[#0099AF] mb-3">Our Process</h2>
+          <h3 class="text-3xl md:text-5xl font-extrabold text-[#1A1A2E] font-unison leading-tight">Quality at Every Stage.</h3>
         </div>
-        <h1 class="cr-hero__h1 font-unison">Standards We Uphold.</h1>
-        <p class="cr-hero__sub">
-          We supply products aligned with international quality standards and compliance requirements
-          for Pakistan's export-oriented textile industry.
-        </p>
-        <div class="cr-hero__accent-line" aria-hidden="true"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── QUALITY COMMITMENTS ───────────────────────────── -->
-  <section class="cr-quality">
-    <div class="cr-container">
-
-      <div class="cr-section-header" data-aos="fade-up">
-        <span class="cr-section-eyebrow">Our Process</span>
-        <h2 class="cr-section-h2 font-unison">Quality at Every Stage.</h2>
-        <p class="cr-section-intro">
-          Consistent quality is the foundation of SANMYRS's business. Our customers rely on us to
-          supply products that perform the same way every batch, every order. We work only with
-          suppliers and raw material sources that meet our quality criteria, and we carry out incoming
-          inspection on every delivery to verify batch consistency before products are offered for sale.
-        </p>
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-gray-600 leading-relaxed">
+          Consistent quality is the foundation of SANMYRS's business. Our customers rely on us to supply products that perform the same way every batch, every order. We work only with suppliers and raw material sources that meet our criteria.
+        </div>
       </div>
 
-      <div class="cr-steps-grid">
-        {[
-          {
-            num: '01',
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>`,
-            title: 'Batch Consistency',
-            body: 'Every incoming batch is checked against reference standards before entering stock. Customers receive consistent-performing product across all orders.',
-          },
-          {
-            num: '02',
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>`,
-            title: 'Technical Data Sheets',
-            body: 'Technical data sheets are available for all products in our range, covering application guidance, curing parameters, compatibility, and safety information.',
-          },
-          {
-            num: '03',
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
-            title: 'Compliance Grades',
-            body: 'We stock formaldehyde-free, PFAS-free, and APEO-free grades across our textile auxiliaries range for customers with strict export-market compliance requirements.',
-          },
-          {
-            num: '04',
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>`,
-            title: 'Supplier Traceability',
-            body: 'We maintain full supplier traceability for all products in our range, enabling us to trace product origin and provide documentation for buyer compliance audits.',
-          },
-        ].map((step, i) => (
-          <div
-            class="cr-step-card"
-            data-aos="fade-up"
-            data-aos-delay={String(i * 80)}
-          >
-            <div class="cr-step-card__num-circle">{step.num}</div>
-            <div class="cr-step-card__icon-box">
-              <Fragment set:html={step.icon} />
+      <!-- Pipeline Container -->
+      <div class="relative">
+        <!-- Connecting Line (Desktop) -->
+        <div class="hidden lg:block absolute top-[4.5rem] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-[#1A1A2E]/10 via-[#0099AF]/50 to-[#1A1A2E]/10 pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            {
+              num: '01',
+              title: 'Batch Consistency',
+              body: 'Every incoming batch is checked against reference standards. Customers receive consistent-performing product across all orders.',
+            },
+            {
+              num: '02',
+              title: 'Technical Docs',
+              body: 'Technical sheets are available for all products, covering application guidance, curing parameters, and safety information.',
+            },
+            {
+              num: '03',
+              title: 'Compliance Grades',
+              body: 'We stock formaldehyde-free, PFAS-free, and APEO-free grades for customers with strict export compliance requirements.',
+            },
+            {
+              num: '04',
+              title: 'Traceability',
+              body: 'We maintain full traceability for our range, enabling us to trace origin and provide documentation for buyer audits.',
+            },
+          ].map((step, i) => (
+            <div class="relative group" data-aos="fade-up" data-aos-delay={i * 100}>
+              <div class="bg-white rounded-[2rem] p-8 border border-gray-100 shadow-sm transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl relative z-10 pt-16 h-full text-center lg:text-left">
+                
+                <!-- Number Node (overlapping line on desktop) -->
+                <div class="absolute -top-6 left-1/2 lg:left-8 -translate-x-1/2 lg:translate-x-0 w-12 h-12 rounded-2xl bg-[#1A1A2E] text-white flex items-center justify-center font-unison text-xl font-bold shadow-lg shadow-[#1A1A2E]/20 ring-4 ring-slate-50 transition-transform group-hover:scale-110 group-hover:bg-[#0099AF]">
+                  {step.num}
+                </div>
+
+                <h3 class="text-xl font-bold text-[#1A1A2E] mb-3">{step.title}</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">{step.body}</p>
+              </div>
             </div>
-            <h3 class="cr-step-card__title font-unison">{step.title}</h3>
-            <p class="cr-step-card__body">{step.body}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ── STANDARDS SECTION ─────────────────────────────── -->
-  <section class="cr-standards">
-    <div class="cr-container">
-
-      <div class="cr-section-header" data-aos="fade-up">
-        <span class="cr-section-eyebrow">Standards</span>
-        <h2 class="cr-section-h2 font-unison">International Compliance Frameworks.</h2>
-        <p class="cr-section-intro">
-          Products in our range are available in grades aligned with the following international
-          textile and chemical standards. Contact us to confirm compliance grade availability for
-          specific products.
+  <!-- ── STANDARDS ROW CARDS ───────────────────────────── -->
+  <section class="py-24 bg-white border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+        <h2 class="text-sm font-bold uppercase tracking-widest text-[#0099AF] mb-3">Standards</h2>
+        <h3 class="text-3xl md:text-5xl font-extrabold text-[#1A1A2E] font-unison leading-tight mb-6">International Compliance.</h3>
+        <p class="text-gray-600">
+          We offer products aligned with international textile and chemical standards. Contact us to confirm compliance grade availability for specific items.
         </p>
       </div>
 
-      <div class="cr-cert-grid">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
         {[
           {
             name: 'OEKO-TEX Standard 100',
             abbr: 'OEKO-TEX',
-            description: "The world's leading textile safety label. We stock OEKO-TEX compliant grades of softeners, fixing agents, and finishing chemicals that meet all restricted substance limits under Annex 6 of the OEKO-TEX Standard 100.",
-            accentColor: '#0369A1',
-            badgeBg: '#EFF6FF',
-            badgeText: '#1D4ED8',
+            desc: "The leading textile safety label. We stock OEKO-TEX compliant grades of softeners and fixing agents meeting Annex 6 limits.",
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>`,
+            style: 'hover:shadow-[#0369A1]/20 hover:border-[#0369A1]/30',
+            bg: 'bg-gradient-to-br from-[#EFF6FF] to-white',
+            text: 'text-[#0369A1]'
           },
           {
             name: 'REACH Regulation (EU)',
             abbr: 'REACH',
-            description: 'European chemical regulation restricting hazardous substances in textile articles. Our textile auxiliaries and printing chemical range includes REACH-compliant grades for manufacturers exporting to EU markets.',
-            accentColor: '#059669',
-            badgeBg: '#ECFDF5',
-            badgeText: '#065F46',
+            desc: 'European chemical regulation restricting hazardous substances. Our range includes REACH-compliant grades for EU exporters.',
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
+            style: 'hover:shadow-[#059669]/20 hover:border-[#059669]/30',
+            bg: 'bg-gradient-to-br from-[#ECFDF5] to-white',
+            text: 'text-[#059669]'
           },
           {
-            name: 'GOTS — Global Organic Textile Standard',
+            name: 'Global Organic Textile Standard',
             abbr: 'GOTS',
-            description: 'For customers processing certified organic cotton, we can supply GOTS-approved auxiliary chemistry including detergents, wetting agents, and softeners that meet GOTS Annex 6 approved inputs criteria.',
-            accentColor: '#047857',
-            badgeBg: '#D1FAE5',
-            badgeText: '#064E3B',
+            desc: 'We supply GOTS-approved auxiliary chemistry including wetting agents and softeners meeting Annex 6 inputs criteria.',
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>`,
+            style: 'hover:shadow-[#047857]/20 hover:border-[#047857]/30',
+            bg: 'bg-gradient-to-br from-[#D1FAE5] to-white',
+            text: 'text-[#047857]'
           },
           {
             name: 'Bluesign System',
             abbr: 'bluesign',
-            description: 'The bluesign standard for sustainable textile chemical management. We can source bluesign-approved chemical alternatives across our softener and finishing auxiliary range for certified sportswear and outdoor apparel supply chains.',
-            accentColor: '#0284C7',
-            badgeBg: '#E0F2FE',
-            badgeText: '#075985',
+            desc: 'The bluesign standard for sustainable chemical management. We source alternatives for certified outdoor apparel supply chains.',
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>`,
+            style: 'hover:shadow-[#0284C7]/20 hover:border-[#0284C7]/30',
+            bg: 'bg-gradient-to-br from-[#E0F2FE] to-white',
+            text: 'text-[#0284C7]'
           },
         ].map((cert, i) => (
-          <div
-            class="cr-cert-card"
-            style={`--cr-accent:${cert.accentColor}; --cr-badge-bg:${cert.badgeBg}; --cr-badge-text:${cert.badgeText};`}
-            data-aos="fade-up"
-            data-aos-delay={String(i * 80)}
-          >
-            <div class="cr-cert-card__top-row">
-              <span class="cr-cert-card__badge">{cert.abbr}</span>
-              <div class="cr-cert-card__shield-box" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
+          <div class={`rounded-3xl p-8 border border-gray-100 shadow-sm transition-all duration-300 hover:-translate-y-1 ${cert.style} ${cert.bg}`} data-aos="fade-up" data-aos-delay={i * 100}>
+            <div class="flex items-start justify-between gap-4 mb-6">
+              <div class={`w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center border border-white/50 ${cert.text}`}>
+                <Fragment set:html={cert.icon} />
               </div>
+              <span class={`inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white shadow-sm border border-gray-100 ${cert.text}`}>
+                {cert.abbr}
+              </span>
             </div>
-            <h3 class="cr-cert-card__name font-unison">{cert.name}</h3>
-            <p class="cr-cert-card__desc">{cert.description}</p>
+            <h3 class="text-2xl font-bold text-[#1A1A2E] mb-3">{cert.name}</h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+              {cert.desc}
+            </p>
           </div>
         ))}
       </div>
 
-      <!-- Disclaimer -->
-      <div class="cr-disclaimer" data-aos="fade-up" data-aos-delay="80">
-        <div class="cr-disclaimer__icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-        </div>
-        <p class="cr-disclaimer__text">
-          <strong>Note:</strong> Certification status is product-specific. Not all products in our range are available in all compliance grades. Contact our team with your specific compliance requirements and we will confirm product availability and provide relevant documentation.
+      <!-- Disclaimer Alert -->
+      <div class="max-w-3xl mx-auto bg-slate-50 border border-gray-200 rounded-2xl p-6 flex items-start gap-4 shadow-sm" data-aos="fade-up">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#0099AF] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <p class="text-sm text-gray-600 leading-relaxed">
+          <strong class="text-[#1A1A2E]">Important Note:</strong> Certification status is product-specific. Not all products in our range are available in all compliance grades. Contact our team with your specific compliance requirements and we will confirm product availability and provide relevant documentation.
         </p>
       </div>
 
     </div>
   </section>
 
-  <!-- ── CTA ───────────────────────────────────────────── -->
-  <section class="cr-cta">
-    <div class="cr-container">
-      <div class="cr-cta__inner" data-aos="fade-up">
-
-        <div class="cr-cta__text" data-aos="fade-up" data-aos-delay="80">
-          <h2 class="cr-cta__h2 font-unison">Compliance Questions?</h2>
-          <p class="cr-cta__sub">
-            Share your buyer's compliance requirements and we'll confirm which grades of our products
-            meet them and provide the relevant documentation.
+  <!-- ── CALL TO ACTION ─────────────────────────────────── -->
+  <section class="border-t border-gray-100">
+    <div class="grid grid-cols-1 md:grid-cols-2">
+      <div class="bg-white p-12 md:p-24 flex items-center justify-center md:justify-end text-center md:text-left">
+        <div class="max-w-md">
+          <h2 class="text-3xl md:text-5xl font-extrabold text-[#1A1A2E] font-unison leading-tight mb-4">Compliance Questions?</h2>
+          <p class="text-gray-500 mb-8 leading-relaxed">
+            Share your buyer's compliance requirements and we'll confirm which grades of our products meet them and provide the relevant documentation.
           </p>
-        </div>
-
-        <div class="cr-cta__buttons" data-aos="fade-up" data-aos-delay="160">
-          <a href="/contact" class="cr-cta__btn-primary">
-            Request Compliance Information
-            <svg xmlns="http://www.w3.org/2000/svg" class="cr-btn-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
+          <a href="/contact" class="inline-flex justify-center items-center px-8 py-4 rounded-xl bg-[#0099AF] text-white font-bold tracking-wide transition-all hover:bg-[#007A8A] hover:-translate-y-1 shadow-lg shadow-[#0099AF]/20 w-full sm:w-auto">
+            Request Information
           </a>
-          <a
-            href="https://wa.me/923183755197?text=Hi%2C%20I%20have%20a%20compliance%20question."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="cr-cta__btn-ghost"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="cr-btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.528 5.852L.057 23.625a.75.75 0 00.918.918l5.773-1.471A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.718 9.718 0 01-4.952-1.352l-.354-.212-3.668.935.952-3.576-.232-.368A9.718 9.718 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
-            </svg>
+        </div>
+      </div>
+      <div class="bg-[#1A1A2E] p-12 md:p-24 flex items-center justify-center md:justify-start text-center md:text-left relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px;"></div>
+        <div class="max-w-md relative z-10">
+          <div class="w-16 h-16 rounded-full bg-[#25D366]/20 text-[#25D366] flex items-center justify-center mb-6 mx-auto md:mx-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-white font-unison leading-tight mb-4">Or text us directly.</h2>
+          <p class="text-gray-400 mb-8 leading-relaxed">
+            Need an immediate answer? Send your query through WhatsApp.
+          </p>
+          <a href="https://wa.me/923183755197" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center px-8 py-4 rounded-xl bg-white text-[#1A1A2E] border border-transparent font-bold tracking-wide transition-all hover:bg-gray-100 hover:-translate-y-1 w-full sm:w-auto">
             WhatsApp Us
           </a>
         </div>
-
       </div>
     </div>
   </section>
 
 </BaseLayout>
-
-<style>
-  /* ── Container ───────────────────────────────────────── */
-  .cr-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 clamp(16px, 4vw, 32px);
-  }
-
-  /* ── HERO ────────────────────────────────────────────── */
-  .cr-hero {
-    position: relative;
-    background: #1A1A2E;
-    overflow: hidden;
-    padding: clamp(80px, 12vw, 130px) 0 clamp(64px, 8vw, 96px);
-  }
-
-  .cr-hero__glow {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-  }
-  .cr-hero__glow::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 55% 90% at 105% -15%, rgba(0,153,175,0.18) 0%, transparent 60%);
-  }
-
-  .cr-hero__inner {
-    position: relative;
-    z-index: 1;
-    max-width: 680px;
-  }
-
-  .cr-eyebrow-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(0,153,175,0.15);
-    border: 1px solid rgba(0,153,175,0.3);
-    color: #0099AF;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 0.3rem 0.85rem;
-    border-radius: 4px;
-    margin-bottom: 1.25rem;
-  }
-
-  .cr-gold-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #F5A623;
-    flex-shrink: 0;
-  }
-
-  .cr-hero__h1 {
-    font-size: clamp(2.8rem, 6vw, 4.5rem);
-    font-weight: 800;
-    color: #ffffff;
-    line-height: 1.05;
-    margin: 0 0 1.25rem;
-  }
-
-  .cr-hero__sub {
-    color: rgba(255,255,255,0.65);
-    font-size: clamp(1rem, 2vw, 1.15rem);
-    line-height: 1.7;
-    max-width: 540px;
-    margin: 0;
-  }
-
-  .cr-hero__accent-line {
-    width: 3rem;
-    height: 3px;
-    background: #0099AF;
-    border-radius: 2px;
-    margin-top: 2rem;
-  }
-
-  /* ── Shared section header ──────────────────────────── */
-  .cr-section-header {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto clamp(2.5rem, 5vw, 3.5rem);
-  }
-
-  .cr-section-eyebrow {
-    display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #0099AF;
-    margin-bottom: 0.5rem;
-  }
-
-  .cr-section-h2 {
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    font-weight: 800;
-    color: #0F172A;
-    line-height: 1.15;
-    margin: 0 0 0.75rem;
-  }
-
-  .cr-section-intro {
-    color: #475569;
-    font-size: 1rem;
-    line-height: 1.75;
-    margin: 0;
-  }
-
-  /* ── Quality Commitments ─────────────────────────────── */
-  .cr-quality {
-    background: #ffffff;
-    padding: clamp(64px, 8vw, 96px) 0;
-  }
-
-  .cr-steps-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  @media (min-width: 640px)  { .cr-steps-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1024px) { .cr-steps-grid { grid-template-columns: repeat(4, 1fr); } }
-
-  .cr-step-card {
-    background: #ffffff;
-    border: 1px solid #E2E8F0;
-    border-top: 3px solid #0099AF;
-    border-radius: 16px;
-    padding: 1.75rem;
-    transition: box-shadow 200ms ease, transform 200ms ease;
-    cursor: default;
-  }
-  .cr-step-card:hover {
-    box-shadow: 0 16px 40px rgba(0,0,0,0.10);
-    transform: translateY(-3px);
-  }
-
-  .cr-step-card__num-circle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background: rgba(0,153,175,0.10);
-    color: #0099AF;
-    font-size: 0.7rem;
-    font-weight: 800;
-    letter-spacing: 0.04em;
-    margin-bottom: 0.875rem;
-  }
-
-  .cr-step-card__icon-box {
-    width: 44px;
-    height: 44px;
-    background: rgba(0,153,175,0.10);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #0099AF;
-    margin-bottom: 0.875rem;
-  }
-
-  .cr-step-card__title {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #0F172A;
-    margin: 0 0 0.5rem;
-    line-height: 1.3;
-  }
-
-  .cr-step-card__body {
-    font-size: 0.875rem;
-    color: #475569;
-    line-height: 1.65;
-    margin: 0;
-  }
-
-  /* ── Standards Section ───────────────────────────────── */
-  .cr-standards {
-    background: #F8FAFC;
-    padding: clamp(64px, 8vw, 96px) 0;
-  }
-
-  .cr-cert-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  @media (min-width: 768px)  { .cr-cert-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1024px) { .cr-cert-grid { grid-template-columns: repeat(4, 1fr); } }
-
-  .cr-cert-card {
-    background: #ffffff;
-    border: 1px solid #E2E8F0;
-    border-top: 3px solid var(--cr-accent, #0099AF);
-    border-radius: 16px;
-    padding: 1.75rem;
-    display: flex;
-    flex-direction: column;
-    transition: box-shadow 200ms ease, transform 200ms ease;
-    cursor: default;
-  }
-  .cr-cert-card:hover {
-    box-shadow: 0 16px 40px rgba(0,0,0,0.10);
-    transform: translateY(-3px);
-  }
-
-  .cr-cert-card__top-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-  }
-
-  .cr-cert-card__badge {
-    display: inline-block;
-    font-size: 0.6875rem;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-    padding: 0.25rem 0.625rem;
-    border-radius: 999px;
-    background: var(--cr-badge-bg, rgba(0,153,175,0.10));
-    color: var(--cr-badge-text, #0099AF);
-  }
-
-  .cr-cert-card__shield-box {
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 8px;
-    background: rgba(0,0,0,0.04);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--cr-accent, #0099AF);
-    flex-shrink: 0;
-  }
-
-  .cr-cert-card__name {
-    font-size: 0.9375rem;
-    font-weight: 700;
-    color: #0F172A;
-    margin: 0 0 0.75rem;
-    line-height: 1.35;
-  }
-
-  .cr-cert-card__desc {
-    font-size: 0.875rem;
-    color: #475569;
-    line-height: 1.65;
-    flex-grow: 1;
-    margin: 0;
-  }
-
-  /* ── Disclaimer ──────────────────────────────────────── */
-  .cr-disclaimer {
-    background: #ffffff;
-    border: 1px solid #E2E8F0;
-    border-left: 3px solid #0099AF;
-    border-radius: 12px;
-    padding: 1.25rem 1.5rem;
-    max-width: 52rem;
-    margin: 0 auto;
-    display: flex;
-    align-items: flex-start;
-    gap: 0.875rem;
-  }
-
-  .cr-disclaimer__icon {
-    flex-shrink: 0;
-    margin-top: 0.1rem;
-    color: #0099AF;
-  }
-
-  .cr-disclaimer__text {
-    font-size: 0.875rem;
-    color: #475569;
-    line-height: 1.65;
-    margin: 0;
-  }
-
-  .cr-disclaimer__text strong {
-    color: #0099AF;
-    font-weight: 700;
-  }
-
-  /* ── CTA ─────────────────────────────────────────────── */
-  .cr-cta {
-    background: #1A1A2E;
-    border-top: 3px solid #0099AF;
-    padding: clamp(56px, 7vw, 80px) 0;
-  }
-
-  .cr-cta__inner {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: flex-start;
-  }
-  @media (min-width: 768px) {
-    .cr-cta__inner {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    }
-  }
-
-  .cr-cta__text {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .cr-cta__h2 {
-    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-    font-weight: 800;
-    color: #ffffff;
-    line-height: 1.15;
-    margin: 0 0 0.75rem;
-  }
-
-  .cr-cta__sub {
-    color: rgba(255,255,255,0.65);
-    font-size: 1rem;
-    line-height: 1.7;
-    margin: 0;
-    max-width: 480px;
-  }
-
-  .cr-cta__buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    flex-shrink: 0;
-  }
-  @media (min-width: 480px) {
-    .cr-cta__buttons {
-      flex-direction: row;
-      align-items: center;
-    }
-  }
-
-  .cr-cta__btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #0099AF;
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 0.9rem;
-    padding: 0.8rem 1.75rem;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background 150ms ease, transform 150ms ease;
-    white-space: nowrap;
-  }
-  .cr-cta__btn-primary:hover {
-    background: #007A8A;
-    transform: translateY(-1px);
-  }
-
-  .cr-cta__btn-ghost {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255,255,255,0.08);
-    border: 1.5px solid rgba(255,255,255,0.2);
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 0.9rem;
-    padding: 0.8rem 1.75rem;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background 150ms ease, transform 150ms ease;
-    white-space: nowrap;
-  }
-  .cr-cta__btn-ghost:hover {
-    background: rgba(255,255,255,0.14);
-    transform: translateY(-1px);
-  }
-
-  .cr-btn-icon {
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
-  }
-</style>

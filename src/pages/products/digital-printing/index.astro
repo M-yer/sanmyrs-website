@@ -1,5 +1,6 @@
 ---
 import ProductLayout from '../../../layouts/ProductLayout.astro';
+import ProductCard from '../../../components/ProductCard.astro';
 import { products } from '../../../data/products.js';
 
 const category = products['digital-printing'];
@@ -8,184 +9,113 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
 
 <ProductLayout
   title="Digital Printing Inks | SANMYRS"
-  description="Reactive, disperse, sublimation, acid, pigment, eco solvent, UV, and latex inks for digital textile and graphic printing. SANMYRS, Karachi, Pakistan."
+  description="High-performance digital printing inks including reactive, disperse, sublimation, eco-solvent, and UV inks. Supplier in Karachi, Pakistan."
   breadcrumbs={[
     { label: 'Products', href: '/products' },
     { label: 'Digital Printing', href: '/products/digital-printing' },
   ]}
 >
 
-  <!-- ── Header ── -->
-  <header class="cat-header">
-    <div class="cat-header-dots" aria-hidden="true">
-      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-        <defs><pattern id="hd" width="32" height="32" patternUnits="userSpaceOnUse">
-          <circle cx="1" cy="1" r="1" fill="rgba(0,153,175,0.15)"/>
-        </pattern></defs>
-        <rect width="100%" height="100%" fill="url(#hd)"/>
-      </svg>
+  <!-- ── NEOMINIMALIST HEADER ── -->
+  <header class="relative pt-24 pb-16 lg:pt-32 lg:pb-24 bg-slate-50 border-b border-gray-100 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute -top-40 -right-40 w-[600px] h-[600px] bg-[#0099AF] rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
     </div>
-    <div class="cat-header-inner">
-      <div class="cat-header-left">
-        <p class="cat-eyebrow">Digital Printing</p>
-        <h1 class="cat-h1 font-unison">Inks &amp; Systems</h1>
-        <p class="cat-desc">High-performance inks for textile digital printing systems and wide-format graphic inkjet printers, covering all major dye and ink chemistries.</p>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
+      <div class="max-w-3xl" data-aos="fade-right">
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="w-8 h-[2px] bg-[#0099AF]"></span>
+          <span class="text-xs font-bold uppercase tracking-widest text-[#0099AF]">Category</span>
+        </div>
+        <h1 class="text-5xl lg:text-7xl font-extrabold text-[#1A1A2E] tracking-tight leading-[1.05] font-unison mb-6">
+          Digital Printing <br/>
+          <span class="text-gray-400">Inks &amp; Supplies</span>
+        </h1>
+        <p class="text-lg text-gray-500 max-w-2xl leading-relaxed">
+          High-performance ink solutions for textile inkjet systems and wide-format graphic printers.
+        </p>
       </div>
-      <div class="cat-header-right">
-        <span class="cat-stat-num font-unison">{totalProducts}</span>
-        <span class="cat-stat-label">Products</span>
+      
+      <div class="shrink-0 flex items-center gap-4 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm" data-aos="fade-left" data-aos-delay="100">
+        <div class="text-4xl font-black text-[#1A1A2E] font-unison">{totalProducts}</div>
+        <div class="text-xs font-bold uppercase tracking-widest text-gray-400 leading-tight">Total<br/>Products</div>
       </div>
     </div>
   </header>
 
-  <!-- ── Sticky Nav (two-level) ── -->
-  <div class="cat-nav">
-    <div class="cat-nav-inner">
-      <div class="cat-pills-scroll" style="padding-bottom:8px;">
+  <!-- ── MINIMALIST TAB NAVIGATION ── -->
+  <div class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-nowrap gap-8 overflow-x-auto scrollbar-hide py-4">
         {category.subcategories.map((sub, i) => (
-          <button class="main-pill" data-cat={String(i)}
-            style={`background:${i===0?'#0099AF':'transparent'}; color:${i===0?'white':'#4A4A4A'}; border-color:${i===0?'#0099AF':'#d1d5db'};`}>
-            {sub.name}
-            <span class="pill-count">{sub.products.length}</span>
+          <button 
+            class={`tab-btn relative shrink-0 text-sm font-bold uppercase tracking-wider transition-colors pb-1 ${i === 0 ? 'text-[#1A1A2E]' : 'text-gray-400 hover:text-[#0099AF]'}`}
+            data-index={String(i)}
+          >
+            {sub.name} <span class="ml-1 text-xs opacity-60">({sub.products.length})</span>
+            <span class={`tab-indicator absolute bottom-[-17px] left-0 w-full h-[2px] bg-[#0099AF] transition-opacity ${i === 0 ? 'opacity-100' : 'opacity-0'}`}></span>
           </button>
         ))}
       </div>
-      {category.subcategories.map((sub, i) => (
-        <div class="sub-pill-bar" data-cat={String(i)}
-          style={`display:${i===0?'flex':'none'}; flex-wrap:nowrap; gap:6px; overflow-x:auto; scrollbar-width:none; padding-bottom:10px; border-top:1px solid #f3f4f6;`}>
-          {sub.products.map((product, j) => (
-            <button class="sub-pill" data-cat={String(i)} data-prod={String(j)}
-              style={`flex-shrink:0; margin-top:8px; padding:5px 14px; border-radius:6px; border:1px solid; font-size:12px; font-weight:500; cursor:pointer; transition:background .15s,color .15s,border-color .15s; background:${j===0?'#0099AF':'transparent'}; color:${j===0?'white':'#4A4A4A'}; border-color:${j===0?'#0099AF':'#d1d5db'};`}>
-              {product.name}
-            </button>
-          ))}
-        </div>
-      ))}
     </div>
   </div>
 
-  <!-- ── Product Sections ── -->
-  <div class="cat-body">
-    {category.subcategories.map((sub, i) => (
-      <div class="cat-section" data-cat={String(i)} style={i===0?'display:block;':'display:none;'}>
-        {sub.products.map((product, j) => (
-          <div class="prod-item" data-cat={String(i)} data-prod={String(j)} style={j===0?'display:block;':'display:none;'}>
-            <div class="prod-item-head">
-              <div>
-                <h2 class="prod-item-h2 font-unison">{product.name}</h2>
-                <p class="prod-item-meta">{product.images ? product.images.length : 1} variants available</p>
-              </div>
-              <a href={`/products/digital-printing/${product.slug}`} class="cat-btn-sm">View Details →</a>
-            </div>
-            {product.images ? (
-              <div class="color-grid">
-                {product.images.map(img => (
-                  <a href={`/products/digital-printing/${product.slug}?variant=${encodeURIComponent(img.label)}`} class="color-card">
-                    <img src={img.src} alt={`${product.name} — ${img.label}`} loading="lazy" class="color-card-img"/>
-                    <p class="color-card-label">{img.label}</p>
-                  </a>
-                ))}
-              </div>
-            ) : (
-              <div style="text-align:center; padding:48px; color:#9ca3af;">No images available</div>
-            )}
+  <!-- ── PRODUCT GRID ── -->
+  <div class="bg-white py-16 lg:py-24 min-h-[50vh]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {category.subcategories.map((sub, i) => (
+        <div class="subcategory-section animate-fade-in" data-index={String(i)} style={i===0?'display:block;':'display:none;'}>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
+            {sub.products.map(product => (
+              <ProductCard 
+                name={product.name} 
+                description={product.description}
+                slug={product.slug} 
+                category="digital-printing" 
+                image={product.image}
+              />
+            ))}
           </div>
-        ))}
-      </div>
-    ))}
-  </div>
-
-  <!-- ── CTA ── -->
-  <div class="cat-cta">
-    <div class="cat-cta-inner">
-      <div class="cat-cta-text">
-        <h3 class="cat-cta-h3 font-unison">Unsure which ink suits your printer?</h3>
-        <p class="cat-cta-p">Tell us your printer model and substrate — we'll recommend the correct ink chemistry and provide technical data sheets.</p>
-      </div>
-      <div class="cat-cta-btns">
-        <a href="/contact" class="cat-btn-primary">Get a Recommendation</a>
-        <a href="https://wa.me/923183755197" target="_blank" rel="noopener noreferrer" class="cat-btn-ghost">WhatsApp Us</a>
-      </div>
+        </div>
+      ))}
     </div>
   </div>
 
 </ProductLayout>
 
 <style>
-  :root { --teal:#0099AF; --teal-dk:#007A8A; --navy:#1A1A2E; --page-bg:#F5F7F6; --border:#e5e7eb; }
-  .cat-header { position:relative; background:var(--navy); overflow:hidden; padding:clamp(36px,5vw,56px) 0; }
-  .cat-header-dots { position:absolute; inset:0; pointer-events:none; opacity:.65; }
-  .cat-header-inner { position:relative; max-width:80rem; margin:0 auto; padding:0 clamp(16px,4vw,32px); display:flex; align-items:center; justify-content:space-between; gap:24px; }
-  .cat-header-left { flex:1; min-width:0; }
-  .cat-eyebrow { font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--teal); margin:0 0 6px; }
-  .cat-h1 { font-size:clamp(1.5rem,3vw,2rem); font-weight:800; color:white; margin:0 0 10px; line-height:1.15; }
-  .cat-desc { color:rgba(255,255,255,.55); font-size:13.5px; line-height:1.65; margin:0; max-width:34rem; }
-  .cat-header-right { flex-shrink:0; display:flex; flex-direction:column; align-items:center; justify-content:center; background:rgba(0,153,175,.12); border:1px solid rgba(0,153,175,.25); border-radius:12px; padding:18px 28px; text-align:center; min-width:100px; }
-  .cat-stat-num { font-size:clamp(2rem,3.5vw,2.8rem); font-weight:800; color:var(--teal); line-height:1; }
-  .cat-stat-label { font-size:11px; font-weight:600; color:rgba(255,255,255,.5); letter-spacing:.08em; text-transform:uppercase; margin-top:4px; }
-  .cat-nav { background:white; border-bottom:1px solid var(--border); position:sticky; top:64px; z-index:30; }
-  .cat-nav-inner { max-width:80rem; margin:0 auto; padding:10px clamp(16px,4vw,32px) 0; }
-  .cat-pills-scroll { display:flex; flex-wrap:nowrap; gap:6px; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; padding-top:0; }
-  .cat-pills-scroll::-webkit-scrollbar { display:none; }
-  .main-pill { flex-shrink:0; display:inline-flex; align-items:center; gap:7px; padding:7px 16px; border-radius:6px; border:1px solid; font-size:13px; font-weight:500; cursor:pointer; transition:background .15s,color .15s,border-color .15s; line-height:1.3; }
-  .pill-count { font-size:11px; font-weight:700; opacity:.7; }
-  .cat-body { background:var(--page-bg); padding:clamp(28px,4vw,48px) clamp(16px,4vw,32px); }
-  .cat-section, .prod-item { max-width:80rem; margin:0 auto; }
-  .prod-item-head { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-bottom:24px; }
-  .prod-item-h2 { font-size:clamp(1rem,2vw,1.3rem); font-weight:700; color:var(--navy); margin:0 0 3px; }
-  .prod-item-meta { color:#6b7280; font-size:13px; margin:0; }
-  .cat-btn-sm { display:inline-flex; align-items:center; min-height:38px; padding:7px 18px; background:var(--teal); color:white; font-size:13px; font-weight:600; border-radius:6px; text-decoration:none; border:none; cursor:pointer; white-space:nowrap; transition:background .15s; }
-  .cat-btn-sm:hover { background:var(--teal-dk); }
-  .color-grid { display:grid; grid-template-columns:repeat(1,minmax(0,1fr)); gap:16px; }
-  @media(min-width:640px)  { .color-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-  @media(min-width:1024px) { .color-grid { grid-template-columns:repeat(4,minmax(0,1fr)); } }
-  .color-card { display:block; text-decoration:none; background:white; border-radius:8px; border:1px solid var(--border); padding:14px 10px; text-align:center; cursor:pointer; transition:box-shadow .15s,transform .15s,border-color .15s; }
-  .color-card:hover { box-shadow:0 4px 16px rgba(0,0,0,.08); transform:translateY(-2px); border-color:var(--teal); }
-  .color-card-img { max-height:130px; width:auto; max-width:100%; object-fit:contain; display:block; margin:0 auto 8px; }
-  .color-card-label { font-size:11px; font-weight:600; color:#4A4A4A; margin:0; text-transform:uppercase; letter-spacing:.03em; }
-  .cat-cta { background:var(--navy); border-top:1px solid rgba(255,255,255,.06); padding:clamp(36px,5vw,56px) 0; }
-  .cat-cta-inner { max-width:80rem; margin:0 auto; padding:0 clamp(16px,4vw,32px); display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px; }
-  .cat-cta-text { flex:1; min-width:0; }
-  .cat-cta-h3 { font-size:clamp(1rem,2vw,1.25rem); font-weight:800; color:white; margin:0 0 8px; }
-  .cat-cta-p { color:rgba(255,255,255,.55); font-size:13.5px; line-height:1.65; margin:0; }
-  .cat-cta-btns { display:flex; flex-wrap:wrap; gap:10px; flex-shrink:0; }
-  .cat-btn-primary, .cat-btn-ghost { display:inline-flex; align-items:center; min-height:42px; padding:9px 22px; font-size:13.5px; font-weight:700; border-radius:6px; text-decoration:none; cursor:pointer; transition:background .18s; white-space:nowrap; }
-  .cat-btn-primary { background:var(--teal); color:white; border:1.5px solid var(--teal); }
-  .cat-btn-primary:hover { background:var(--teal-dk); border-color:var(--teal-dk); }
-  .cat-btn-ghost { background:rgba(255,255,255,.08); color:white; border:1.5px solid rgba(255,255,255,.18); }
-  .cat-btn-ghost:hover { background:rgba(255,255,255,.15); }
-  div::-webkit-scrollbar { display:none; }
-  @media(prefers-reduced-motion:reduce) { .color-card { transform:none !important; transition:none; } }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
 </style>
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', function () {
-    var mainPills = document.querySelectorAll('.main-pill');
-    var subPillBars = document.querySelectorAll('.sub-pill-bar');
-    var catSections = document.querySelectorAll('.cat-section');
-    function activateMainPill(catIdx) {
-      mainPills.forEach(function(p){ p.style.background='transparent'; p.style.color='#4A4A4A'; p.style.borderColor='#d1d5db'; });
-      var a=document.querySelector('.main-pill[data-cat="'+catIdx+'"]');
-      if(a){a.style.background='#0099AF';a.style.color='white';a.style.borderColor='#0099AF';}
-      subPillBars.forEach(function(b){b.style.display='none';});
-      var bar=document.querySelector('.sub-pill-bar[data-cat="'+catIdx+'"]');
-      if(bar)bar.style.display='flex';
-      catSections.forEach(function(s){s.style.display='none';});
-      var sec=document.querySelector('.cat-section[data-cat="'+catIdx+'"]');
-      if(sec)sec.style.display='block';
-      activateSubPill(catIdx,0);
-    }
-    function activateSubPill(catIdx,prodIdx) {
-      var subs=document.querySelectorAll('.sub-pill[data-cat="'+catIdx+'"]');
-      subs.forEach(function(p){p.style.background='transparent';p.style.color='#4A4A4A';p.style.borderColor='#d1d5db';});
-      var a=document.querySelector('.sub-pill[data-cat="'+catIdx+'"][data-prod="'+prodIdx+'"]');
-      if(a){a.style.background='#0099AF';a.style.color='white';a.style.borderColor='#0099AF';}
-      var items=document.querySelectorAll('.prod-item[data-cat="'+catIdx+'"]');
-      items.forEach(function(item){item.style.display='none';});
-      var t=document.querySelector('.prod-item[data-cat="'+catIdx+'"][data-prod="'+prodIdx+'"]');
-      if(t)t.style.display='block';
-    }
-    mainPills.forEach(function(pill){pill.addEventListener('click',function(){activateMainPill(this.getAttribute('data-cat'));});});
-    document.querySelectorAll('.sub-pill').forEach(function(pill){pill.addEventListener('click',function(){activateSubPill(this.getAttribute('data-cat'),this.getAttribute('data-prod'));});});
+    const tabs = document.querySelectorAll('.tab-btn');
+    const sections = document.querySelectorAll('.subcategory-section');
+    if (!tabs.length) return;
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        const idx = this.getAttribute('data-index');
+        tabs.forEach(t => {
+          t.classList.remove('text-[#1A1A2E]');
+          t.classList.add('text-gray-400');
+          t.querySelector('.tab-indicator').classList.remove('opacity-100');
+          t.querySelector('.tab-indicator').classList.add('opacity-0');
+        });
+        this.classList.remove('text-gray-400');
+        this.classList.add('text-[#1A1A2E]');
+        this.querySelector('.tab-indicator').classList.remove('opacity-0');
+        this.querySelector('.tab-indicator').classList.add('opacity-100');
+        sections.forEach(s => { s.style.display = 'none'; });
+        const targetSection = document.querySelector('.subcategory-section[data-index="'+idx+'"]');
+        if (targetSection) targetSection.style.display = 'block';
+      });
+    });
   });
 </script>
