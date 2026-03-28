@@ -8,143 +8,598 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 >
 
   <!-- Hero -->
-  <div class="bg-navy py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="font-glancyr text-4xl sm:text-5xl font-extrabold mb-4" style="color:#F5A623;">Certifications &amp; Quality</h1>
-      <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+  <section class="cert-hero">
+    <div class="cert-hero__dot-grid" aria-hidden="true"></div>
+    <svg class="cert-hero__checker" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="checker" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+          <polygon points="0,0 16,0 0,16" stroke="rgba(255,255,255,0.05)" stroke-width="1" fill="none"/>
+          <polygon points="16,32 32,32 32,16" stroke="rgba(255,255,255,0.05)" stroke-width="1" fill="none"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#checker)"/>
+    </svg>
+    <div class="cert-hero__content" data-aos="fade-up" data-aos-duration="700">
+      <div class="cert-hero__eyebrow">
+        <span class="cert-hero__gold-dot" aria-hidden="true"></span>
+        Quality &amp; Compliance
+      </div>
+      <h1 class="cert-hero__h1">
+        Standards We <span class="cert-hero__teal">Uphold.</span>
+      </h1>
+      <p class="cert-hero__sub">
         We supply products aligned with international quality standards and compliance requirements for Pakistan's export-oriented textile industry.
       </p>
     </div>
-  </div>
+  </section>
 
-  <!-- Quality Assurance Section -->
-  <section class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto text-center mb-14">
-        <h2 class="font-glancyr text-3xl font-bold text-primary mb-5">Our Quality Commitment</h2>
-        <p class="text-body-text leading-relaxed">
+  <!-- Quality Commitments -->
+  <section class="cert-quality">
+    <div class="cert-container">
+      <div class="cert-section-header" data-aos="fade-up" data-aos-duration="600">
+        <div class="cert-eyebrow">Our Process</div>
+        <h2 class="cert-h2">Quality at Every Stage.</h2>
+        <p class="cert-intro">
           Consistent quality is the foundation of SANMYRS's business. Our customers rely on us to supply products that perform the same way every batch, every order. We work only with suppliers and raw material sources that meet our quality criteria, and we carry out incoming inspection on every delivery to verify batch consistency before products are offered for sale.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="cert-steps">
         {[
           {
+            num: '01',
             icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>`,
             title: 'Batch Consistency',
             body: 'Every incoming batch is checked against reference standards before entering stock. Customers receive consistent-performing product across all orders.',
           },
           {
+            num: '02',
             icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>`,
             title: 'Technical Data Sheets',
             body: 'Technical data sheets are available for all products in our range, covering application guidance, curing parameters, compatibility, and safety information.',
           },
           {
+            num: '03',
             icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
             title: 'Compliance Grades',
             body: 'We stock formaldehyde-free, PFAS-free, and APEO-free grades across our textile auxiliaries range for customers with strict export-market compliance requirements.',
           },
           {
+            num: '04',
             icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>`,
             title: 'Supplier Traceability',
             body: 'We maintain full supplier traceability for all products in our range, enabling us to trace product origin and provide documentation for buyer compliance audits.',
           },
-        ].map(card => (
-          <div class="bg-page-bg rounded-2xl border border-gray-200 p-6 hover:shadow-md transition-shadow duration-200">
-            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-5">
-              <Fragment set:html={card.icon} />
+        ].map((step, i) => (
+          <div class="cert-step" data-aos="fade-up" data-aos-duration="600" data-aos-delay={String(i * 80)}>
+            <div class="cert-step__num">{step.num}</div>
+            <div class="cert-step__icon-wrap">
+              <Fragment set:html={step.icon} />
             </div>
-            <h3 class="text-primary font-bold mb-3">{card.title}</h3>
-            <p class="text-body-text text-sm leading-relaxed">{card.body}</p>
+            <h3 class="cert-step__title">{step.title}</h3>
+            <p class="cert-step__body">{step.body}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Certification Cards -->
-  <section class="py-16 bg-page-bg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="font-glancyr text-3xl font-bold text-primary mb-4">Standards &amp; Compliance Frameworks</h2>
-        <p class="text-body-text max-w-xl mx-auto">
+  <!-- Standards & Compliance -->
+  <section class="cert-standards">
+    <div class="cert-container">
+      <div class="cert-section-header" data-aos="fade-up" data-aos-duration="600">
+        <div class="cert-eyebrow">Standards</div>
+        <h2 class="cert-h2">International Compliance Frameworks.</h2>
+        <p class="cert-intro">
           Products in our range are available in grades aligned with the following international textile and chemical standards. Contact us to confirm compliance grade availability for specific products.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="cert-cards">
         {[
           {
             name: 'OEKO-TEX Standard 100',
             abbr: 'OEKO-TEX',
-            description: 'The world\'s leading textile safety label. We stock OEKO-TEX compliant grades of softeners, fixing agents, and finishing chemicals that meet all restricted substance limits under Annex 6 of the OEKO-TEX Standard 100.',
-            color: 'bg-blue-50 border-blue-200 text-blue-800',
-            badge: 'bg-blue-100 text-blue-700',
+            description: "The world's leading textile safety label. We stock OEKO-TEX compliant grades of softeners, fixing agents, and finishing chemicals that meet all restricted substance limits under Annex 6 of the OEKO-TEX Standard 100.",
+            accentColor: '#0369A1',
+            badgeBg: '#EFF6FF',
+            badgeText: '#1D4ED8',
           },
           {
             name: 'REACH Regulation (EU)',
             abbr: 'REACH',
             description: 'European chemical regulation restricting hazardous substances in textile articles. Our textile auxiliaries and printing chemical range includes REACH-compliant grades for manufacturers exporting to EU markets.',
-            color: 'bg-green-50 border-green-200 text-green-800',
-            badge: 'bg-green-100 text-green-700',
+            accentColor: '#059669',
+            badgeBg: '#ECFDF5',
+            badgeText: '#065F46',
           },
           {
             name: 'GOTS — Global Organic Textile Standard',
             abbr: 'GOTS',
             description: 'For customers processing certified organic cotton, we can supply GOTS-approved auxiliary chemistry including detergents, wetting agents, and softeners that meet GOTS Annex 6 approved inputs criteria.',
-            color: 'bg-emerald-50 border-emerald-200 text-emerald-800',
-            badge: 'bg-emerald-100 text-emerald-700',
+            accentColor: '#047857',
+            badgeBg: '#D1FAE5',
+            badgeText: '#064E3B',
           },
           {
             name: 'Bluesign System',
             abbr: 'bluesign',
             description: 'The bluesign standard for sustainable textile chemical management. We can source bluesign-approved chemical alternatives across our softener and finishing auxiliary range for certified sportswear and outdoor apparel supply chains.',
-            color: 'bg-sky-50 border-sky-200 text-sky-800',
-            badge: 'bg-sky-100 text-sky-700',
+            accentColor: '#0284C7',
+            badgeBg: '#E0F2FE',
+            badgeText: '#075985',
           },
-        ].map(cert => (
-          <div class={`rounded-2xl border p-7 flex flex-col ${cert.color}`}>
-            <div class="flex items-start justify-between mb-4">
-              <span class={`text-xs font-bold px-3 py-1 rounded-full ${cert.badge}`}>
-                {cert.abbr}
-              </span>
-              <div class="w-10 h-10 bg-white/60 rounded-xl flex items-center justify-center">
+        ].map((cert, i) => (
+          <div
+            class="cert-card"
+            style={`--accent: ${cert.accentColor}; --badge-bg: ${cert.badgeBg}; --badge-text: ${cert.badgeText};`}
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay={String(i * 80)}
+          >
+            <div class="cert-card__top">
+              <span class="cert-card__badge">{cert.abbr}</span>
+              <div class="cert-card__shield" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
             </div>
-            <h3 class="font-bold text-base mb-3">{cert.name}</h3>
-            <p class="text-sm leading-relaxed opacity-80 flex-grow">{cert.description}</p>
+            <h3 class="cert-card__name">{cert.name}</h3>
+            <p class="cert-card__desc">{cert.description}</p>
           </div>
         ))}
       </div>
 
-      <div class="mt-10 bg-white rounded-2xl border border-gray-200 p-8 text-center">
-        <p class="text-body-text text-sm max-w-2xl mx-auto">
-          <span class="font-semibold text-primary">Note:</span> Certification status is product-specific. Not all products in our range are available in all compliance grades. Contact our team with your specific compliance requirements and we will confirm product availability and provide relevant documentation.
+      <!-- Disclaimer -->
+      <div class="cert-disclaimer" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+        <div class="cert-disclaimer__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <p class="cert-disclaimer__text">
+          <strong>Note:</strong> Certification status is product-specific. Not all products in our range are available in all compliance grades. Contact our team with your specific compliance requirements and we will confirm product availability and provide relevant documentation.
         </p>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="bg-navy py-14">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-glancyr text-3xl font-bold text-white mb-5">Compliance Questions?</h2>
-      <p class="text-gray-300 mb-8">
-        Share your buyer's compliance requirements and we'll confirm which grades of our products meet them and provide the relevant documentation.
-      </p>
-      <a
-        href="/contact"
-        class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors duration-200 cursor-pointer"
-      >
-        Request Compliance Information
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </a>
+  <section class="cert-cta">
+    <div class="cert-container">
+      <div class="cert-cta__inner" data-aos="fade-up" data-aos-duration="700">
+        <div class="cert-cta__text">
+          <h2 class="cert-cta__h2">Compliance Questions?</h2>
+          <p class="cert-cta__sub">
+            Share your buyer's compliance requirements and we'll confirm which grades of our products meet them and provide the relevant documentation.
+          </p>
+        </div>
+        <div class="cert-cta__buttons">
+          <a href="/contact" class="cert-cta__btn cert-cta__btn--primary">
+            Request Compliance Information
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+          <a
+            href="https://wa.me/923183755197?text=Hi%2C%20I%20have%20a%20compliance%20question."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cert-cta__btn cert-cta__btn--ghost"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.528 5.852L.057 23.625a.75.75 0 00.918.918l5.773-1.471A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.718 9.718 0 01-4.952-1.352l-.354-.212-3.668.935.952-3.576-.232-.368A9.718 9.718 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+            </svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
 </BaseLayout>
+
+<style>
+  /* ── Shared ── */
+  .cert-container {
+    max-width: 1152px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+  @media (min-width: 640px)  { .cert-container { padding: 0 1.5rem; } }
+  @media (min-width: 1024px) { .cert-container { padding: 0 2rem; } }
+
+  .cert-eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #0099AF;
+    margin-bottom: 0.75rem;
+  }
+
+  .cert-section-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .cert-h2 {
+    font-family: 'UnisonPro', sans-serif;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    color: #1A1A2E;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .cert-intro {
+    color: #4A4A4A;
+    line-height: 1.75;
+    font-size: 1rem;
+  }
+
+  /* ── Hero ── */
+  .cert-hero {
+    position: relative;
+    background: #1A1A2E;
+    padding: clamp(5rem, 10vw, 7.5rem) 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .cert-hero__dot-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(0,153,175,0.18) 1.5px, transparent 1.5px);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+
+  .cert-hero__checker {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .cert-hero__content {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .cert-hero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(8px);
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+  }
+
+  .cert-hero__gold-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #F5A623;
+    flex-shrink: 0;
+  }
+
+  .cert-hero__h1 {
+    font-family: 'UnisonPro', sans-serif;
+    font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+  }
+
+  .cert-hero__teal {
+    background: linear-gradient(135deg, #0099AF 0%, #00C8E0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .cert-hero__sub {
+    color: rgba(255,255,255,0.70);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* ── Quality Commitments ── */
+  .cert-quality {
+    background: #ffffff;
+    padding: clamp(4rem, 8vw, 6rem) 0;
+  }
+
+  .cert-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px)  { .cert-steps { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .cert-steps { grid-template-columns: repeat(4, 1fr); } }
+
+  .cert-step {
+    background: #F5F7F6;
+    border: 1px solid #E5E7EB;
+    border-radius: 1rem;
+    padding: 1.75rem;
+    transition: box-shadow 200ms ease, transform 200ms ease;
+  }
+  .cert-step:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+    transform: translateY(-3px);
+  }
+
+  .cert-step__num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: rgba(0,153,175,0.12);
+    color: #0099AF;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    margin-bottom: 1rem;
+  }
+
+  .cert-step__icon-wrap {
+    width: 2.75rem;
+    height: 2.75rem;
+    background: rgba(0,153,175,0.10);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0099AF;
+    margin-bottom: 1rem;
+  }
+
+  .cert-step__title {
+    font-family: 'UnisonPro', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #1A1A2E;
+    margin-bottom: 0.625rem;
+  }
+
+  .cert-step__body {
+    color: #4A4A4A;
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+
+  /* ── Standards & Compliance ── */
+  .cert-standards {
+    background: #F5F7F6;
+    padding: clamp(4rem, 8vw, 6rem) 0;
+  }
+
+  .cert-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  @media (min-width: 768px)  { .cert-cards { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .cert-cards { grid-template-columns: repeat(4, 1fr); } }
+
+  .cert-card {
+    background: #ffffff;
+    border: 1px solid #E5E7EB;
+    border-radius: 0.75rem;
+    padding: 1.75rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 200ms ease, transform 200ms ease;
+  }
+  .cert-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent);
+    border-radius: 0.75rem 0 0 0.75rem;
+  }
+  .cert-card:hover {
+    box-shadow: 0 8px 28px rgba(0,0,0,0.10);
+    transform: translateY(-3px);
+  }
+
+  .cert-card__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .cert-card__badge {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    padding: 0.25rem 0.625rem;
+    border-radius: 999px;
+    background: var(--badge-bg);
+    color: var(--badge-text);
+  }
+
+  .cert-card__shield {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.5rem;
+    background: rgba(0,0,0,0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .cert-card__name {
+    font-family: 'UnisonPro', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #1A1A2E;
+    margin-bottom: 0.75rem;
+    line-height: 1.35;
+  }
+
+  .cert-card__desc {
+    font-size: 0.875rem;
+    color: #4A4A4A;
+    line-height: 1.65;
+    flex-grow: 1;
+  }
+
+  /* ── Disclaimer ── */
+  .cert-disclaimer {
+    background: #ffffff;
+    border: 1px solid #E5E7EB;
+    border-radius: 0.75rem;
+    padding: 1.5rem 2rem;
+    max-width: 48rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+    text-align: left;
+  }
+
+  .cert-disclaimer__icon {
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+    color: #0099AF;
+  }
+
+  .cert-disclaimer__text {
+    font-size: 0.875rem;
+    color: #4A4A4A;
+    line-height: 1.65;
+  }
+
+  .cert-disclaimer__text strong {
+    color: #0099AF;
+    font-weight: 700;
+  }
+
+  /* ── CTA ── */
+  .cert-cta {
+    background: #1A1A2E;
+    padding: clamp(3.5rem, 7vw, 5rem) 0;
+  }
+
+  .cert-cta__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+  }
+  @media (min-width: 768px) {
+    .cert-cta__inner {
+      flex-direction: row;
+      text-align: left;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .cert-cta__text {
+    flex: 1;
+  }
+
+  .cert-cta__h2 {
+    font-family: 'UnisonPro', sans-serif;
+    font-size: clamp(1.75rem, 3.5vw, 2.375rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+
+  .cert-cta__sub {
+    color: rgba(255,255,255,0.65);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 480px;
+  }
+
+  .cert-cta__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+  @media (min-width: 480px) {
+    .cert-cta__buttons {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .cert-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    border-radius: 0.75rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 180ms ease, box-shadow 180ms ease, transform 120ms ease;
+    white-space: nowrap;
+  }
+  .cert-cta__btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .cert-cta__btn--primary {
+    background: #0099AF;
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(0,153,175,0.35);
+  }
+  .cert-cta__btn--primary:hover {
+    background: #007d91;
+    box-shadow: 0 6px 20px rgba(0,153,175,0.45);
+  }
+
+  .cert-cta__btn--ghost {
+    background: transparent;
+    color: #ffffff;
+    border: 1.5px solid rgba(255,255,255,0.30);
+  }
+  .cert-cta__btn--ghost:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.55);
+  }
+</style>

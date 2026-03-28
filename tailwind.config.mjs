@@ -6,13 +6,14 @@ export default {
       colors: {
         primary: '#0099AF',
         'primary-dark': '#007A68',
-        navy: '#7A2A37',
+        navy: '#04091A',
         'page-bg': '#F5F7F6',
         'body-text': '#4A4A4A',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         glancyr: ['Outfit', 'sans-serif'],
+        unison: ['UnisonPro', 'sans-serif'],
         erasitc: ['ErasITC', 'sans-serif'],
       },
     },

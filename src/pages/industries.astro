@@ -7,252 +7,769 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="SANMYRS supplies screen printing studios, textile mills, digital print bureaus, and garment manufacturers across Pakistan with specialist printing inks and textile auxiliaries."
 >
 
-  <!-- Hero -->
-  <div class="bg-navy py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="font-glancyr text-4xl sm:text-5xl font-extrabold mb-4" style="color:#F5A623;">Industries We Serve</h1>
-      <p class="text-gray-300 text-lg max-w-2xl mx-auto">
-        SANMYRS products are trusted across Pakistan's full textile and printing manufacturing spectrum — from small garment decorators to large export mills.
+  <!-- ═══════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════ -->
+  <section class="industries-hero" aria-label="Industries hero">
+
+    <!-- Dot grid pattern -->
+    <svg class="hero-pattern hero-dots" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <pattern id="dots" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+          <circle cx="16" cy="16" r="1.5" fill="rgba(0,153,175,0.18)" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#dots)" />
+    </svg>
+
+    <!-- Checker / triangle pattern -->
+    <svg class="hero-pattern hero-checker" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <pattern id="checker" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <polygon points="0,0 20,0 0,20" stroke="rgba(255,255,255,0.05)" stroke-width="1" fill="none" />
+          <polygon points="40,0 40,20 20,0" stroke="rgba(255,255,255,0.05)" stroke-width="1" fill="none" />
+          <polygon points="0,40 20,40 0,20" stroke="rgba(255,255,255,0.05)" stroke-width="1" fill="none" />
+          <polygon points="40,40 40,20 20,40" stroke="rgba(255,255,255,0.05)" stroke-width="1" fill="none" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#checker)" />
+    </svg>
+
+    <div class="hero-inner">
+      <!-- Eyebrow pill -->
+      <div class="eyebrow-pill" data-aos="fade-up" data-aos-delay="80">
+        <span class="gold-dot"></span>
+        4 Industries
+      </div>
+
+      <!-- Heading -->
+      <h1 class="hero-heading font-unison" data-aos="fade-up" data-aos-delay="160">
+        Who We <span class="teal-gradient">Serve.</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="240">
+        From small garment decorators to large textile mills — SANMYRS products are trusted across Pakistan's full textile and printing manufacturing spectrum.
       </p>
     </div>
-  </div>
+  </section>
 
-  <!-- Industries Detail Sections -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
+  <!-- ═══════════════════════════════════════════════
+       INDUSTRIES GRID
+  ═══════════════════════════════════════════════ -->
+  <section class="industries-section" aria-label="Industries we serve">
+    <div class="section-container">
 
-    <!-- Screen Printing Studios -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-      <div>
-        <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-          </svg>
-        </div>
-        <h2 class="font-glancyr text-3xl font-bold text-primary mb-4">Screen Printing Studios</h2>
-        <p class="text-body-text leading-relaxed mb-5">
-          Whether you operate a single manual press for custom T-shirts or a multi-head automatic press facility for high-volume garment contracts, SANMYRS has the ink system, additive, and specialty effect product to meet your production requirements.
-        </p>
-        <p class="text-body-text leading-relaxed mb-6">
-          We stock plastisol inks for standard cotton printing, low-bleed formulations for polyester sportswear, high-density inks for raised 3D effects, and specialty inks including glow, metallic, glitter, and reflective. Our water-based range covers soft-hand fashion printing, discharge systems, and eco-compliant programs for international brands with environmental requirements.
-        </p>
-        <div class="space-y-2">
-          {[
-            'Custom T-shirt and garment decoration studios',
-            'Commercial screen printing for promotional and branded apparel',
-            'Sportswear and performance garment decoration',
-            'Fashion brand in-house and contract print facilities',
-          ].map(item => (
-            <div class="flex items-center gap-2 text-body-text text-sm">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              {item}
+      <!-- Section header -->
+      <div class="section-header" data-aos="fade-up" data-aos-delay="80">
+        <span class="section-eyebrow">Our Customers</span>
+        <h2 class="section-heading font-unison">Trusted Across the Industry.</h2>
+      </div>
+
+      <!-- 2×2 grid -->
+      <div class="industries-grid">
+
+        <!-- ── Card 01: Screen Printing Studios ── -->
+        <article class="industry-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="card-accent-bar"></div>
+          <div class="card-inner">
+
+            <!-- Top row: badge + title -->
+            <div class="card-top-row">
+              <span class="card-badge font-unison">01</span>
+              <h2 class="card-title font-unison">Screen Printing Studios</h2>
             </div>
-          ))}
-        </div>
-      </div>
-      <div class="bg-page-bg rounded-2xl border border-gray-200 p-8">
-        <h3 class="text-primary font-bold mb-5 text-lg">Relevant Products</h3>
-        <div class="space-y-3">
-          {[
-            { name: 'Plastisol Standard & High Opacity Inks', href: '/products/screen-printing' },
-            { name: 'Low Bleed Inks for Polyester', href: '/products/screen-printing' },
-            { name: 'Water-Based Soft-Hand Inks', href: '/products/screen-printing' },
-            { name: 'Specialty Effects: Metallic, Glitter, Glow', href: '/products/screen-printing' },
-            { name: 'Plastisol & WB Additives', href: '/products/screen-printing' },
-          ].map(p => (
-            <a href={p.href} class="flex items-center gap-2 text-primary text-sm hover:text-primary-dark transition-colors duration-150">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-              {p.name}
-            </a>
-          ))}
-        </div>
-      </div>
-    </div>
 
-    <div class="border-t border-gray-200"></div>
-
-    <!-- Textile Mills & Dyeing Units -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-      <div class="order-2 lg:order-1 bg-page-bg rounded-2xl border border-gray-200 p-8">
-        <h3 class="text-primary font-bold mb-5 text-lg">Relevant Products</h3>
-        <div class="space-y-3">
-          {[
-            { name: 'Wetting, Leveling & Dispersing Agents', href: '/products/textile-auxiliaries' },
-            { name: 'Sequestering & pH Buffer Chemistry', href: '/products/textile-auxiliaries' },
-            { name: 'Dye Fixing & Soaping Agents', href: '/products/textile-auxiliaries' },
-            { name: 'Silicone & Amino Silicone Softeners', href: '/products/textile-auxiliaries' },
-            { name: 'Enzymes, Wrinkle-Free Resins & Functional Finishes', href: '/products/textile-auxiliaries' },
-          ].map(p => (
-            <a href={p.href} class="flex items-center gap-2 text-primary text-sm hover:text-primary-dark transition-colors duration-150">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            <!-- Icon -->
+            <div class="card-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" class="card-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
               </svg>
-              {p.name}
-            </a>
-          ))}
-        </div>
-      </div>
-      <div class="order-1 lg:order-2">
-        <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-          </svg>
-        </div>
-        <h2 class="font-glancyr text-3xl font-bold text-primary mb-4">Textile Mills &amp; Dyeing Units</h2>
-        <p class="text-body-text leading-relaxed mb-5">
-          Pakistan's textile export industry demands chemical consistency and technical reliability. SANMYRS's textile auxiliaries range covers every stage of the wet processing workflow — from pre-treatment and dyeing through to finishing and functional treatments.
-        </p>
-        <p class="text-body-text leading-relaxed mb-6">
-          For dyeing departments, we supply wetting agents, sequestrants, leveling agents, dispersants, and dye fixing chemistry. For finishing, our range includes silicone softeners across all grades (PDMS, hydrophilic, amino-functional), wrinkle-free resins, water repellents, anti-pilling enzymes, and antistatic agents for every fiber type.
-        </p>
-        <div class="space-y-2">
-          {[
-            'Knitting, woven, and non-woven fabric dyeing units',
-            'Garment dyeing and finishing departments',
-            'Yarn package and beam dyeing operations',
-            'Technical textile and functional fabric finishing mills',
-          ].map(item => (
-            <div class="flex items-center gap-2 text-body-text text-sm">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              {item}
             </div>
-          ))}
-        </div>
-      </div>
-    </div>
 
-    <div class="border-t border-gray-200"></div>
+            <!-- Description -->
+            <p class="card-desc">
+              Whether you operate a single manual press for custom T-shirts or a multi-head automatic press facility for high-volume garment contracts, SANMYRS has the ink system, additive, and specialty effect product to meet your production requirements.
+            </p>
+            <p class="card-desc">
+              We stock plastisol inks for standard cotton printing, low-bleed formulations for polyester sportswear, high-density inks for raised 3D effects, and specialty inks including glow, metallic, glitter, and reflective. Our water-based range covers soft-hand fashion printing, discharge systems, and eco-compliant programs for international brands with environmental requirements.
+            </p>
 
-    <!-- Digital Print Studios -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-      <div>
-        <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-          </svg>
-        </div>
-        <h2 class="font-glancyr text-3xl font-bold text-primary mb-4">Digital Print Studios</h2>
-        <p class="text-body-text leading-relaxed mb-5">
-          Digital textile printing is one of Pakistan's fastest growing production segments, driven by demand for short-run, fast-turnaround, and sustainable printing alternatives to conventional screen and rotary printing. SANMYRS supplies the full range of digital textile inks — reactive, disperse, sublimation, acid, and pigment — along with pretreatment liquors and maintenance cleaning solutions.
-        </p>
-        <p class="text-body-text leading-relaxed mb-6">
-          For wide-format graphic and advertising studios, we supply eco solvent, hard solvent, UV, latex, pigment, and dye inkjet inks for Epson, Roland, Mimaki, Mutoh, and HP compatible systems, covering all major signage, banner, and display media types.
-        </p>
-        <div class="space-y-2">
-          {[
-            'Digital textile print bureaus on cotton, polyester, silk, and wool',
-            'Sublimation printing on polyester sportswear and fashion',
-            'Wide-format signage, banner, and display graphics studios',
-            'On-demand, short-run sampling and production print facilities',
-          ].map(item => (
-            <div class="flex items-center gap-2 text-body-text text-sm">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              {item}
+            <!-- Checklist -->
+            <ul class="card-checklist">
+              {[
+                'Custom T-shirt and garment decoration studios',
+                'Commercial screen printing for promotional and branded apparel',
+                'Sportswear and performance garment decoration',
+                'Fashion brand in-house and contract print facilities',
+              ].map(item => (
+                <li class="checklist-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="check-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <!-- Relevant Products -->
+            <div class="relevant-products">
+              <p class="relevant-label">Relevant Products</p>
+              <div class="product-links">
+                {[
+                  { name: 'Plastisol Standard & High Opacity Inks', href: '/products/screen-printing' },
+                  { name: 'Low Bleed Inks for Polyester', href: '/products/screen-printing' },
+                  { name: 'Water-Based Soft-Hand Inks', href: '/products/screen-printing' },
+                  { name: 'Specialty Effects: Metallic, Glitter, Glow', href: '/products/screen-printing' },
+                  { name: 'Plastisol & WB Additives', href: '/products/screen-printing' },
+                ].map(p => (
+                  <a href={p.href} class="product-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                    {p.name}
+                  </a>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
-      </div>
-      <div class="bg-page-bg rounded-2xl border border-gray-200 p-8">
-        <h3 class="text-primary font-bold mb-5 text-lg">Relevant Products</h3>
-        <div class="space-y-3">
-          {[
-            { name: 'Reactive & Acid Digital Textile Inks', href: '/products/digital-printing' },
-            { name: 'Sublimation & Disperse Inks', href: '/products/digital-printing' },
-            { name: 'Pigment Textile Inks', href: '/products/digital-printing' },
-            { name: 'Eco Solvent, UV & Latex Inks', href: '/products/digital-printing' },
-            { name: 'Pretreatment & Cleaning Solutions', href: '/products/digital-printing' },
-          ].map(p => (
-            <a href={p.href} class="flex items-center gap-2 text-primary text-sm hover:text-primary-dark transition-colors duration-150">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-              {p.name}
-            </a>
-          ))}
-        </div>
-      </div>
-    </div>
 
-    <div class="border-t border-gray-200"></div>
+          </div>
+        </article>
 
-    <!-- Garment Manufacturers -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-      <div class="order-2 lg:order-1 bg-page-bg rounded-2xl border border-gray-200 p-8">
-        <h3 class="text-primary font-bold mb-5 text-lg">Relevant Products</h3>
-        <div class="space-y-3">
-          {[
-            { name: 'Plastisol PU & Stretch Inks', href: '/products/screen-printing' },
-            { name: 'Water-Based Eco Printing Systems', href: '/products/screen-printing' },
-            { name: 'Reflective & Hi-Vis Safety Inks', href: '/products/screen-printing' },
-            { name: 'Amino Silicone & Reactive Softeners', href: '/products/textile-auxiliaries' },
-            { name: 'Water Repellent & Functional Finishes', href: '/products/textile-auxiliaries' },
-          ].map(p => (
-            <a href={p.href} class="flex items-center gap-2 text-primary text-sm hover:text-primary-dark transition-colors duration-150">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-              {p.name}
-            </a>
-          ))}
-        </div>
-      </div>
-      <div class="order-1 lg:order-2">
-        <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-          </svg>
-        </div>
-        <h2 class="font-glancyr text-3xl font-bold text-primary mb-4">Garment Manufacturers</h2>
-        <p class="text-body-text leading-relaxed mb-5">
-          Pakistan's garment export sector faces increasing compliance demands from international buyers — OEKO-TEX compliance, formaldehyde-free chemistry, PFAS-free DWR finishes, and eco-certified ink systems. SANMYRS supports export-oriented manufacturers by stocking products that meet these requirements alongside standard commercial grades.
-        </p>
-        <p class="text-body-text leading-relaxed mb-6">
-          For garment printing, we supply stretch-compatible plastisol PU inks, low-bleed inks for polyester, water-based eco systems, and hi-visibility reflective inks for safety workwear. For finishing, our softener range — including amino silicone, reactive, and hydrophilic grades — provides the hand-feel specification required by international brand buyers.
-        </p>
-        <div class="space-y-2">
-          {[
-            'Apparel export manufacturers for EU and US markets',
-            'Sportswear and activewear brands and their contract manufacturers',
-            'Workwear, uniform, and safety garment producers',
-            'Fashion brands requiring soft-hand eco-printing capabilities',
-          ].map(item => (
-            <div class="flex items-center gap-2 text-body-text text-sm">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              {item}
+        <!-- ── Card 02: Textile Mills & Dyeing Units ── -->
+        <article class="industry-card" data-aos="fade-up" data-aos-delay="160">
+          <div class="card-accent-bar"></div>
+          <div class="card-inner">
+
+            <div class="card-top-row">
+              <span class="card-badge font-unison">02</span>
+              <h2 class="card-title font-unison">Textile Mills &amp; Dyeing Units</h2>
             </div>
-          ))}
-        </div>
+
+            <div class="card-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" class="card-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </div>
+
+            <p class="card-desc">
+              Pakistan's textile export industry demands chemical consistency and technical reliability. SANMYRS's textile auxiliaries range covers every stage of the wet processing workflow — from pre-treatment and dyeing through to finishing and functional treatments.
+            </p>
+            <p class="card-desc">
+              For dyeing departments, we supply wetting agents, sequestrants, leveling agents, dispersants, and dye fixing chemistry. For finishing, our range includes silicone softeners across all grades (PDMS, hydrophilic, amino-functional), wrinkle-free resins, water repellents, anti-pilling enzymes, and antistatic agents for every fiber type.
+            </p>
+
+            <ul class="card-checklist">
+              {[
+                'Knitting, woven, and non-woven fabric dyeing units',
+                'Garment dyeing and finishing departments',
+                'Yarn package and beam dyeing operations',
+                'Technical textile and functional fabric finishing mills',
+              ].map(item => (
+                <li class="checklist-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="check-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <div class="relevant-products">
+              <p class="relevant-label">Relevant Products</p>
+              <div class="product-links">
+                {[
+                  { name: 'Wetting, Leveling & Dispersing Agents', href: '/products/textile-auxiliaries' },
+                  { name: 'Sequestering & pH Buffer Chemistry', href: '/products/textile-auxiliaries' },
+                  { name: 'Dye Fixing & Soaping Agents', href: '/products/textile-auxiliaries' },
+                  { name: 'Silicone & Amino Silicone Softeners', href: '/products/textile-auxiliaries' },
+                  { name: 'Enzymes, Wrinkle-Free Resins & Functional Finishes', href: '/products/textile-auxiliaries' },
+                ].map(p => (
+                  <a href={p.href} class="product-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                    {p.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- ── Card 03: Digital Print Studios ── -->
+        <article class="industry-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="card-accent-bar"></div>
+          <div class="card-inner">
+
+            <div class="card-top-row">
+              <span class="card-badge font-unison">03</span>
+              <h2 class="card-title font-unison">Digital Print Studios</h2>
+            </div>
+
+            <div class="card-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" class="card-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+
+            <p class="card-desc">
+              Digital textile printing is one of Pakistan's fastest growing production segments, driven by demand for short-run, fast-turnaround, and sustainable printing alternatives to conventional screen and rotary printing. SANMYRS supplies the full range of digital textile inks — reactive, disperse, sublimation, acid, and pigment — along with pretreatment liquors and maintenance cleaning solutions.
+            </p>
+            <p class="card-desc">
+              For wide-format graphic and advertising studios, we supply eco solvent, hard solvent, UV, latex, pigment, and dye inkjet inks for Epson, Roland, Mimaki, Mutoh, and HP compatible systems, covering all major signage, banner, and display media types.
+            </p>
+
+            <ul class="card-checklist">
+              {[
+                'Digital textile print bureaus on cotton, polyester, silk, and wool',
+                'Sublimation printing on polyester sportswear and fashion',
+                'Wide-format signage, banner, and display graphics studios',
+                'On-demand, short-run sampling and production print facilities',
+              ].map(item => (
+                <li class="checklist-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="check-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <div class="relevant-products">
+              <p class="relevant-label">Relevant Products</p>
+              <div class="product-links">
+                {[
+                  { name: 'Reactive & Acid Digital Textile Inks', href: '/products/digital-printing' },
+                  { name: 'Sublimation & Disperse Inks', href: '/products/digital-printing' },
+                  { name: 'Pigment Textile Inks', href: '/products/digital-printing' },
+                  { name: 'Eco Solvent, UV & Latex Inks', href: '/products/digital-printing' },
+                  { name: 'Pretreatment & Cleaning Solutions', href: '/products/digital-printing' },
+                ].map(p => (
+                  <a href={p.href} class="product-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                    {p.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- ── Card 04: Garment Manufacturers ── -->
+        <article class="industry-card" data-aos="fade-up" data-aos-delay="160">
+          <div class="card-accent-bar"></div>
+          <div class="card-inner">
+
+            <div class="card-top-row">
+              <span class="card-badge font-unison">04</span>
+              <h2 class="card-title font-unison">Garment Manufacturers</h2>
+            </div>
+
+            <div class="card-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" class="card-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+            </div>
+
+            <p class="card-desc">
+              Pakistan's garment export sector faces increasing compliance demands from international buyers — OEKO-TEX compliance, formaldehyde-free chemistry, PFAS-free DWR finishes, and eco-certified ink systems. SANMYRS supports export-oriented manufacturers by stocking products that meet these requirements alongside standard commercial grades.
+            </p>
+            <p class="card-desc">
+              For garment printing, we supply stretch-compatible plastisol PU inks, low-bleed inks for polyester, water-based eco systems, and hi-visibility reflective inks for safety workwear. For finishing, our softener range — including amino silicone, reactive, and hydrophilic grades — provides the hand-feel specification required by international brand buyers.
+            </p>
+
+            <ul class="card-checklist">
+              {[
+                'Apparel export manufacturers for EU and US markets',
+                'Sportswear and activewear brands and their contract manufacturers',
+                'Workwear, uniform, and safety garment producers',
+                'Fashion brands requiring soft-hand eco-printing capabilities',
+              ].map(item => (
+                <li class="checklist-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="check-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <div class="relevant-products">
+              <p class="relevant-label">Relevant Products</p>
+              <div class="product-links">
+                {[
+                  { name: 'Plastisol PU & Stretch Inks', href: '/products/screen-printing' },
+                  { name: 'Water-Based Eco Printing Systems', href: '/products/screen-printing' },
+                  { name: 'Reflective & Hi-Vis Safety Inks', href: '/products/screen-printing' },
+                  { name: 'Amino Silicone & Reactive Softeners', href: '/products/textile-auxiliaries' },
+                  { name: 'Water Repellent & Functional Finishes', href: '/products/textile-auxiliaries' },
+                ].map(p => (
+                  <a href={p.href} class="product-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                    {p.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+      </div><!-- /industries-grid -->
+    </div><!-- /section-container -->
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CTA
+  ═══════════════════════════════════════════════ -->
+  <section class="cta-section" aria-label="Call to action">
+    <div class="cta-inner">
+
+      <!-- Left: text -->
+      <div class="cta-text" data-aos="fade-up" data-aos-delay="80">
+        <h2 class="cta-heading font-unison">Serving Your Industry.</h2>
+        <p class="cta-sub">
+          Tell us your production process and we'll recommend the right products for your specific needs. Our technical team has hands-on experience across all four sectors.
+        </p>
       </div>
-    </div>
 
-  </div>
+      <!-- Right: buttons -->
+      <div class="cta-buttons" data-aos="fade-up" data-aos-delay="160">
+        <a href="/contact" class="btn-primary-cta">
+          Speak to Our Team
+          <svg xmlns="http://www.w3.org/2000/svg" class="btn-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a
+          href="https://wa.me/923183755197?text=Hello%2C%20I%27d%20like%20to%20discuss%20your%20products%20for%20my%20industry."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-ghost-cta"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="btn-icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          WhatsApp Us
+        </a>
+      </div>
 
-  <!-- CTA -->
-  <section class="bg-navy py-14">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-glancyr text-3xl font-bold text-white mb-5">Serving Your Industry</h2>
-      <p class="text-gray-300 mb-8">
-        Tell us your production process and we'll recommend the right products for your specific needs.
-      </p>
-      <a
-        href="/contact"
-        class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors duration-200 cursor-pointer"
-      >
-        Speak to Our Team
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </a>
     </div>
   </section>
 
 </BaseLayout>
+
+<style>
+  /* ── Hero ── */
+  .industries-hero {
+    position: relative;
+    background-color: #1A1A2E;
+    padding: clamp(72px, 10vw, 112px) 1rem;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .hero-dots  { z-index: 1; }
+  .hero-checker { z-index: 2; }
+
+  .hero-inner {
+    position: relative;
+    z-index: 3;
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* Eyebrow pill */
+  .eyebrow-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(8px);
+    color: rgba(255,255,255,0.85);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 999px;
+  }
+
+  .gold-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #F5A623;
+    flex-shrink: 0;
+  }
+
+  /* Hero heading */
+  .hero-heading {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  .teal-gradient {
+    background: linear-gradient(135deg, #0099AF 0%, #00c6e0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    color: rgba(255,255,255,0.70);
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.7;
+    max-width: 580px;
+    margin: 0;
+  }
+
+  /* ── Industries Section ── */
+  .industries-section {
+    background-color: #F5F7F6;
+    padding: clamp(64px, 8vw, 96px) 1rem;
+  }
+
+  .section-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  /* Section header */
+  .section-header {
+    text-align: center;
+    margin-bottom: clamp(40px, 5vw, 64px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #0099AF;
+    background: rgba(0,153,175,0.08);
+    padding: 4px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(0,153,175,0.2);
+  }
+
+  .section-heading {
+    font-size: clamp(1.875rem, 4vw, 2.75rem);
+    font-weight: 800;
+    color: #1A1A2E;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  /* Grid */
+  .industries-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  @media (min-width: 768px) {
+    .industries-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Card */
+  .industry-card {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+  }
+
+  .industry-card:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.10);
+    transform: translateY(-3px);
+  }
+
+  /* Left accent bar */
+  .card-accent-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #0099AF;
+  }
+
+  .card-inner {
+    padding: 32px 28px 28px 32px;
+  }
+
+  /* Top row: badge + title */
+  .card-top-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .card-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,153,175,0.10);
+    color: #0099AF;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 4px 12px;
+    border-radius: 999px;
+    flex-shrink: 0;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #1A1A2E;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  /* Icon box */
+  .card-icon-box {
+    width: 56px;
+    height: 56px;
+    background: rgba(0,153,175,0.08);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0099AF;
+    margin-bottom: 18px;
+    flex-shrink: 0;
+  }
+
+  .card-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Description */
+  .card-desc {
+    color: #4A4A4A;
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    margin: 0 0 12px 0;
+  }
+
+  /* Checklist */
+  .card-checklist {
+    list-style: none;
+    margin: 16px 0 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: #4A4A4A;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .check-icon {
+    width: 16px;
+    height: 16px;
+    color: #0099AF;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* Relevant Products sidebar */
+  .relevant-products {
+    background: #F5F7F6;
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 20px;
+  }
+
+  .relevant-label {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: #0099AF;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 10px 0;
+  }
+
+  .product-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .product-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #0099AF;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: color 0.15s ease, gap 0.15s ease;
+  }
+
+  .product-link:hover {
+    color: #007a8c;
+    gap: 9px;
+  }
+
+  .link-arrow {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    transition: transform 0.15s ease;
+  }
+
+  .product-link:hover .link-arrow {
+    transform: translateX(2px);
+  }
+
+  /* ── CTA Section ── */
+  .cta-section {
+    background-color: #1A1A2E;
+    padding: clamp(56px, 7vw, 80px) 1rem;
+  }
+
+  .cta-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+  }
+
+  @media (min-width: 768px) {
+    .cta-inner {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+    }
+  }
+
+  .cta-text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .cta-heading {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    margin: 0 0 12px 0;
+  }
+
+  .cta-sub {
+    color: rgba(255,255,255,0.65);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+    max-width: 520px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 480px) {
+    .cta-buttons {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .btn-primary-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    background: #0099AF;
+    color: #ffffff;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .btn-primary-cta:hover {
+    background: #007a8c;
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    background: transparent;
+    color: #ffffff;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    border-radius: 10px;
+    border: 1.5px solid rgba(255,255,255,0.35);
+    text-decoration: none;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .btn-ghost-cta:hover {
+    border-color: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.06);
+    transform: translateY(-1px);
+  }
+
+  .btn-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+</style>

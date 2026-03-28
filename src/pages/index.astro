@@ -7,7 +7,6 @@ const schema = {
   "name": "SANMYRS",
   "url": "https://www.sanmyrs.com",
   "telephone": "+92-318-3755197",
-  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "F-126, Lucknow Society, Korangi",
@@ -20,278 +19,971 @@ const schema = {
     "contactType": "sales"
   }
 };
+
+const categories = [
+  {
+    title: 'Screen Printing',
+    href: '/products/screen-printing',
+    count: '38 Products',
+    accentColor: '#0099AF',
+    tags: ['Plastisol Inks', 'Water-Based', 'Specialty Effects', 'Additives'],
+    desc: 'Plastisol & water-based inks, specialty effects, and additives for garment and textile screen printing.',
+    icon: `<svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="5" width="20" height="11" rx="2"/><path d="M7 19h10M9.5 16v3M14.5 16v3"/><path d="M6 9.5h12M6 12.5h8"/></svg>`,
+  },
+  {
+    title: 'Screen Chemicals & Accessories',
+    href: '/products/screen-chemicals-accessories',
+    count: '33 Products',
+    accentColor: '#D97706',
+    tags: ['Emulsions', 'Degreasers', 'Mesh & Squeegees', 'Accessories'],
+    desc: 'Emulsions, degreasers, screen openers, mesh, squeegees and all essentials for screen preparation.',
+    icon: `<svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 2h4l1 6H9L10 2z"/><path d="M9 8c-2 1.5-4 3.5-4 7a7 7 0 0014 0c0-3.5-2-5.5-4-7"/><line x1="12" y1="8" x2="12" y2="13"/></svg>`,
+  },
+  {
+    title: 'Digital Printing',
+    href: '/products/digital-printing',
+    count: '14 Products',
+    accentColor: '#0099AF',
+    tags: ['Reactive & Acid', 'Sublimation', 'UV & Eco Solvent', 'DTF'],
+    desc: 'Reactive, disperse, sublimation, UV, and latex inks for textile inkjet and wide-format printers.',
+    icon: `<svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M7 7V5a2 2 0 012-2h6a2 2 0 012 2v2"/><circle cx="7.5" cy="12" r="1"/><path d="M11 12h5"/><path d="M11 15h3"/></svg>`,
+  },
+  {
+    title: 'Textile Auxiliaries',
+    href: '/products/textile-auxiliaries',
+    count: '22 Products',
+    accentColor: '#D97706',
+    tags: ['Pre-Treatment', 'Softeners', 'Functional Finishes', 'Enzymes'],
+    desc: 'Pre-treatment agents, softeners, and finishing chemicals used in garment and textile printing operations.',
+    icon: `<svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3C8.5 3 5 6 5 10v4c0 4 3.1 7 7 7s7-3 7-7v-4c0-4-3.5-7-7-7z"/><path d="M8.5 10.5c1.5-1.2 5.5-1.2 7 0"/><path d="M8.5 14c1.5 1.2 5.5 1.2 7 0"/></svg>`,
+  },
+];
+
+const stats = [
+  { value: '18+', label: 'Years in Business', icon: `<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>` },
+  { value: '80+', label: 'Products in Stock', icon: `<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>` },
+  { value: '500+', label: 'Clients Served', icon: `<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>` },
+  { value: 'KHI', label: 'Ready Stock, Karachi', icon: `<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>` },
+];
+
+const whyPoints = [
+  {
+    title: 'Verified Quality',
+    body: 'Every product tested for performance consistency before dispatch. Your production runs predictably, without defects.',
+    icon: `<svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>`,
+  },
+  {
+    title: 'Technical Support',
+    body: 'Application guidance, troubleshooting, and process recommendations. Not just product supply — real expertise.',
+    icon: `<svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>`,
+  },
+  {
+    title: 'Fast Fulfillment',
+    body: "Ready stock of core products in Karachi's industrial corridor. Same-day and next-day order fulfillment available.",
+    icon: `<svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`,
+  },
+];
+
+const industries = [
+  'Screen Printing Studios', 'Garment Decorators', 'Digital Print Bureaus',
+  'Sportswear Printers', 'Workwear Producers', 'Uniform Manufacturers',
+  'Print-on-Demand Studios', 'Industrial Print Shops', 'Apparel Branding Companies', 'Promotional Product Printers',
+];
+
+const trustBadges = [
+  { label: 'ISO Compliant', detail: 'Certified Products' },
+  { label: 'Since 2002', detail: '18+ Years Experience' },
+  { label: 'Karachi Stock', detail: 'Same-Day Dispatch' },
+  { label: 'B2B Focused', detail: 'Bulk Orders Welcome' },
+];
 ---
+
 <BaseLayout
   title="SANMYRS | Printing Inks & Textile Chemicals — Karachi, Pakistan"
   description="SANMYRS supplies professional screen printing inks, digital printing inks, and textile auxiliaries to Pakistan's textile and garment industry. 18+ years of expertise. Inquire from Karachi."
   schema={schema}
 >
 
-  <!-- Hero Section -->
-  <section class="relative overflow-hidden min-h-[600px] flex items-center" style="background-color:#7A2A37;">
-    <!-- Geometric SVG Background -->
-    <div class="absolute inset-0 opacity-40 pointer-events-none" aria-hidden="true">
-      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" stroke-width="1"/>
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#grid)" />
-        <circle cx="10%" cy="20%" r="120" fill="#0099AF" opacity="0.15"/>
-        <circle cx="85%" cy="75%" r="200" fill="#0099AF" opacity="0.10"/>
-        <circle cx="60%" cy="10%" r="80" fill="#0099AF" opacity="0.12"/>
-        <polygon points="90%,5% 100%,25% 80%,25%" fill="#0099AF" opacity="0.08"/>
-        <polygon points="5%,80% 15%,95% 0%,95%" fill="#0099AF" opacity="0.08"/>
-      </svg>
-    </div>
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════ -->
+  <section class="hero-wrap" aria-label="Hero">
 
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-      <div data-aos="fade-down" class="inline-flex items-center gap-2 bg-primary/20 border border-primary/30 text-primary text-sm font-medium px-4 py-2 rounded-full mb-6">
-        <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
-        Trusted by Pakistan's Textile Industry Since 2002
+    <!-- Subtle dot grid -->
+    <svg class="hero-dots" aria-hidden="true" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="dotgrid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" fill="rgba(0,153,175,0.18)"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#dotgrid)"/>
+    </svg>
+
+    <!-- Teal glow — static, no animation -->
+    <div class="hero-glow-top" aria-hidden="true"></div>
+    <div class="hero-glow-bottom" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+
+      <!-- ── Left col ── -->
+      <div class="hero-text">
+
+        <div data-aos="fade-down" class="hero-eyebrow">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          Since 2002 &nbsp;·&nbsp; Karachi, Pakistan
+        </div>
+
+        <h1 data-aos="fade-up" data-aos-delay="80" class="hero-h1 font-unison">
+          The Chemistry<br/>
+          <span class="hero-h1-teal">Behind Every Print.</span>
+        </h1>
+
+        <p data-aos="fade-up" data-aos-delay="160" class="hero-desc">
+          Pakistan's specialist supplier of screen printing inks, digital inks, and textile auxiliaries — trusted by 500+ printing companies and studios since 2002.
+        </p>
+
+        <div data-aos="fade-up" data-aos-delay="220" class="hero-actions">
+          <a href="/products" class="btn-teal">Browse Products</a>
+          <a href="/contact" class="btn-ghost">Request a Sample</a>
+        </div>
+
+        <!-- Trust badges row -->
+        <div data-aos="fade-up" data-aos-delay="300" class="trust-row">
+          {trustBadges.map(b => (
+            <div class="trust-badge">
+              <span class="trust-label">{b.label}</span>
+              <span class="trust-detail">{b.detail}</span>
+            </div>
+          ))}
+        </div>
+
       </div>
 
-      <h1 data-aos="fade-up" data-aos-delay="100" class="font-glancyr text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-        Premium Inks &amp; Chemicals<br/>
-        <span style="color:#F5A623;">For Every Print Process</span>
-      </h1>
+      <!-- ── Right col: image + stats ── -->
+      <div data-aos="fade-left" data-aos-delay="180" class="hero-right">
 
-      <p data-aos="fade-up" data-aos-delay="200" class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-        SANMYRS supplies screen printing inks, digital printing inks, and textile auxiliaries to manufacturers, garment decorators, and dyeing units across Pakistan.
-      </p>
-
-      <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a
-          href="/products"
-          class="px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors duration-200 cursor-pointer text-base shadow-lg shadow-primary/30"
-        >
-          Browse Products
-        </a>
-        <a
-          href="/contact"
-          class="px-8 py-4 bg-white/10 text-white font-semibold rounded-xl hover:bg-white/20 transition-colors duration-200 cursor-pointer text-base border border-white/20"
-        >
-          Request a Sample
-        </a>
-      </div>
-
-      <!-- Stats Row -->
-      <div data-aos="fade-up" data-aos-delay="400" class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto">
-        {[
-          { value: '18+', label: 'Years in Business' },
-          { value: '50+', label: 'Product SKUs' },
-          { value: '4', label: 'Product Categories' },
-          { value: '500+', label: 'Satisfied Clients' },
-        ].map(stat => (
-          <div class="text-center">
-            <div class="text-3xl font-extrabold text-primary">{stat.value}</div>
-            <div class="text-sm text-gray-400 mt-1">{stat.label}</div>
+        <!-- Image frame -->
+        <div class="hero-img-frame">
+          <div class="hero-img-inner" role="img" aria-label="SANMYRS product image — coming soon">
+            <svg width="52" height="52" fill="none" viewBox="0 0 24 24" stroke="rgba(0,153,175,0.35)" stroke-width="0.8" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <path d="M21 15l-5-5L5 21"/>
+            </svg>
+            <span class="img-placeholder-text">Hero image</span>
           </div>
-        ))}
+
+          <!-- Corner accent lines -->
+          <span class="corner-tl" aria-hidden="true"></span>
+          <span class="corner-br" aria-hidden="true"></span>
+        </div>
+
+        <!-- Stats strip under image -->
+        <div class="stats-strip">
+          {stats.map(s => (
+            <div class="stat-item">
+              <span class="stat-icon" set:html={s.icon}></span>
+              <span class="stat-value font-unison">{s.value}</span>
+              <span class="stat-label">{s.label}</span>
+            </div>
+          ))}
+        </div>
+
       </div>
+
     </div>
+
+    <!-- Angled bottom edge -->
+    <div class="hero-edge" aria-hidden="true"></div>
   </section>
 
-  <!-- Product Categories Section -->
-  <section class="py-20 bg-page-bg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div data-aos="fade-up" class="text-center mb-12">
-        <h2 class="font-glancyr text-3xl sm:text-4xl font-bold text-primary mb-4">Our Product Range</h2>
-        <p class="text-body-text max-w-xl mx-auto">
-          Four comprehensive categories covering every stage of textile printing and dyeing production.
-        </p>
+
+  <!-- ═══════════════════════════════════════════
+       PRODUCT CATEGORIES
+  ════════════════════════════════════════════ -->
+  <section class="section-light" aria-labelledby="cats-heading">
+    <div class="container">
+
+      <div data-aos="fade-up" class="section-hd">
+        <p class="eyebrow-text">What We Supply</p>
+        <h2 id="cats-heading" class="section-h2 font-unison">
+          Four Categories.<br/>Every Stage of Production.
+        </h2>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {[
-          {
-            title: 'Screen Printing',
-            href: '/products/screen-printing',
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>`,
-            description: 'Plastisol inks, water-based inks, and specialty additives for garment decoration and textile screen printing.',
-            count: '38 Products',
-            features: ['Plastisol Inks', 'Water-Based Inks', 'Specialty Effects', 'Additives'],
-          },
-          {
-            title: 'Screen Chemicals & Accessories',
-            href: '/products/screen-chemicals-accessories',
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>`,
-            description: 'Screen emulsions, degreasers, screen openers, mesh, squeegees, and all essential chemicals for screen preparation.',
-            count: '33 Products',
-            features: ['Screen Emulsions', 'Screen Chemicals', 'Mesh & Squeegees', 'Accessories'],
-          },
-          {
-            title: 'Digital Printing',
-            href: '/products/digital-printing',
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`,
-            description: 'Reactive, disperse, sublimation, and UV inks for textile inkjet systems and wide-format graphic printers.',
-            count: '14 Products',
-            features: ['Reactive & Acid Inks', 'Sublimation Inks', 'UV & Eco Solvent', 'Pretreatments'],
-          },
-          {
-            title: 'Textile Auxiliaries',
-            href: '/products/textile-auxiliaries',
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>`,
-            description: 'Comprehensive dyeing auxiliaries, softeners, and functional finishing chemicals for modern textile mills.',
-            count: '22 Products',
-            features: ['Dyeing Auxiliaries', 'Silicone Softeners', 'Functional Finishes', 'Enzymes'],
-          },
-        ].map((cat, i) => (
-          <a href={cat.href} data-aos="fade-up" data-aos-delay={String(i * 100)} class="bg-white rounded-2xl border border-gray-200 p-8 hover:shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col group" style="text-decoration:none;">
-            <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-              <Fragment set:html={cat.icon} />
-            </div>
-            <h3 class="text-xl font-bold text-primary mb-3">{cat.title}</h3>
-            <p class="text-body-text text-sm leading-relaxed mb-5 flex-grow">{cat.description}</p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              {cat.features.map(f => (
-                <span class="text-xs bg-page-bg text-body-text px-3 py-1 rounded-full border border-gray-200">{f}</span>
-              ))}
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">{cat.count}</span>
-              <span class="text-primary font-medium text-sm group-hover:text-primary-dark transition-colors duration-150 inline-flex items-center gap-1">
-                View All
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      <div class="cat-grid">
+        {categories.map((cat, i) => (
+          <a href={cat.href}
+             data-aos="fade-up"
+             data-aos-delay={String(i * 70)}
+             class="cat-card"
+             style={`--accent:${cat.accentColor};`}
+             aria-label={`${cat.title} — ${cat.count}`}>
+
+            <!-- Accent bar -->
+            <div class="cat-bar" aria-hidden="true"></div>
+
+            <div class="cat-body">
+              <!-- Header row -->
+              <div class="cat-header">
+                <span class="cat-icon" aria-hidden="true" set:html={cat.icon}></span>
+                <span class="cat-count">{cat.count}</span>
+              </div>
+
+              <!-- Image slot -->
+              <div class="cat-img" role="img" aria-label={`${cat.title} product image`}>
+                <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="rgba(0,0,0,0.12)" stroke-width="1" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <path d="M21 15l-5-5L5 21"/>
                 </svg>
+              </div>
+
+              <h3 class="cat-title font-unison">{cat.title}</h3>
+              <p class="cat-desc">{cat.desc}</p>
+
+              <div class="cat-tags" aria-label="Product subcategories">
+                {cat.tags.map(tag => (
+                  <span class="cat-tag">{tag}</span>
+                ))}
+              </div>
+
+              <span class="cat-cta">
+                View Products
+                <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </span>
             </div>
+
           </a>
         ))}
       </div>
+
     </div>
   </section>
 
-  <!-- Why SANMYRS Section -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div data-aos="fade-up" class="text-center mb-12">
-        <h2 class="font-glancyr text-3xl sm:text-4xl font-bold text-primary mb-4">Why Choose SANMYRS</h2>
-        <p class="text-body-text max-w-xl mx-auto">
-          Built on 18 years of supplying Pakistan's most demanding textile and printing operations.
+
+  <!-- ═══════════════════════════════════════════
+       WHY SANMYRS
+  ════════════════════════════════════════════ -->
+  <section class="section-dark" aria-labelledby="why-heading">
+    <div class="container">
+
+      <div data-aos="fade-up" class="section-hd">
+        <p class="eyebrow-text">Why SANMYRS</p>
+        <h2 id="why-heading" class="section-h2 font-unison" style="color:white;">
+          Built for Serious<br/>Production Runs.
+        </h2>
+        <p class="why-lead">
+          18 years supplying Pakistan's printing industry means we know what production downtime costs and what ink consistency is worth.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {[
-          {
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>`,
-            title: 'Verified Quality',
-            body: 'Every product is tested for performance consistency before dispatch, ensuring your production runs predictably and without defects.',
-          },
-          {
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`,
-            title: 'Technical Support',
-            body: 'Our experienced team provides application guidance, troubleshooting, and process recommendations — not just product supply.',
-          },
-          {
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`,
-            title: 'Fast Turnaround',
-            body: 'Located in Karachi\'s industrial corridor, we maintain ready stock of core products for same-day and next-day order fulfillment.',
-          },
-          {
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
-            title: 'Wide Product Range',
-            body: 'From basic plastisol inks to advanced dyeing auxiliaries, SANMYRS covers every chemical need across screen printing, digital printing, and textile finishing.',
-          },
-        ].map((card, i) => (
-          <div data-aos="fade-up" data-aos-delay={String(i * 100)} class="bg-page-bg rounded-2xl p-6 border border-gray-200 hover:shadow-md transition-shadow duration-200">
-            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-5">
-              <Fragment set:html={card.icon} />
-            </div>
-            <h3 class="text-primary font-bold mb-3">{card.title}</h3>
-            <p class="text-body-text text-sm leading-relaxed">{card.body}</p>
+      <div class="why-grid">
+        {whyPoints.map((pt, i) => (
+          <div data-aos="fade-up" data-aos-delay={String(i * 90)} class="why-card">
+            <div class="why-icon-wrap" aria-hidden="true" set:html={pt.icon}></div>
+            <h3 class="why-title">{pt.title}</h3>
+            <p class="why-body">{pt.body}</p>
           </div>
+        ))}
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="200" class="why-cta-row">
+        <a href="/contact" class="btn-teal">Talk to Our Team</a>
+        <a href="/products" class="btn-ghost">Browse All Products</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       INDUSTRIES TICKER
+  ════════════════════════════════════════════ -->
+  <section class="section-mid" aria-labelledby="ind-heading">
+    <div class="container ticker-header">
+      <div data-aos="fade-right">
+        <p class="eyebrow-text">Who We Serve</p>
+        <h2 id="ind-heading" class="section-h2 font-unison" style="font-size:clamp(1.5rem,3vw,2.2rem);">
+          Trusted across<br/>Pakistan's industry.
+        </h2>
+      </div>
+      <a href="/industries" data-aos="fade-left" class="btn-outline-teal">See all industries →</a>
+    </div>
+
+    <!-- Scrolling ticker — full width -->
+    <div class="ticker-outer" aria-label="Industries we serve">
+      <div class="ticker-track">
+        <!-- Doubled for seamless loop -->
+        {[...industries, ...industries].map(ind => (
+          <span class="ticker-item">
+            <span class="ticker-dot" aria-hidden="true"></span>
+            {ind}
+          </span>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Industries We Serve -->
-  <section class="py-20 bg-page-bg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div data-aos="fade-up" class="text-center mb-12">
-        <h2 class="font-glancyr text-3xl sm:text-4xl font-bold text-primary mb-4">Industries We Serve</h2>
-        <p class="text-body-text max-w-xl mx-auto">
-          SANMYRS products are trusted across the full spectrum of Pakistan's textile and print manufacturing sector.
-        </p>
-      </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {[
-          {
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>`,
-            title: 'Screen Printing Studios',
-            desc: 'T-shirt printers, garment decorators, and promotional merchandise producers.',
-          },
-          {
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>`,
-            title: 'Textile Mills',
-            desc: 'Dyeing units, finishing departments, and knitting and weaving mills.',
-          },
-          {
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`,
-            title: 'Digital Print Studios',
-            desc: 'Digital textile print bureaus, sublimation printers, and wide-format signage studios.',
-          },
-          {
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>`,
-            title: 'Garment Manufacturers',
-            desc: 'Apparel exporters, sportswear brands, and workwear manufacturers requiring specialist print and finishing chemicals.',
-          },
-        ].map((item, i) => (
-          <div data-aos="fade-up" data-aos-delay={String(i * 100)} class="bg-white rounded-2xl p-6 border border-gray-200 hover:border-primary/40 hover:shadow-md transition-all duration-200 text-center">
-            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mx-auto mb-4">
-              <Fragment set:html={item.icon} />
-            </div>
-            <h3 class="text-primary font-semibold mb-2 text-sm sm:text-base">{item.title}</h3>
-            <p class="text-body-text text-xs sm:text-sm leading-relaxed">{item.desc}</p>
-          </div>
-        ))}
-      </div>
+  <!-- ═══════════════════════════════════════════
+       CTA
+  ════════════════════════════════════════════ -->
+  <section class="cta-section" aria-label="Call to action">
+    <div class="container">
+      <div class="cta-inner">
 
-      <div class="text-center mt-8">
-        <a href="/industries" class="text-primary font-medium hover:text-primary-dark transition-colors duration-150 inline-flex items-center gap-1">
-          Learn More About Industries We Serve
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
+        <div data-aos="fade-right" class="cta-text">
+          <p class="eyebrow-text" style="color:rgba(255,255,255,0.55);">Get Started Today</p>
+          <h2 class="cta-h2 font-unison">
+            Ready to upgrade<br/>your production?
+          </h2>
+          <p class="cta-sub">
+            Product recommendations, technical data sheets, or samples — we respond within 24 hours on working days.
+          </p>
+        </div>
 
-  <!-- Contact CTA Banner -->
-  <section class="py-20 bg-navy">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 data-aos="fade-up" class="font-glancyr text-3xl sm:text-4xl font-bold text-white mb-5">
-        Ready to Upgrade Your Production?
-      </h2>
-      <p data-aos="fade-up" data-aos-delay="100" class="text-gray-300 text-lg mb-10 leading-relaxed">
-        Contact our team for product recommendations, technical data sheets, or to request samples. We respond within 24 hours on working days.
-      </p>
-      <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a
-          href="/contact"
-          class="px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors duration-200 cursor-pointer text-base shadow-lg shadow-primary/30"
-        >
-          Get a Quote Today
-        </a>
-        <a
-          href="https://wa.me/923183755197"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="px-8 py-4 bg-white/10 text-white font-semibold rounded-xl hover:bg-white/20 transition-colors duration-200 cursor-pointer text-base border border-white/20 inline-flex items-center gap-2"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-[#25D366]">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-          WhatsApp Us
-        </a>
+        <div data-aos="fade-left" data-aos-delay="100" class="cta-actions">
+          <a href="/contact" class="btn-white">Get a Quote</a>
+          <a href="https://wa.me/923183755197"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="btn-ghost-white"
+             aria-label="Contact us on WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="color:#4ade80;flex-shrink:0;" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
 
 </BaseLayout>
+
+
+<style>
+/* ─────────────────────────────────────────────
+   TOKENS
+───────────────────────────────────────────── */
+:root {
+  --teal:        #0099AF;
+  --teal-dark:   #007A8A;
+  --teal-light:  #00C4D4;
+  --amber:       #D97706;
+  --amber-light: #F59E0B;
+  --dark:        #112952;
+  --dark-card:   #1A3660;
+  --dark-border: rgba(255,255,255,0.07);
+  --page-bg:     #F8FAFC;
+  --text:        #0F172A;
+  --muted:       #475569;
+  --border:      #E2E8F0;
+  --white:       #FFFFFF;
+}
+
+/* ─────────────────────────────────────────────
+   RESET + BASE
+───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 32px);
+}
+
+.section-light { background: var(--page-bg); padding: clamp(64px, 8vw, 96px) 0; }
+.section-dark  { background: var(--dark);    padding: clamp(64px, 8vw, 96px) 0; }
+.section-mid   { background: var(--white);   padding: clamp(56px, 7vw, 80px) 0; }
+
+.section-hd { margin-bottom: 48px; }
+.eyebrow-text {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 0 0 10px;
+}
+.section-h2 {
+  font-size: clamp(1.9rem, 3.8vw, 3rem);
+  font-weight: 800;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* ─────────────────────────────────────────────
+   BUTTONS — min 44px touch targets
+───────────────────────────────────────────── */
+.btn-teal, .btn-ghost, .btn-outline-teal,
+.btn-white, .btn-ghost-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 11px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.15s ease, opacity 0.18s ease;
+}
+.btn-teal {
+  background: var(--teal);
+  color: var(--white);
+  border: 1.5px solid var(--teal);
+}
+.btn-teal:hover { background: var(--teal-dark); border-color: var(--teal-dark); transform: translateY(-1px); }
+.btn-teal:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid rgba(255,255,255,0.2);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.08); }
+.btn-ghost:focus-visible { outline: 3px solid var(--white); outline-offset: 3px; }
+
+.btn-outline-teal {
+  background: transparent;
+  color: var(--teal);
+  border: 1.5px solid var(--teal);
+}
+.btn-outline-teal:hover { background: var(--teal); color: var(--white); }
+.btn-outline-teal:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+
+.btn-white {
+  background: var(--white);
+  color: var(--dark);
+  border: 1.5px solid var(--white);
+}
+.btn-white:hover { opacity: 0.9; transform: translateY(-1px); }
+.btn-white:focus-visible { outline: 3px solid var(--white); outline-offset: 3px; }
+
+.btn-ghost-white {
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  border: 1.5px solid rgba(255,255,255,0.18);
+}
+.btn-ghost-white:hover { background: rgba(255,255,255,0.18); }
+.btn-ghost-white:focus-visible { outline: 3px solid rgba(255,255,255,0.6); outline-offset: 3px; }
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .btn-teal:hover, .btn-white:hover { transform: none; }
+}
+
+/* ─────────────────────────────────────────────
+   HERO
+───────────────────────────────────────────── */
+.hero-wrap {
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+  padding: clamp(96px, 12vw, 140px) 0 0;
+}
+
+.hero-dots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.hero-glow-top {
+  position: absolute;
+  top: -160px; right: -120px;
+  width: 640px; height: 640px;
+  background: radial-gradient(circle, rgba(0,153,175,0.12) 0%, transparent 68%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero-glow-bottom {
+  position: absolute;
+  bottom: -80px; left: -60px;
+  width: 480px; height: 480px;
+  background: radial-gradient(circle, rgba(217,119,6,0.08) 0%, transparent 68%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 clamp(16px,4vw,32px) clamp(72px,9vw,112px);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 56px;
+  align-items: center;
+}
+@media (min-width: 900px) { .hero-inner { grid-template-columns: 1fr 1fr; gap: 64px; } }
+
+/* Eyebrow */
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,153,175,0.1);
+  border: 1px solid rgba(0,153,175,0.22);
+  color: var(--teal);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-radius: 100px;
+  margin-bottom: 26px;
+}
+.eyebrow-dot {
+  width: 6px; height: 6px;
+  background: var(--teal);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Title */
+.hero-h1 {
+  font-size: clamp(2.6rem, 5vw, 4.8rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.06;
+  margin: 0 0 20px;
+  letter-spacing: -0.02em;
+}
+.hero-h1-teal {
+  /* Gradient text */
+  background: linear-gradient(125deg, var(--teal) 0%, var(--teal-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-desc {
+  font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+  color: #94a3b8;
+  max-width: 480px;
+  line-height: 1.75;
+  margin: 0 0 32px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 44px;
+}
+
+/* Trust badges */
+.trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.trust-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 8px 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+}
+.trust-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.04em;
+}
+.trust-detail { font-size: 10px; color: #64748b; }
+
+/* Right col */
+.hero-right { display: flex; flex-direction: column; gap: 16px; }
+
+.hero-img-frame {
+  position: relative;
+  border-radius: 14px;
+  overflow: visible;
+}
+
+.hero-img-inner {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 14px;
+  background: linear-gradient(140deg, #152e52 0%, #0d2240 100%);
+  border: 1px solid rgba(0,153,175,0.14);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 0 80px rgba(0,153,175,0.07), 0 24px 64px rgba(0,0,0,0.4);
+}
+.img-placeholder-text {
+  font-size: 10px;
+  color: rgba(148,163,184,0.35);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Corner accents */
+.corner-tl, .corner-br {
+  position: absolute;
+  width: 28px; height: 28px;
+  pointer-events: none;
+}
+.corner-tl {
+  top: -6px; left: -6px;
+  border-top: 2px solid var(--teal);
+  border-left: 2px solid var(--teal);
+  border-radius: 4px 0 0 0;
+}
+.corner-br {
+  bottom: -6px; right: -6px;
+  border-bottom: 2px solid var(--amber);
+  border-right: 2px solid var(--amber);
+  border-radius: 0 0 4px 0;
+}
+
+/* Stats strip */
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  overflow: hidden;
+}
+@media (max-width: 500px) { .stats-strip { grid-template-columns: repeat(2, 1fr); } }
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 8px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+}
+.stat-item:last-child { border-right: none; }
+.stat-icon { color: var(--teal); display: flex; }
+.stat-value {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 9px;
+  color: #64748b;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+/* Angled bottom edge */
+.hero-edge {
+  position: relative;
+  height: 52px;
+  background: var(--page-bg);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+@media (max-width: 640px) { .hero-edge { height: 32px; } }
+
+
+/* ─────────────────────────────────────────────
+   PRODUCT CATEGORIES
+───────────────────────────────────────────── */
+.cat-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 640px)  { .cat-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .cat-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.cat-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.cat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 52px rgba(0,0,0,0.1);
+  border-color: var(--accent, var(--teal));
+}
+.cat-card:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) { .cat-card:hover { transform: none; } }
+
+.cat-bar {
+  height: 3px;
+  background: var(--accent, var(--teal));
+  flex-shrink: 0;
+}
+
+.cat-body {
+  padding: 22px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.cat-icon { color: var(--accent, var(--teal)); display: flex; }
+.cat-count {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--accent, var(--teal));
+  background: color-mix(in srgb, var(--accent, var(--teal)) 12%, transparent);
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+/* Image slot */
+.cat-img {
+  width: 100%;
+  height: 110px;
+  background: #F1F5F9;
+  border: 1px dashed #CBD5E1;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cat-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+.cat-desc {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0 0 14px;
+  flex: 1;
+}
+.cat-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 16px;
+}
+.cat-tag {
+  font-size: 10px;
+  color: var(--muted);
+  background: #F1F5F9;
+  border: 1px solid var(--border);
+  padding: 3px 9px;
+  border-radius: 3px;
+}
+.cat-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent, var(--teal));
+  margin-top: auto;
+}
+
+
+/* ─────────────────────────────────────────────
+   WHY SANMYRS
+───────────────────────────────────────────── */
+.why-lead {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.7;
+  max-width: 540px;
+  margin: 16px 0 0;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 768px) { .why-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.why-card {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 12px;
+  padding: 32px 28px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.why-card:hover {
+  background: rgba(0,153,175,0.07);
+  border-color: rgba(0,153,175,0.22);
+}
+
+.why-icon-wrap {
+  color: var(--teal);
+  margin-bottom: 18px;
+  display: flex;
+}
+.why-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 10px;
+}
+.why-body {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.why-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 48px;
+}
+
+
+/* ─────────────────────────────────────────────
+   TICKER
+───────────────────────────────────────────── */
+.ticker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.ticker-outer {
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+  background: var(--white);
+  /* Never show scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.ticker-outer::-webkit-scrollbar { display: none; }
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 28s linear infinite;
+  will-change: transform;
+}
+.ticker-track:hover { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: reduce) {
+  /* Slow down instead of stopping — no scrollbar */
+  .ticker-track { animation-duration: 80s; }
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 28px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  white-space: nowrap;
+}
+.ticker-dot {
+  width: 5px; height: 5px;
+  background: var(--teal);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+
+/* ─────────────────────────────────────────────
+   CTA
+───────────────────────────────────────────── */
+.cta-section {
+  background: linear-gradient(130deg, #006677 0%, var(--teal) 45%, #00BDD6 100%);
+  padding: clamp(72px, 9vw, 108px) 0;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Ccircle cx='1' cy='1' r='1' fill='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.cta-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  align-items: flex-start;
+}
+@media (min-width: 768px) {
+  .cta-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+  }
+}
+
+.cta-text { flex: 1; }
+.cta-h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--white);
+  margin: 10px 0 14px;
+  line-height: 1.12;
+}
+.cta-sub {
+  color: rgba(255,255,255,0.72);
+  font-size: 15px;
+  margin: 0;
+  line-height: 1.65;
+}
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+
+/* ─────────────────────────────────────────────
+   KEYFRAMES
+───────────────────────────────────────────── */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+</style>

@@ -14,128 +14,148 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
     { label: 'Digital Printing', href: '/products/digital-printing' },
   ]}
 >
-  <!-- Header -->
-  <div style="background:#7A2A37; padding:clamp(32px,6vw,56px) 0;">
-    <div style="max-width:80rem; margin:0 auto; padding:0 24px;">
-      <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px;">
-        <div>
-          <h1 class="font-glancyr" style="font-size:clamp(1.75rem,5vw,2.25rem); font-weight:800; color:#F5A623; margin:0 0 8px 0;">Digital Printing</h1>
-          <p style="color:#d1d5db; max-width:36rem; margin:0;">
-            High-performance inks for textile digital printing systems and wide-format graphic inkjet printers, covering all major dye and ink chemistries.
-          </p>
-        </div>
-        <span style="background:rgba(0,153,175,0.2); color:#0099AF; font-size:13px; font-weight:600; padding:6px 16px; border-radius:999px; border:1px solid rgba(0,153,175,0.3); white-space:nowrap;">
-          {totalProducts} Products
-        </span>
+
+  <!-- ── Header ── -->
+  <header class="cat-header">
+    <div class="cat-header-dots" aria-hidden="true">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="hd" width="32" height="32" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" fill="rgba(0,153,175,0.15)"/>
+        </pattern></defs>
+        <rect width="100%" height="100%" fill="url(#hd)"/>
+      </svg>
+    </div>
+    <div class="cat-header-inner">
+      <div class="cat-header-left">
+        <p class="cat-eyebrow">Digital Printing</p>
+        <h1 class="cat-h1 font-unison">Inks &amp; Systems</h1>
+        <p class="cat-desc">High-performance inks for textile digital printing systems and wide-format graphic inkjet printers, covering all major dye and ink chemistries.</p>
+      </div>
+      <div class="cat-header-right">
+        <span class="cat-stat-num font-unison">{totalProducts}</span>
+        <span class="cat-stat-label">Products</span>
       </div>
     </div>
-  </div>
+  </header>
 
-  <!-- Sticky Nav -->
-  <div style="background:white; border-bottom:1px solid #e5e7eb; position:sticky; top:64px; z-index:30;">
-    <div style="max-width:80rem; margin:0 auto; padding:12px 24px 0;">
-
-      <!-- Level 1: Main category pills -->
-      <div style="display:flex; flex-wrap:nowrap; gap:8px; overflow-x:auto; scrollbar-width:none; padding-bottom:12px;">
+  <!-- ── Sticky Nav (two-level) ── -->
+  <div class="cat-nav">
+    <div class="cat-nav-inner">
+      <div class="cat-pills-scroll" style="padding-bottom:8px;">
         {category.subcategories.map((sub, i) => (
-          <button
-            class="main-pill"
-            data-cat={String(i)}
-            style={`flex-shrink:0; padding:6px 16px; border-radius:999px; border:1px solid; font-size:13px; font-weight:500; cursor:pointer; transition:background 0.15s, color 0.15s, border-color 0.15s; background:${i === 0 ? '#0099AF' : 'white'}; color:${i === 0 ? 'white' : '#1A1A2E'}; border-color:${i === 0 ? '#0099AF' : '#e5e7eb'};`}
-          >
-            {sub.name} ({sub.products.length})
+          <button class="main-pill" data-cat={String(i)}
+            style={`background:${i===0?'#0099AF':'transparent'}; color:${i===0?'white':'#4A4A4A'}; border-color:${i===0?'#0099AF':'#d1d5db'};`}>
+            {sub.name}
+            <span class="pill-count">{sub.products.length}</span>
           </button>
         ))}
       </div>
-
-      <!-- Level 2: Sub-pills per main category -->
       {category.subcategories.map((sub, i) => (
-        <div
-          class="sub-pill-bar"
-          data-cat={String(i)}
-          style={`display:${i === 0 ? 'flex' : 'none'}; flex-wrap:nowrap; gap:8px; overflow-x:auto; scrollbar-width:none; padding-bottom:12px; border-top:1px solid #f3f4f6;`}
-        >
+        <div class="sub-pill-bar" data-cat={String(i)}
+          style={`display:${i===0?'flex':'none'}; flex-wrap:nowrap; gap:6px; overflow-x:auto; scrollbar-width:none; padding-bottom:10px; border-top:1px solid #f3f4f6;`}>
           {sub.products.map((product, j) => (
-            <button
-              class="sub-pill"
-              data-cat={String(i)}
-              data-prod={String(j)}
-              style={`flex-shrink:0; margin-top:10px; padding:5px 14px; border-radius:999px; border:1px solid; font-size:12px; font-weight:500; cursor:pointer; transition:background 0.15s, color 0.15s, border-color 0.15s; background:${j === 0 ? '#0099AF' : 'white'}; color:${j === 0 ? 'white' : '#4A4A4A'}; border-color:${j === 0 ? '#0099AF' : '#e5e7eb'};`}
-            >
+            <button class="sub-pill" data-cat={String(i)} data-prod={String(j)}
+              style={`flex-shrink:0; margin-top:8px; padding:5px 14px; border-radius:6px; border:1px solid; font-size:12px; font-weight:500; cursor:pointer; transition:background .15s,color .15s,border-color .15s; background:${j===0?'#0099AF':'transparent'}; color:${j===0?'white':'#4A4A4A'}; border-color:${j===0?'#0099AF':'#d1d5db'};`}>
               {product.name}
             </button>
           ))}
         </div>
       ))}
-
     </div>
   </div>
 
-  <!-- Product Sections -->
-  <div style="max-width:80rem; margin:0 auto; padding:48px 24px;">
+  <!-- ── Product Sections ── -->
+  <div class="cat-body">
     {category.subcategories.map((sub, i) => (
-      <div class="cat-section" data-cat={String(i)} style={i === 0 ? 'display:block;' : 'display:none;'}>
+      <div class="cat-section" data-cat={String(i)} style={i===0?'display:block;':'display:none;'}>
         {sub.products.map((product, j) => (
-          <div class="prod-item" data-cat={String(i)} data-prod={String(j)} style={j === 0 ? 'display:block;' : 'display:none;'}>
-
-            <!-- Product Header -->
-            <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-bottom:28px;">
+          <div class="prod-item" data-cat={String(i)} data-prod={String(j)} style={j===0?'display:block;':'display:none;'}>
+            <div class="prod-item-head">
               <div>
-                <h2 class="font-glancyr" style="font-size:1.4rem; font-weight:700; color:#1A1A2E; margin:0 0 4px 0;">{product.name}</h2>
-                <p style="color:#6b7280; font-size:13px; margin:0;">{product.images ? product.images.length : 1} variants available</p>
+                <h2 class="prod-item-h2 font-unison">{product.name}</h2>
+                <p class="prod-item-meta">{product.images ? product.images.length : 1} variants available</p>
               </div>
-              <a href={`/products/digital-printing/${product.slug}`} style="padding:8px 20px; background:#0099AF; color:white; font-weight:600; border-radius:10px; text-decoration:none; font-size:13px; white-space:nowrap;">
-                View Details →
-              </a>
+              <a href={`/products/digital-printing/${product.slug}`} class="cat-btn-sm">View Details →</a>
             </div>
-
-            <!-- Color Image Grid -->
             {product.images ? (
               <div class="color-grid">
                 {product.images.map(img => (
-                  <a href={`/products/digital-printing/${product.slug}?variant=${encodeURIComponent(img.label)}`} style="display:block; text-decoration:none; background:white; border-radius:12px; border:1px solid #e5e7eb; padding:16px 12px; text-align:center; transition:box-shadow 0.15s, transform 0.15s; cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.1)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
-                    <img
-                      src={img.src}
-                      alt={`${product.name} — ${img.label}`}
-                      loading="lazy"
-                      style="max-height:140px; width:auto; max-width:100%; object-fit:contain; display:block; margin:0 auto 10px;"
-                    />
-                    <p style="font-size:11px; font-weight:600; color:#4A4A4A; margin:0; text-transform:uppercase; letter-spacing:0.03em;">{img.label}</p>
+                  <a href={`/products/digital-printing/${product.slug}?variant=${encodeURIComponent(img.label)}`} class="color-card">
+                    <img src={img.src} alt={`${product.name} — ${img.label}`} loading="lazy" class="color-card-img"/>
+                    <p class="color-card-label">{img.label}</p>
                   </a>
                 ))}
               </div>
             ) : (
               <div style="text-align:center; padding:48px; color:#9ca3af;">No images available</div>
             )}
-
           </div>
         ))}
       </div>
     ))}
   </div>
 
-  <!-- CTA -->
-  <div style="background:white; border-top:1px solid #e5e7eb; padding:48px 0;">
-    <div style="max-width:48rem; margin:0 auto; padding:0 24px; text-align:center;">
-      <h3 style="font-size:1.125rem; font-weight:700; color:#1A1A2E; margin:0 0 12px 0;">Unsure which ink suits your printer?</h3>
-      <p style="color:#4A4A4A; margin:0 0 24px 0;">Tell us your printer model and substrate — we'll recommend the correct ink chemistry and provide technical data sheets.</p>
-      <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
-        <a href="/contact" style="padding:10px 24px; background:#0099AF; color:white; font-weight:600; border-radius:12px; text-decoration:none; font-size:14px;">Get a Recommendation</a>
-        <a href="https://wa.me/923183755197" target="_blank" rel="noopener noreferrer" style="padding:10px 24px; border:1px solid #0099AF; color:#0099AF; font-weight:600; border-radius:12px; text-decoration:none; font-size:14px;">WhatsApp Us</a>
+  <!-- ── CTA ── -->
+  <div class="cat-cta">
+    <div class="cat-cta-inner">
+      <div class="cat-cta-text">
+        <h3 class="cat-cta-h3 font-unison">Unsure which ink suits your printer?</h3>
+        <p class="cat-cta-p">Tell us your printer model and substrate — we'll recommend the correct ink chemistry and provide technical data sheets.</p>
+      </div>
+      <div class="cat-cta-btns">
+        <a href="/contact" class="cat-btn-primary">Get a Recommendation</a>
+        <a href="https://wa.me/923183755197" target="_blank" rel="noopener noreferrer" class="cat-btn-ghost">WhatsApp Us</a>
       </div>
     </div>
   </div>
+
 </ProductLayout>
 
 <style>
-  .color-grid {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    gap: 24px;
-  }
-  @media (min-width: 640px)  { .color-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (min-width: 1024px) { .color-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-  div::-webkit-scrollbar { display: none; }
+  :root { --teal:#0099AF; --teal-dk:#007A8A; --navy:#1A1A2E; --page-bg:#F5F7F6; --border:#e5e7eb; }
+  .cat-header { position:relative; background:var(--navy); overflow:hidden; padding:clamp(36px,5vw,56px) 0; }
+  .cat-header-dots { position:absolute; inset:0; pointer-events:none; opacity:.65; }
+  .cat-header-inner { position:relative; max-width:80rem; margin:0 auto; padding:0 clamp(16px,4vw,32px); display:flex; align-items:center; justify-content:space-between; gap:24px; }
+  .cat-header-left { flex:1; min-width:0; }
+  .cat-eyebrow { font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--teal); margin:0 0 6px; }
+  .cat-h1 { font-size:clamp(1.5rem,3vw,2rem); font-weight:800; color:white; margin:0 0 10px; line-height:1.15; }
+  .cat-desc { color:rgba(255,255,255,.55); font-size:13.5px; line-height:1.65; margin:0; max-width:34rem; }
+  .cat-header-right { flex-shrink:0; display:flex; flex-direction:column; align-items:center; justify-content:center; background:rgba(0,153,175,.12); border:1px solid rgba(0,153,175,.25); border-radius:12px; padding:18px 28px; text-align:center; min-width:100px; }
+  .cat-stat-num { font-size:clamp(2rem,3.5vw,2.8rem); font-weight:800; color:var(--teal); line-height:1; }
+  .cat-stat-label { font-size:11px; font-weight:600; color:rgba(255,255,255,.5); letter-spacing:.08em; text-transform:uppercase; margin-top:4px; }
+  .cat-nav { background:white; border-bottom:1px solid var(--border); position:sticky; top:64px; z-index:30; }
+  .cat-nav-inner { max-width:80rem; margin:0 auto; padding:10px clamp(16px,4vw,32px) 0; }
+  .cat-pills-scroll { display:flex; flex-wrap:nowrap; gap:6px; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; padding-top:0; }
+  .cat-pills-scroll::-webkit-scrollbar { display:none; }
+  .main-pill { flex-shrink:0; display:inline-flex; align-items:center; gap:7px; padding:7px 16px; border-radius:6px; border:1px solid; font-size:13px; font-weight:500; cursor:pointer; transition:background .15s,color .15s,border-color .15s; line-height:1.3; }
+  .pill-count { font-size:11px; font-weight:700; opacity:.7; }
+  .cat-body { background:var(--page-bg); padding:clamp(28px,4vw,48px) clamp(16px,4vw,32px); }
+  .cat-section, .prod-item { max-width:80rem; margin:0 auto; }
+  .prod-item-head { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-bottom:24px; }
+  .prod-item-h2 { font-size:clamp(1rem,2vw,1.3rem); font-weight:700; color:var(--navy); margin:0 0 3px; }
+  .prod-item-meta { color:#6b7280; font-size:13px; margin:0; }
+  .cat-btn-sm { display:inline-flex; align-items:center; min-height:38px; padding:7px 18px; background:var(--teal); color:white; font-size:13px; font-weight:600; border-radius:6px; text-decoration:none; border:none; cursor:pointer; white-space:nowrap; transition:background .15s; }
+  .cat-btn-sm:hover { background:var(--teal-dk); }
+  .color-grid { display:grid; grid-template-columns:repeat(1,minmax(0,1fr)); gap:16px; }
+  @media(min-width:640px)  { .color-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media(min-width:1024px) { .color-grid { grid-template-columns:repeat(4,minmax(0,1fr)); } }
+  .color-card { display:block; text-decoration:none; background:white; border-radius:8px; border:1px solid var(--border); padding:14px 10px; text-align:center; cursor:pointer; transition:box-shadow .15s,transform .15s,border-color .15s; }
+  .color-card:hover { box-shadow:0 4px 16px rgba(0,0,0,.08); transform:translateY(-2px); border-color:var(--teal); }
+  .color-card-img { max-height:130px; width:auto; max-width:100%; object-fit:contain; display:block; margin:0 auto 8px; }
+  .color-card-label { font-size:11px; font-weight:600; color:#4A4A4A; margin:0; text-transform:uppercase; letter-spacing:.03em; }
+  .cat-cta { background:var(--navy); border-top:1px solid rgba(255,255,255,.06); padding:clamp(36px,5vw,56px) 0; }
+  .cat-cta-inner { max-width:80rem; margin:0 auto; padding:0 clamp(16px,4vw,32px); display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px; }
+  .cat-cta-text { flex:1; min-width:0; }
+  .cat-cta-h3 { font-size:clamp(1rem,2vw,1.25rem); font-weight:800; color:white; margin:0 0 8px; }
+  .cat-cta-p { color:rgba(255,255,255,.55); font-size:13.5px; line-height:1.65; margin:0; }
+  .cat-cta-btns { display:flex; flex-wrap:wrap; gap:10px; flex-shrink:0; }
+  .cat-btn-primary, .cat-btn-ghost { display:inline-flex; align-items:center; min-height:42px; padding:9px 22px; font-size:13.5px; font-weight:700; border-radius:6px; text-decoration:none; cursor:pointer; transition:background .18s; white-space:nowrap; }
+  .cat-btn-primary { background:var(--teal); color:white; border:1.5px solid var(--teal); }
+  .cat-btn-primary:hover { background:var(--teal-dk); border-color:var(--teal-dk); }
+  .cat-btn-ghost { background:rgba(255,255,255,.08); color:white; border:1.5px solid rgba(255,255,255,.18); }
+  .cat-btn-ghost:hover { background:rgba(255,255,255,.15); }
+  div::-webkit-scrollbar { display:none; }
+  @media(prefers-reduced-motion:reduce) { .color-card { transform:none !important; transition:none; } }
 </style>
 
 <script is:inline>
@@ -143,45 +163,29 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
     var mainPills = document.querySelectorAll('.main-pill');
     var subPillBars = document.querySelectorAll('.sub-pill-bar');
     var catSections = document.querySelectorAll('.cat-section');
-
     function activateMainPill(catIdx) {
-      mainPills.forEach(function (p) {
-        p.style.background = 'white'; p.style.color = '#1A1A2E'; p.style.borderColor = '#e5e7eb';
-      });
-      var active = document.querySelector('.main-pill[data-cat="' + catIdx + '"]');
-      if (active) { active.style.background = '#0099AF'; active.style.color = 'white'; active.style.borderColor = '#0099AF'; }
-
-      subPillBars.forEach(function (bar) { bar.style.display = 'none'; });
-      var bar = document.querySelector('.sub-pill-bar[data-cat="' + catIdx + '"]');
-      if (bar) bar.style.display = 'flex';
-
-      catSections.forEach(function (s) { s.style.display = 'none'; });
-      var section = document.querySelector('.cat-section[data-cat="' + catIdx + '"]');
-      if (section) section.style.display = 'block';
-
-      activateSubPill(catIdx, 0);
+      mainPills.forEach(function(p){ p.style.background='transparent'; p.style.color='#4A4A4A'; p.style.borderColor='#d1d5db'; });
+      var a=document.querySelector('.main-pill[data-cat="'+catIdx+'"]');
+      if(a){a.style.background='#0099AF';a.style.color='white';a.style.borderColor='#0099AF';}
+      subPillBars.forEach(function(b){b.style.display='none';});
+      var bar=document.querySelector('.sub-pill-bar[data-cat="'+catIdx+'"]');
+      if(bar)bar.style.display='flex';
+      catSections.forEach(function(s){s.style.display='none';});
+      var sec=document.querySelector('.cat-section[data-cat="'+catIdx+'"]');
+      if(sec)sec.style.display='block';
+      activateSubPill(catIdx,0);
     }
-
-    function activateSubPill(catIdx, prodIdx) {
-      var subPills = document.querySelectorAll('.sub-pill[data-cat="' + catIdx + '"]');
-      subPills.forEach(function (p) {
-        p.style.background = 'white'; p.style.color = '#4A4A4A'; p.style.borderColor = '#e5e7eb';
-      });
-      var active = document.querySelector('.sub-pill[data-cat="' + catIdx + '"][data-prod="' + prodIdx + '"]');
-      if (active) { active.style.background = '#0099AF'; active.style.color = 'white'; active.style.borderColor = '#0099AF'; }
-
-      var prodItems = document.querySelectorAll('.prod-item[data-cat="' + catIdx + '"]');
-      prodItems.forEach(function (item) { item.style.display = 'none'; });
-      var target = document.querySelector('.prod-item[data-cat="' + catIdx + '"][data-prod="' + prodIdx + '"]');
-      if (target) target.style.display = 'block';
+    function activateSubPill(catIdx,prodIdx) {
+      var subs=document.querySelectorAll('.sub-pill[data-cat="'+catIdx+'"]');
+      subs.forEach(function(p){p.style.background='transparent';p.style.color='#4A4A4A';p.style.borderColor='#d1d5db';});
+      var a=document.querySelector('.sub-pill[data-cat="'+catIdx+'"][data-prod="'+prodIdx+'"]');
+      if(a){a.style.background='#0099AF';a.style.color='white';a.style.borderColor='#0099AF';}
+      var items=document.querySelectorAll('.prod-item[data-cat="'+catIdx+'"]');
+      items.forEach(function(item){item.style.display='none';});
+      var t=document.querySelector('.prod-item[data-cat="'+catIdx+'"][data-prod="'+prodIdx+'"]');
+      if(t)t.style.display='block';
     }
-
-    mainPills.forEach(function (pill) {
-      pill.addEventListener('click', function () { activateMainPill(this.getAttribute('data-cat')); });
-    });
-
-    document.querySelectorAll('.sub-pill').forEach(function (pill) {
-      pill.addEventListener('click', function () { activateSubPill(this.getAttribute('data-cat'), this.getAttribute('data-prod')); });
-    });
+    mainPills.forEach(function(pill){pill.addEventListener('click',function(){activateMainPill(this.getAttribute('data-cat'));});});
+    document.querySelectorAll('.sub-pill').forEach(function(pill){pill.addEventListener('click',function(){activateSubPill(this.getAttribute('data-cat'),this.getAttribute('data-prod'));});});
   });
 </script>

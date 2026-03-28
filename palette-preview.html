@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SANMYRS — Color Palette Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #111; color: white; }
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+  .palette-label {
+    text-align: center;
+    padding: 32px 0 16px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #9ca3af;
+  }
+  .palette-label span {
+    color: white;
+    font-size: 20px;
+    display: block;
+    margin-top: 4px;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  /* ── MOCK SITE CARD ── */
+  .site {
+    max-width: 900px;
+    margin: 0 auto 64px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+  }
+
+  /* Navbar */
+  .nav {
+    background: #1A1A2E;
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo { font-size: 20px; font-weight: 800; letter-spacing: 0.06em; color: white; }
+  .nav-links { display: flex; gap: 24px; }
+  .nav-links a { font-size: 12px; color: #9ca3af; text-decoration: none; }
+  .nav-btn { background: #0099AF; color: white; font-size: 12px; font-weight: 700; padding: 7px 16px; border-radius: 5px; text-decoration: none; }
+
+  /* Hero */
+  .hero {
+    padding: 56px 48px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    min-height: 280px;
+  }
+  .hero-text { flex: 1; }
+  .hero-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0,153,175,0.3);
+    color: #0099AF;
+    background: rgba(0,153,175,0.08);
+  }
+  .hero-title { font-size: 36px; font-weight: 800; color: white; line-height: 1.1; margin-bottom: 12px; }
+  .hero-title span { color: #0099AF; }
+  .hero-sub { font-size: 13px; color: #9ca3af; line-height: 1.7; margin-bottom: 24px; max-width: 380px; }
+  .hero-btns { display: flex; gap: 10px; }
+  .btn-primary { background: #0099AF; color: white; font-size: 12px; font-weight: 700; padding: 10px 22px; border-radius: 5px; text-decoration: none; }
+  .btn-outline { background: transparent; color: white; font-size: 12px; font-weight: 600; padding: 10px 22px; border-radius: 5px; text-decoration: none; border: 1px solid rgba(255,255,255,0.2); }
+
+  /* Hero visual placeholder */
+  .hero-visual {
+    width: 200px;
+    height: 180px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    border: 1px dashed rgba(255,255,255,0.1);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Products strip */
+  .products {
+    background: #F5F7F6;
+    padding: 28px 48px;
+  }
+  .products-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #0099AF; margin-bottom: 16px; }
+  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .card { background: white; border-radius: 4px; overflow: hidden; }
+  .card-bar { height: 3px; }
+  .card-body { padding: 14px; }
+  .card-title { font-size: 11px; font-weight: 700; color: #1A1A2E; margin-bottom: 6px; }
+  .card-desc { font-size: 10px; color: #9ca3af; line-height: 1.5; }
+
+  /* CTA strip */
+  .cta {
+    padding: 32px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cta-title { font-size: 20px; font-weight: 800; color: white; margin-bottom: 6px; }
+  .cta-sub { font-size: 12px; color: rgba(255,255,255,0.55); }
+  .cta-btns { display: flex; gap: 10px; flex-shrink: 0; }
+
+  /* Footer */
+  .footer {
+    background: #1A1A2E;
+    padding: 18px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-logo { font-size: 15px; font-weight: 800; color: white; letter-spacing: 0.06em; }
+  .footer-copy { font-size: 10px; color: #4b5563; }
+
+  /* Divider */
+  .divider {
+    border: none;
+    border-top: 1px solid #222;
+    margin: 16px auto 0;
+    max-width: 900px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════ -->
+<!--  OPTION 1 — Navy + Slate                  -->
+<!-- ══════════════════════════════════════════ -->
+<div class="palette-label">Option 1 <span>Navy + Slate</span></div>
+<div class="site">
+  <div class="nav">
+    <div class="nav-logo">SANMYRS</div>
+    <div class="nav-links">
+      <a href="#">Products</a><a href="#">Industries</a><a href="#">About</a><a href="#">Contact</a>
+    </div>
+    <a href="#" class="nav-btn">Get a Quote</a>
+  </div>
+
+  <div class="hero" style="background:#1A1A2E;">
+    <div class="hero-text">
+      <div class="hero-badge">Since 2002 · Karachi, Pakistan</div>
+      <div class="hero-title">Chemistry<br/><span>That Prints.</span></div>
+      <div class="hero-sub">Specialist printing inks and textile chemicals for Pakistan's most demanding manufacturers.</div>
+      <div class="hero-btns">
+        <a href="#" class="btn-primary">Browse Products</a>
+        <a href="#" class="btn-outline">Request a Sample</a>
+      </div>
+    </div>
+    <div class="hero-visual">Hero Image</div>
+  </div>
+
+  <div class="products">
+    <div class="products-label">What We Supply</div>
+    <div class="cards">
+      <div class="card"><div class="card-bar" style="background:#0099AF;"></div><div class="card-body"><div class="card-title">Screen Printing</div><div class="card-desc">Plastisol & water-based inks, additives.</div></div></div>
+      <div class="card"><div class="card-bar" style="background:#1E3A5F;"></div><div class="card-body"><div class="card-title">Screen Chemicals</div><div class="card-desc">Emulsions, degreasers, accessories.</div></div></div>
+      <div class="card"><div class="card-bar" style="background:#0099AF;"></div><div class="card-body"><div class="card-title">Digital Printing</div><div class="card-desc">Reactive, sublimation, UV, DTF inks.</div></div></div>
+      <div class="card"><div class="card-bar" style="background:#1E3A5F;"></div><div class="card-body"><div class="card-title">Textile Auxiliaries</div><div class="card-desc">Softeners, leveling agents, enzymes.</div></div></div>
+    </div>
+  </div>
+
+  <div class="cta" style="background:#1E3A5F;">
+    <div>
+      <div class="cta-title">Ready to upgrade your production?</div>
+      <div class="cta-sub">Samples, data sheets, quotes — we respond within 24 hours.</div>
+    </div>
+    <div class="cta-btns">
+      <a href="#" class="btn-primary">Get a Quote</a>
+      <a href="#" class="btn-outline">WhatsApp Us</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-logo">SANMYRS</div>
+    <div class="footer-copy">© 2024 Source International Company. All rights reserved.</div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════ -->
+<!--  OPTION 2 — Navy + Amber                  -->
+<!-- ══════════════════════════════════════════ -->
+<div class="palette-label">Option 2 <span>Navy + Amber/Gold</span></div>
+<div class="site">
+  <div class="nav">
+    <div class="nav-logo">SANMYRS</div>
+    <div class="nav-links">
+      <a href="#">Products</a><a href="#">Industries</a><a href="#">About</a><a href="#">Contact</a>
+    </div>
+    <a href="#" class="nav-btn">Get a Quote</a>
+  </div>
+
+  <div class="hero" style="background:#1A1A2E;">
+    <div class="hero-text">
+      <div class="hero-badge">Since 2002 · Karachi, Pakistan</div>
+      <div class="hero-title">Chemistry<br/><span>That Prints.</span></div>
+      <div class="hero-sub">Specialist printing inks and textile chemicals for Pakistan's most demanding manufacturers.</div>
+      <div class="hero-btns">
+        <a href="#" class="btn-primary">Browse Products</a>
+        <a href="#" class="btn-outline">Request a Sample</a>
+      </div>
+    </div>
+    <div class="hero-visual">Hero Image</div>
+  </div>
+
+  <div class="products">
+    <div class="products-label">What We Supply</div>
+    <div class="cards">
+      <div class="card"><div class="card-bar" style="background:#0099AF;"></div><div class="card-body"><div class="card-title">Screen Printing</div><div class="card-desc">Plastisol & water-based inks, additives.</div></div></div>
+      <div class="card"><div class="card-bar" style="background:#B45309;"></div><div class="card-body"><div class="card-title">Screen Chemicals</div><div class="card-desc">Emulsions, degreasers, accessories.</div></div></div>
+      <div class="card"><div class="card-bar" style="background:#0099AF;"></div><div class="card-body"><div class="card-title">Digital Printing</div><div class="card-desc">Reactive, sublimation, UV, DTF inks.</div></div></div>
+      <div class="card"><div class="card-bar" style="background:#B45309;"></div><div class="card-body"><div class="card-title">Textile Auxiliaries</div><div class="card-desc">Softeners, leveling agents, enzymes.</div></div></div>
+    </div>
+  </div>
+
+  <div class="cta" style="background:#B45309;">
+    <div>
+      <div class="cta-title">Ready to upgrade your production?</div>
+      <div class="cta-sub">Samples, data sheets, quotes — we respond within 24 hours.</div>
+    </div>
+    <div class="cta-btns">
+      <a href="#" class="btn-primary">Get a Quote</a>
+      <a href="#" class="btn-outline">WhatsApp Us</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-logo">SANMYRS</div>
+    <div class="footer-copy">© 2024 Source International Company. All rights reserved.</div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════ -->
+<!--  OPTION 3 — Charcoal Only (Minimal)       -->
+<!-- ══════════════════════════════════════════ -->
+<div class="palette-label">Option 3 <span>Charcoal Only (Minimal)</span></div>
+<div class="site">
+  <div class="nav">
+    <div class="nav-logo">SANMYRS</div>
+    <div class="nav-links">
+      <a href="#">Products</a><a href="#">Industries</a><a href="#">About</a><a href="#">Contact</a>
+    </div>
+    <a href="#" class="nav-btn">Get a Quote</a>
+  </div>
+
+  <div class="hero" style="background:#1A1A2E;">
+    <div class="hero-text">
+      <div class="hero-badge">Since 2002 · Karachi, Pakistan</div>
+      <div class="hero-title">Chemistry<br/><span>That Prints.</span></div>
+      <div class="hero-sub">Specialist printing inks and textile chemicals for Pakistan's most demanding manufacturers.</div>
+      <div class="hero-btns">
+        <a href="#" class="btn-primary">Browse Products</a>
+        <a href="#" class="btn-outline">Request a Sample</a>
+      </div>
+    </div>
+    <div class="hero-visual">Hero Image</div>
+  </div>
+
+  <div class="products">
+    <div class="products-label">What We Supply</div>
+    <div class="cards">
+      <div class="card"><div class="card-bar" style="background:#0099AF;"></div><div class="card-body"><div class="card-title">Screen Printing</div><div class="card-desc">Plastisol & water-based inks, additives.</div></div></div>
+      <div class="card"><div class="card-bar" style="background:#1F2937;"></div><div class="card-body"><div class="card-title">Screen Chemicals</div><div class="card-desc">Emulsions, degreasers, accessories.</div></div></div>
+      <div class="card"><div class="card-bar" style="background:#0099AF;"></div><div class="card-body"><div class="card-title">Digital Printing</div><div class="card-desc">Reactive, sublimation, UV, DTF inks.</div></div></div>
+      <div class="card"><div class="card-bar" style="background:#1F2937;"></div><div class="card-body"><div class="card-title">Textile Auxiliaries</div><div class="card-desc">Softeners, leveling agents, enzymes.</div></div></div>
+    </div>
+  </div>
+
+  <div class="cta" style="background:#1F2937;">
+    <div>
+      <div class="cta-title">Ready to upgrade your production?</div>
+      <div class="cta-sub">Samples, data sheets, quotes — we respond within 24 hours.</div>
+    </div>
+    <div class="cta-btns">
+      <a href="#" class="btn-primary">Get a Quote</a>
+      <a href="#" class="btn-outline">WhatsApp Us</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-logo">SANMYRS</div>
+    <div class="footer-copy">© 2024 Source International Company. All rights reserved.</div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════ -->
+<!--  OPTION 4 — Navy + Forest Green           -->
+<!-- ══════════════════════════════════════════ -->
+<div class="palette-label">Option 4 <span>Navy + Forest Green</span></div>
+<div class="site">
+  <div class="nav">
+    <div class="nav-logo">SANMYRS</div>
+    <div class="nav-links">
+      <a href="#">Products</a><a href="#">Industries</a><a href="#">About</a><a href="#">Contact</a>
+    </div>
+    <a href="#" class="nav-btn">Get a Quote</a>
+  </div>
+
+  <div class="hero" style="background:#1A1A2E;">
+    <div class="hero-text">
+      <div class="hero-badge">Since 2002 · Karachi, Pakistan</div>
+      <div class="hero-title">Chemistry<br/><span>That Prints.</span></div>
+      <div class="hero-sub">Specialist printing inks and textile chemicals for Pakistan's most demanding manufacturers.</div>
+      <div class="hero-btns">
+        <a href="#" class="btn-primary">Browse Products</a>
+        <a href="#" class="btn-outline">Request a Sample</a>
+      </div>
+    </div>
+    <div class="hero-visual">Hero Image</div>
+  </div>
+
+  <div class="products">
+    <div class="products-label">What We Supply</div>
+    <div class="cards">
+      <div class="card"><div class="card-bar" style="background:#0099AF;"></div><div class="card-body"><div class="card-title">Screen Printing</div><div class="card-desc">Plastisol & water-based inks, additives.</div></div></div>
+      <div class="card"><div class="card-bar" style="background:#14532D;"></div><div class="card-body"><div class="card-title">Screen Chemicals</div><div class="card-desc">Emulsions, degreasers, accessories.</div></div></div>
+      <div class="card"><div class="card-bar" style="background:#0099AF;"></div><div class="card-body"><div class="card-title">Digital Printing</div><div class="card-desc">Reactive, sublimation, UV, DTF inks.</div></div></div>
+      <div class="card"><div class="card-bar" style="background:#14532D;"></div><div class="card-body"><div class="card-title">Textile Auxiliaries</div><div class="card-desc">Softeners, leveling agents, enzymes.</div></div></div>
+    </div>
+  </div>
+
+  <div class="cta" style="background:#14532D;">
+    <div>
+      <div class="cta-title">Ready to upgrade your production?</div>
+      <div class="cta-sub">Samples, data sheets, quotes — we respond within 24 hours.</div>
+    </div>
+    <div class="cta-btns">
+      <a href="#" class="btn-primary">Get a Quote</a>
+      <a href="#" class="btn-outline">WhatsApp Us</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-logo">SANMYRS</div>
+    <div class="footer-copy">© 2024 Source International Company. All rights reserved.</div>
+  </div>
+</div>
+
+<div style="height:48px;"></div>
+</body>
+</html>

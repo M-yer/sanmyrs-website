@@ -1084,6 +1084,151 @@ export const products = {
         ]
       }
     ]
+  },
+
+  "screen-chemicals-accessories": {
+    label: "Screen Chemicals & Accessories",
+    slug: "screen-chemicals-accessories",
+    description: "Emulsions, degreasers, screen openers, mesh, squeegees, and all essentials for professional screen preparation and printing.",
+    subcategories: [
+      {
+        name: "Screen Emulsions",
+        products: [
+          {
+            name: "Dual-Cure Emulsion",
+            slug: "dual-cure-emulsion",
+            image: null,
+            description: "A dual-cure (diazo + photopolymer) emulsion offering excellent resolution, durability, and resistance to plastisol and water-based inks. Suitable for fine-detail and high-volume screen printing applications.",
+            uses: [
+              "Fine-detail halftone and process printing screens",
+              "High-volume production screens requiring durability",
+              "Compatible with plastisol and water-based ink systems"
+            ],
+            metaTitle: "Dual-Cure Screen Emulsion | SANMYRS",
+            metaDescription: "SANMYRS Dual-Cure Emulsion delivers sharp resolution and durability for high-volume screen printing. Available in Karachi, Pakistan."
+          },
+          {
+            name: "Pure Photopolymer Emulsion",
+            slug: "pure-photopolymer-emulsion",
+            image: null,
+            description: "Ready-to-use pure photopolymer emulsion with fast exposure times and excellent chemical resistance. No diazo mixing required. Provides sharp stencil edges for detailed artwork reproduction.",
+            uses: [
+              "Quick-turnaround screen production",
+              "Water-based and discharge ink applications",
+              "Detailed graphic and fine-line printing"
+            ],
+            metaTitle: "Pure Photopolymer Emulsion | SANMYRS",
+            metaDescription: "SANMYRS Pure Photopolymer Emulsion offers fast exposure and sharp stencil edges for screen printing. Available in Karachi, Pakistan."
+          }
+        ]
+      },
+      {
+        name: "Screen Chemicals",
+        products: [
+          {
+            name: "Screen Degreaser",
+            slug: "screen-degreaser",
+            image: null,
+            description: "Professional-grade screen degreaser that removes oils, fingerprints, and contaminants from mesh before coating. Ensures uniform emulsion adhesion and eliminates pinholes caused by surface contamination.",
+            uses: [
+              "Pre-coating mesh preparation",
+              "Removing oil and contamination from reclaimed screens",
+              "Improving emulsion adhesion on new mesh"
+            ],
+            metaTitle: "Screen Degreaser | SANMYRS",
+            metaDescription: "SANMYRS Screen Degreaser removes oils and contaminants for flawless emulsion adhesion. Available in Karachi, Pakistan."
+          },
+          {
+            name: "Screen Opener / Ink Degradant",
+            slug: "screen-opener",
+            image: null,
+            description: "Fast-acting screen opener dissolves dried plastisol and water-based inks during production. Restores blocked mesh without removing the stencil, minimising press downtime.",
+            uses: [
+              "Clearing blocked mesh during print runs",
+              "Dissolving dried plastisol ink from screens",
+              "On-press maintenance without stencil removal"
+            ],
+            metaTitle: "Screen Opener / Ink Degradant | SANMYRS",
+            metaDescription: "SANMYRS Screen Opener clears blocked mesh fast without removing the stencil. Available in Karachi, Pakistan."
+          },
+          {
+            name: "Emulsion Remover / Stripper",
+            slug: "emulsion-remover",
+            image: null,
+            description: "High-efficiency emulsion stripper that quickly breaks down cured photopolymer and diazo emulsions for fast screen reclaiming. Safe on all standard mesh types.",
+            uses: [
+              "Reclaiming screens after production runs",
+              "Removing dual-cure and photopolymer emulsions",
+              "High-volume screen reclaim operations"
+            ],
+            metaTitle: "Emulsion Remover | SANMYRS",
+            metaDescription: "SANMYRS Emulsion Remover strips cured emulsion fast for efficient screen reclaiming. Available in Karachi, Pakistan."
+          }
+        ]
+      },
+      {
+        name: "Mesh & Squeegees",
+        products: [
+          {
+            name: "Polyester Printing Mesh",
+            slug: "polyester-printing-mesh",
+            image: null,
+            description: "High-tension monofilament polyester mesh available in a full range of thread counts for plastisol, water-based, and specialty ink applications. Consistent weave geometry ensures reproducible ink deposit across the print run.",
+            uses: [
+              "General-purpose plastisol ink printing (60–160 t/cm)",
+              "Fine-detail and halftone printing (180–196 t/cm)",
+              "Specialty effect and heavy-deposit printing (40–60 t/cm)"
+            ],
+            metaTitle: "Polyester Printing Mesh | SANMYRS",
+            metaDescription: "SANMYRS Polyester Printing Mesh in a full range of thread counts for all screen printing applications. Available in Karachi, Pakistan."
+          },
+          {
+            name: "Polyurethane Squeegee Blade",
+            slug: "polyurethane-squeegee-blade",
+            image: null,
+            description: "Durable polyurethane squeegee blades in a range of durometer ratings for different ink viscosities and print requirements. Maintains sharp edge profile over extended use for consistent ink deposit.",
+            uses: [
+              "Plastisol and water-based ink printing",
+              "Automatic and manual press applications",
+              "High-volume production printing"
+            ],
+            metaTitle: "Polyurethane Squeegee Blade | SANMYRS",
+            metaDescription: "SANMYRS Squeegee Blades offer consistent ink deposit for manual and automatic screen printing. Available in Karachi, Pakistan."
+          }
+        ]
+      },
+      {
+        name: "Accessories",
+        products: [
+          {
+            name: "Pallet Adhesive / Spray Tack",
+            slug: "pallet-adhesive",
+            image: null,
+            description: "Re-positionable spray adhesive for securing garments to printing pallets during screen printing. Provides consistent hold without permanent bonding, allowing easy repositioning and clean removal.",
+            uses: [
+              "Securing T-shirts and garments to platens",
+              "Preventing garment movement during multi-colour printing",
+              "Compatible with automatic and manual press pallets"
+            ],
+            metaTitle: "Pallet Adhesive / Spray Tack | SANMYRS",
+            metaDescription: "SANMYRS Pallet Adhesive secures garments to platens for accurate multi-colour registration. Available in Karachi, Pakistan."
+          },
+          {
+            name: "Blockout / Screen Filler",
+            slug: "blockout-screen-filler",
+            image: null,
+            description: "Opaque water-based blockout for sealing pinholes, repairing stencil edges, and masking unwanted open areas on coated screens. Dries quickly and resists plastisol and water-based inks.",
+            uses: [
+              "Sealing pinholes in coated screens",
+              "Repairing stencil edges before printing",
+              "Masking screen borders and frame areas"
+            ],
+            metaTitle: "Screen Blockout / Filler | SANMYRS",
+            metaDescription: "SANMYRS Screen Blockout seals pinholes and repairs stencils for clean, defect-free printing. Available in Karachi, Pakistan."
+          }
+        ]
+      }
+    ]
   }
 };
 

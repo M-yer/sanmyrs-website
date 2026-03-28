@@ -3,16 +3,16 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
 import ProductCard from '../../../components/ProductCard.astro';
 import { products } from '../../../data/products.js';
 
-const category = products['textile-auxiliaries'];
+const category = products['screen-chemicals-accessories'];
 const totalProducts = category.subcategories.reduce((a, s) => a + s.products.length, 0);
 ---
 
 <ProductLayout
-  title="Textile Auxiliaries | SANMYRS"
-  description="Wetting agents, leveling agents, softeners, enzymes, fixing agents, and functional finishing chemicals for textile dyeing and finishing mills. SANMYRS, Karachi."
+  title="Screen Chemicals & Accessories | SANMYRS"
+  description="Screen emulsions, degreasers, screen openers, mesh, squeegees, and all essentials for professional screen preparation. SANMYRS, Karachi, Pakistan."
   breadcrumbs={[
     { label: 'Products', href: '/products' },
-    { label: 'Textile Auxiliaries', href: '/products/textile-auxiliaries' },
+    { label: 'Screen Chemicals & Accessories', href: '/products/screen-chemicals-accessories' },
   ]}
 >
 
@@ -28,9 +28,9 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
     </div>
     <div class="cat-header-inner">
       <div class="cat-header-left">
-        <p class="cat-eyebrow">Textile Auxiliaries</p>
-        <h1 class="cat-h1 font-unison">Dyeing &amp; Finishing</h1>
-        <p class="cat-desc">Comprehensive dyeing auxiliaries, softeners, and functional finishing chemicals for every stage of modern textile wet processing.</p>
+        <p class="cat-eyebrow">Screen Chemicals &amp; Accessories</p>
+        <h1 class="cat-h1 font-unison">Emulsions &amp; Chemicals</h1>
+        <p class="cat-desc">Screen emulsions, degreasers, screen openers, mesh, squeegees, and all essentials for professional screen preparation.</p>
       </div>
       <div class="cat-header-right">
         <span class="cat-stat-num font-unison">{totalProducts}</span>
@@ -44,7 +44,7 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
     <div class="cat-nav-inner">
       <div class="cat-pills-scroll">
         {category.subcategories.map((sub, i) => (
-          <button class="main-pill" data-cat={String(i)}
+          <button class="pill-btn" data-index={String(i)}
             style={`background:${i===0?'#0099AF':'transparent'}; color:${i===0?'white':'#4A4A4A'}; border-color:${i===0?'#0099AF':'#d1d5db'};`}>
             {sub.name}
             <span class="pill-count">{sub.products.length}</span>
@@ -57,11 +57,11 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
   <!-- ── Product Grid ── -->
   <div class="cat-body">
     {category.subcategories.map((sub, i) => (
-      <div class="cat-section" data-cat={String(i)} style={i===0?'display:block;':'display:none;'}>
+      <div class="subcategory-section" data-index={String(i)} style={i===0?'display:block;':'display:none;'}>
         <div class="product-grid" style="display:grid; gap:20px; align-items:start;">
           {sub.products.map(product => (
             <ProductCard name={product.name} description={product.description}
-              slug={product.slug} category="textile-auxiliaries" image={product.image}/>
+              slug={product.slug} category="screen-chemicals-accessories" image={product.image}/>
           ))}
         </div>
       </div>
@@ -72,11 +72,11 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
   <div class="cat-cta">
     <div class="cat-cta-inner">
       <div class="cat-cta-text">
-        <h3 class="cat-cta-h3 font-unison">Need process chemistry advice?</h3>
-        <p class="cat-cta-p">Our team has deep expertise in textile wet processing. Share your challenge and we'll recommend the right solution.</p>
+        <h3 class="cat-cta-h3 font-unison">Need a specific chemical or accessory?</h3>
+        <p class="cat-cta-p">Our team can advise on the right emulsion, chemical, or accessory for your screen printing setup and ink system.</p>
       </div>
       <div class="cat-cta-btns">
-        <a href="/contact" class="cat-btn-primary">Speak to an Expert</a>
+        <a href="/contact" class="cat-btn-primary">Get a Recommendation</a>
         <a href="https://wa.me/923183755197" target="_blank" rel="noopener noreferrer" class="cat-btn-ghost">WhatsApp Us</a>
       </div>
     </div>
@@ -85,36 +85,25 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
 </ProductLayout>
 
 <style>
-  :root {
-    --teal:#0099AF; --teal-dk:#007A8A;
-    --navy:#1A1A2E; --page-bg:#F5F7F6; --border:#e5e7eb;
-  }
+  :root { --teal:#0099AF; --teal-dk:#007A8A; --navy:#1A1A2E; --page-bg:#F5F7F6; --border:#e5e7eb; }
   .cat-header { position:relative; background:var(--navy); overflow:hidden; padding:clamp(36px,5vw,56px) 0; }
   .cat-header-dots { position:absolute; inset:0; pointer-events:none; opacity:.65; }
-  .cat-header-inner {
-    position:relative; max-width:80rem; margin:0 auto;
-    padding:0 clamp(16px,4vw,32px);
-    display:flex; align-items:center; justify-content:space-between; gap:24px;
-  }
+  .cat-header-inner { position:relative; max-width:80rem; margin:0 auto; padding:0 clamp(16px,4vw,32px); display:flex; align-items:center; justify-content:space-between; gap:24px; }
   .cat-header-left { flex:1; min-width:0; }
   .cat-eyebrow { font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--teal); margin:0 0 6px; }
   .cat-h1 { font-size:clamp(1.5rem,3vw,2rem); font-weight:800; color:white; margin:0 0 10px; line-height:1.15; }
   .cat-desc { color:rgba(255,255,255,.55); font-size:13.5px; line-height:1.65; margin:0; max-width:34rem; }
-  .cat-header-right {
-    flex-shrink:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
-    background:rgba(0,153,175,.12); border:1px solid rgba(0,153,175,.25);
-    border-radius:12px; padding:18px 28px; text-align:center; min-width:100px;
-  }
+  .cat-header-right { flex-shrink:0; display:flex; flex-direction:column; align-items:center; justify-content:center; background:rgba(0,153,175,.12); border:1px solid rgba(0,153,175,.25); border-radius:12px; padding:18px 28px; text-align:center; min-width:100px; }
   .cat-stat-num { font-size:clamp(2rem,3.5vw,2.8rem); font-weight:800; color:var(--teal); line-height:1; }
   .cat-stat-label { font-size:11px; font-weight:600; color:rgba(255,255,255,.5); letter-spacing:.08em; text-transform:uppercase; margin-top:4px; }
   .cat-nav { background:white; border-bottom:1px solid var(--border); position:sticky; top:64px; z-index:30; }
   .cat-nav-inner { max-width:80rem; margin:0 auto; padding:0 clamp(16px,4vw,32px); }
   .cat-pills-scroll { display:flex; flex-wrap:nowrap; gap:6px; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; padding:10px 0; }
   .cat-pills-scroll::-webkit-scrollbar { display:none; }
-  .main-pill { flex-shrink:0; display:inline-flex; align-items:center; gap:7px; padding:7px 16px; border-radius:6px; border:1px solid; font-size:13px; font-weight:500; cursor:pointer; transition:background .15s,color .15s,border-color .15s; line-height:1.3; }
+  .pill-btn { flex-shrink:0; display:inline-flex; align-items:center; gap:7px; padding:7px 16px; border-radius:6px; border:1px solid; font-size:13px; font-weight:500; cursor:pointer; transition:background .15s,color .15s,border-color .15s; line-height:1.3; }
   .pill-count { font-size:11px; font-weight:700; opacity:.7; }
   .cat-body { background:var(--page-bg); padding:clamp(28px,4vw,48px) clamp(16px,4vw,32px); }
-  .cat-section { max-width:80rem; margin:0 auto; }
+  .subcategory-section { max-width:80rem; margin:0 auto; }
   .product-grid { grid-template-columns:repeat(1,minmax(0,1fr)); }
   @media(min-width:640px)  { .product-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
   @media(min-width:1024px) { .product-grid { grid-template-columns:repeat(4,minmax(0,1fr)); } }
@@ -124,7 +113,7 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
   .cat-cta-h3 { font-size:clamp(1rem,2vw,1.25rem); font-weight:800; color:white; margin:0 0 8px; }
   .cat-cta-p { color:rgba(255,255,255,.55); font-size:13.5px; line-height:1.65; margin:0; }
   .cat-cta-btns { display:flex; flex-wrap:wrap; gap:10px; flex-shrink:0; }
-  .cat-btn-primary, .cat-btn-ghost { display:inline-flex; align-items:center; min-height:42px; padding:9px 22px; font-size:13.5px; font-weight:700; border-radius:6px; text-decoration:none; cursor:pointer; transition:background .18s,opacity .18s; white-space:nowrap; }
+  .cat-btn-primary, .cat-btn-ghost { display:inline-flex; align-items:center; min-height:42px; padding:9px 22px; font-size:13.5px; font-weight:700; border-radius:6px; text-decoration:none; cursor:pointer; transition:background .18s; white-space:nowrap; }
   .cat-btn-primary { background:var(--teal); color:white; border:1.5px solid var(--teal); }
   .cat-btn-primary:hover { background:var(--teal-dk); border-color:var(--teal-dk); }
   .cat-btn-ghost { background:rgba(255,255,255,.08); color:white; border:1.5px solid rgba(255,255,255,.18); }
@@ -133,16 +122,17 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', function () {
-    var mainPills = document.querySelectorAll('.main-pill');
-    var catSections = document.querySelectorAll('.cat-section');
-    mainPills.forEach(function (pill) {
+    var pills = document.querySelectorAll('.pill-btn');
+    var sections = document.querySelectorAll('.subcategory-section');
+    if (!pills.length) return;
+    pills.forEach(function (pill) {
       pill.addEventListener('click', function () {
-        var catIdx = this.getAttribute('data-cat');
-        mainPills.forEach(function (p) { p.style.background='transparent'; p.style.color='#4A4A4A'; p.style.borderColor='#d1d5db'; });
-        this.style.background='#0099AF'; this.style.color='white'; this.style.borderColor='#0099AF';
-        catSections.forEach(function (s) { s.style.display='none'; });
-        var section = document.querySelector('.cat-section[data-cat="'+catIdx+'"]');
-        if (section) section.style.display='block';
+        var idx = this.getAttribute('data-index');
+        pills.forEach(function(p){ p.style.background='transparent'; p.style.color='#4A4A4A'; p.style.borderColor='#d1d5db'; p.style.cursor='pointer'; });
+        this.style.background='#0099AF'; this.style.color='white'; this.style.borderColor='#0099AF'; this.style.cursor='default';
+        sections.forEach(function(s){ s.style.display='none'; });
+        var t=document.querySelector('.subcategory-section[data-index="'+idx+'"]');
+        if(t) t.style.display='block';
       });
     });
   });

@@ -57,6 +57,24 @@ const schema = {
     { label: product.name, href: `/products/${categorySlug}/${product.slug}` },
   ]}
 >
+  <!-- ── Product Header ── -->
+  <header class="pd-header">
+    <div class="pd-header-dots" aria-hidden="true">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="pdh" width="32" height="32" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" fill="rgba(0,153,175,0.18)"/>
+        </pattern></defs>
+        <rect width="100%" height="100%" fill="url(#pdh)"/>
+      </svg>
+    </div>
+    <div class="pd-header-inner">
+      <span class="pd-sub-badge">{product.subcategory}</span>
+      <h1 class="pd-h1 font-unison">{product.name}</h1>
+      <p class="pd-hdesc">{product.description.split('.')[0]}.</p>
+    </div>
+  </header>
+
+  <div class="pd-body">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
 
@@ -76,7 +94,7 @@ const schema = {
               <span class="inline-block text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full mb-4">
                 {product.subcategory}
               </span>
-              <h1 class="text-3xl font-extrabold text-primary mb-6">{product.name}</h1>
+              <h1 class="font-unison text-2xl font-bold text-navy mb-4">{product.name}</h1>
               <div class="prose prose-sm max-w-none">
                 <p class="text-body-text leading-relaxed text-base">{product.description}</p>
               </div>
@@ -87,7 +105,7 @@ const schema = {
             <span class="inline-block text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full mb-4">
               {product.subcategory}
             </span>
-            <h1 class="text-3xl font-extrabold text-primary mb-6">{product.name}</h1>
+            <h1 class="font-unison text-2xl font-bold text-navy mb-4">{product.name}</h1>
             <div class="prose prose-sm max-w-none">
               <p class="text-body-text leading-relaxed text-base">{product.description}</p>
             </div>
@@ -119,14 +137,14 @@ const schema = {
           <h2 class="text-lg font-bold mb-4">Why Order From SANMYRS?</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
-              { icon: '✓', text: 'Consistent batch-to-batch quality' },
-              { icon: '✓', text: 'Technical support and guidance' },
-              { icon: '✓', text: 'Fast dispatch from Karachi stock' },
-              { icon: '✓', text: 'Competitive pricing for all order sizes' },
-            ].map(item => (
+              'Consistent batch-to-batch quality',
+              'Technical support and guidance',
+              'Fast dispatch from Karachi stock',
+              'Competitive pricing for all order sizes',
+            ].map(text => (
               <div class="flex items-center gap-2 text-sm text-gray-200">
-                <span class="text-primary font-bold">{item.icon}</span>
-                {item.text}
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                {text}
               </div>
             ))}
           </div>
@@ -176,22 +194,27 @@ const schema = {
     <!-- Related Products -->
     {relatedProducts.length > 0 && (
       <div class="mt-14">
-        <h2 class="text-2xl font-bold text-primary mb-6">Related Products</h2>
+        <h2 class="font-unison text-2xl font-bold text-primary mb-6">Related Products</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {relatedProducts.map((p: any) => (
-            <div class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md hover:border-primary transition-all duration-200">
+            <a href={`/products/${categorySlug}/${p.slug}`} class="block bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md hover:border-primary transition-all duration-200 cursor-pointer no-underline">
               <h3 class="font-semibold text-primary mb-2">{p.name}</h3>
-              <p class="text-body-text text-sm mb-4">{p.description.split('.')[0]}.</p>
-              <a href={`/products/${categorySlug}/${p.slug}`} class="text-primary font-medium text-sm hover:text-primary-dark transition-colors duration-150 inline-flex items-center gap-1">
-                View Details
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
+              <p class="text-body-text text-sm">{p.description.split('.')[0]}.</p>
+            </a>
           ))}
         </div>
       </div>
     )}
   </div>
+  </div>{/* pd-body */}
+
+<style>
+  .pd-header { position:relative; background:#1A1A2E; overflow:hidden; padding:clamp(32px,5vw,52px) 0; }
+  .pd-header-dots { position:absolute; inset:0; pointer-events:none; }
+  .pd-header-inner { position:relative; max-width:80rem; margin:0 auto; padding:0 clamp(16px,4vw,32px); }
+  .pd-sub-badge { display:inline-flex; align-items:center; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#0099AF; background:rgba(0,153,175,0.12); border:1px solid rgba(0,153,175,0.25); padding:5px 14px; border-radius:100px; margin-bottom:12px; }
+  .pd-h1 { font-size:clamp(1.5rem,3.5vw,2.6rem); font-weight:800; color:white; margin:0 0 12px; line-height:1.1; letter-spacing:-0.01em; }
+  .pd-hdesc { color:rgba(255,255,255,0.6); font-size:14px; line-height:1.7; margin:0; max-width:42rem; }
+  .pd-body { background:#F5F7F6; }
+</style>
 </ProductLayout>
