@@ -16,24 +16,27 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
 >
 
   <!-- ── Header ── -->
-  <header class="cat-header">
-    <div class="cat-header-dots" aria-hidden="true">
-      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-        <defs><pattern id="hd" width="32" height="32" patternUnits="userSpaceOnUse">
-          <circle cx="1" cy="1" r="1" fill="rgba(0,153,175,0.15)"/>
-        </pattern></defs>
-        <rect width="100%" height="100%" fill="url(#hd)"/>
-      </svg>
+  <header class="relative pt-24 pb-16 lg:pt-32 lg:pb-24 bg-white border-b border-gray-100 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute -top-40 -right-40 w-[600px] h-[600px] bg-[#F7D000] rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
     </div>
-    <div class="cat-header-inner">
-      <div class="cat-header-left" data-aos="fade-right">
-        <p class="cat-eyebrow">Digital Printing</p>
-        <h1 class="cat-h1 font-unison">Inks &amp; Systems</h1>
-        <p class="cat-desc">High-performance inks for textile digital printing systems and wide-format graphic inkjet printers, covering all major dye and ink chemistries.</p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
+      <div class="max-w-3xl" data-aos="fade-right">
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="w-8 h-[2px] bg-[#F7D000]"></span>
+          <span class="text-xs font-bold uppercase tracking-widest text-[#F7D000]">Category</span>
+        </div>
+        <h1 class="text-5xl lg:text-7xl font-extrabold text-[#1A1A2E] tracking-tight leading-[1.05] font-unison mb-6">
+          Digital Printing <br/>
+          <span class="text-gray-400">Inks &amp; Systems</span>
+        </h1>
+        <p class="text-lg text-gray-500 max-w-2xl leading-relaxed">
+          High-performance inks for textile digital printing systems and wide-format graphic inkjet printers, covering all major dye and ink chemistries.
+        </p>
       </div>
-      <div class="cat-header-right" data-aos="fade-left" data-aos-delay="100">
-        <span class="cat-stat-num font-unison">{totalProducts}</span>
-        <span class="cat-stat-label">Products</span>
+      <div class="shrink-0 flex items-center gap-4 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm" data-aos="fade-left" data-aos-delay="100">
+        <div class="text-4xl font-black text-[#1A1A2E] font-unison">{totalProducts}</div>
+        <div class="text-xs font-bold uppercase tracking-widest text-gray-400 leading-tight">Total<br/>Products</div>
       </div>
     </div>
   </header>
@@ -113,16 +116,6 @@ const totalProducts = category.subcategories.reduce((a, s) => a + s.products.len
 
 <style>
   :root { --teal:#0099AF; --teal-dk:#007A8A; --navy:#1A1A2E; --page-bg:#F5F7F6; --border:#e5e7eb; }
-  .cat-header { position:relative; background:var(--navy); overflow:hidden; padding:clamp(36px,5vw,56px) 0; }
-  .cat-header-dots { position:absolute; inset:0; pointer-events:none; opacity:.65; }
-  .cat-header-inner { position:relative; max-width:80rem; margin:0 auto; padding:0 clamp(16px,4vw,32px); display:flex; align-items:center; justify-content:space-between; gap:24px; }
-  .cat-header-left { flex:1; min-width:0; }
-  .cat-eyebrow { font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--teal); margin:0 0 6px; }
-  .cat-h1 { font-size:clamp(1.5rem,3vw,2rem); font-weight:800; color:white; margin:0 0 10px; line-height:1.15; }
-  .cat-desc { color:rgba(255,255,255,.55); font-size:13.5px; line-height:1.65; margin:0; max-width:34rem; }
-  .cat-header-right { flex-shrink:0; display:flex; flex-direction:column; align-items:center; justify-content:center; background:rgba(0,153,175,.12); border:1px solid rgba(0,153,175,.25); border-radius:12px; padding:18px 28px; text-align:center; min-width:100px; }
-  .cat-stat-num { font-size:clamp(2rem,3.5vw,2.8rem); font-weight:800; color:var(--teal); line-height:1; }
-  .cat-stat-label { font-size:11px; font-weight:600; color:rgba(255,255,255,.5); letter-spacing:.08em; text-transform:uppercase; margin-top:4px; }
   .cat-nav { background:white; border-bottom:1px solid var(--border); position:sticky; top:64px; z-index:30; }
   .cat-nav-inner { max-width:80rem; margin:0 auto; padding:10px clamp(16px,4vw,32px) 0; }
   .cat-pills-scroll { display:flex; flex-wrap:nowrap; gap:6px; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; padding-top:0; }
