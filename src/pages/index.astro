@@ -64,7 +64,7 @@ const categories = [
 ];
 
 const stats = [
-  { value: '18+', label: 'Years in Business', icon: `<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>` },
+  { value: '22+', label: 'Years in Business', icon: `<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>` },
   { value: '80+', label: 'Products in Stock', icon: `<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>` },
   { value: '500+', label: 'Clients Served', icon: `<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>` },
   { value: 'KHI', label: 'Ready Stock, Karachi', icon: `<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>` },
@@ -96,7 +96,7 @@ const industries = [
 
 const trustBadges = [
   { label: 'ISO Compliant', detail: 'Certified Products' },
-  { label: 'Since 2002', detail: '18+ Years Experience' },
+  { label: 'Since 2002', detail: '22+ Years Experience' },
   { label: 'Karachi Stock', detail: 'Same-Day Dispatch' },
   { label: 'B2B Focused', detail: 'Bulk Orders Welcome' },
 ];
@@ -104,7 +104,7 @@ const trustBadges = [
 
 <BaseLayout
   title="SANMYRS | Printing Inks & Textile Chemicals — Karachi, Pakistan"
-  description="SANMYRS supplies professional screen printing inks, digital printing inks, and textile auxiliaries to Pakistan's textile and garment industry. 18+ years of expertise. Inquire from Karachi."
+  description="SANMYRS supplies professional screen printing inks, digital printing inks, and textile auxiliaries to Pakistan's textile and garment industry. 22+ years of expertise. Inquire from Karachi."
   schema={schema}
 >
 
@@ -396,11 +396,11 @@ const trustBadges = [
   padding: 0 clamp(16px, 4vw, 32px);
 }
 
-.section-light { background: var(--page-bg); padding: clamp(64px, 8vw, 96px) 0; }
-.section-dark  { background: var(--dark);    padding: clamp(64px, 8vw, 96px) 0; }
-.section-mid   { background: var(--white);   padding: clamp(56px, 7vw, 80px) 0; }
+.section-light { background: var(--page-bg); padding: clamp(48px, 6vw, 64px) 0; }
+.section-dark  { background: var(--dark);    padding: clamp(48px, 6vw, 64px) 0; }
+.section-mid   { background: var(--white);   padding: clamp(40px, 5vw, 56px) 0; }
 
-.section-hd { margin-bottom: 48px; }
+.section-hd { margin-bottom: clamp(24px, 4vw, 48px); }
 .eyebrow-text {
   font-size: 11px;
   font-weight: 700;
@@ -486,7 +486,7 @@ const trustBadges = [
   background: var(--dark);
   position: relative;
   overflow: hidden;
-  padding: clamp(72px, 9vw, 104px) 0 0;
+  padding: clamp(48px, 6vw, 64px) 0 0;
 }
 
 .hero-dots {
@@ -517,10 +517,10 @@ const trustBadges = [
   position: relative;
   max-width: 80rem;
   margin: 0 auto;
-  padding: 0 clamp(16px,4vw,32px) clamp(72px,9vw,112px);
+  padding: 0 clamp(16px,4vw,32px) clamp(32px, 5vw, 64px);
   display: grid;
   grid-template-columns: 1fr;
-  gap: 56px;
+  gap: 28px;
   align-items: center;
 }
 @media (min-width: 900px) { .hero-inner { grid-template-columns: 1fr 1fr; gap: 64px; } }
@@ -550,7 +550,7 @@ const trustBadges = [
 
 /* Title */
 .hero-h1 {
-  font-size: clamp(2.6rem, 5vw, 4.8rem);
+  font-size: clamp(1.75rem, 8vw, 4.8rem);
   font-weight: 800;
   color: var(--white);
   line-height: 1.06;
@@ -577,7 +577,7 @@ const trustBadges = [
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 44px;
+  margin-bottom: clamp(24px, 4vw, 44px);
 }
 
 /* Trust badges */
@@ -838,7 +838,7 @@ const trustBadges = [
   background: var(--dark-card);
   border: 1px solid var(--dark-border);
   border-radius: 12px;
-  padding: 32px 28px;
+  padding: clamp(18px, 4vw, 32px) clamp(16px, 3.5vw, 28px);
   transition: background 0.2s ease, border-color 0.2s ease;
 }
 .why-card:hover {
@@ -932,7 +932,7 @@ const trustBadges = [
 ───────────────────────────────────────────── */
 .cta-section {
   background: linear-gradient(130deg, #006677 0%, var(--teal) 45%, #00BDD6 100%);
-  padding: clamp(72px, 9vw, 108px) 0;
+  padding: clamp(44px, 7vw, 108px) 0;
   position: relative;
   overflow: hidden;
 }
